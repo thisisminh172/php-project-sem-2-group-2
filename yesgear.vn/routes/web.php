@@ -23,3 +23,6 @@ Route::get('product/show', function(){
 Route::get('product/detail', function(){
     return view('product.detail');
 });
+Route::get('admin', function(){
+    return view('admin.home');
+});
