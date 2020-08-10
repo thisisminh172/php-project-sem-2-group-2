@@ -1,11 +1,30 @@
-<div id="sidebar-wp" class="col-md-2 col-sm-12">
-    <div class="container">
-        <ul id="sidebar">
-            <li><a href=""><i class="fas fa-headphones"></i> Tai nghe gaming</a></li>
-            <li><a href=""><i class="fas fa-keyboard"></i> Bàn phím cơ</a></li>
-            <li><a href=""><i class="fas fa-mouse"></i> Chuột gaming</a></li>
-            <li><a href=""><i class="fas fa-chair"></i> Bàn ghế gaming</a></li>
-        </ul>
-    </div>
 
-</div>
+            <div class="col-2 border-right shadow-sm bg-dark">
+                <ul class="list-unstyled">
+                    <li class="py-1">
+                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
+                                class="far fa-list-alt"></i> DASHBOARD</a>
+                    </li>
+                    <li class="py-1">
+                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
+                                class="far fa-folder"></i> SẢN PHẨM</a>
+                    </li>
+                    <li class="py-1">
+                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
+                                class="far fa-folder"></i> KHÁCH HÀNG</a>
+                    </li>
+                    <li class="py-1">
+                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
+                                class="far fa-folder"></i> TRANG</a>
+                    </li>
+                    <li class="py-1">
+                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
+                                class="far fa-folder"></i> TIN TỨC</a>
+                    </li>
+                    <li class="py-1">
+                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
+                                class="far fa-folder"></i> USERS</a>
+                    </li>
+
+                </ul>
+            </div>
