@@ -1,5 +1,5 @@
 # aptech-sem2-project
-semester 2 - project - Duong - Minh - Tuan - Quang
+semester 2 - project - Duong - Minh - Tuan
 
 
 check db size make sure dont excess 200MB

@@ -1,5 +1,5 @@
 <?php
-require_once './lib/database.php';
+session_start();
 ?>
 
 
@@ -9,6 +9,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 $path = "./pages/{$page}.php";
 
 require './inc/header.php';
+require './inc/sidebar.php';
 
 if (file_exists($path)) {
     require "{$path}";
@@ -18,5 +19,3 @@ if (file_exists($path)) {
 
 require './inc/footer.php';
 ?>
-
-
