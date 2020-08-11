@@ -1,3 +1,4 @@
 <div class="col-10">
-    content
+    dashboard
+    
 </div>

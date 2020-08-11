@@ -5,7 +5,7 @@ session_start();
 
 <?php
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
 $path = "./pages/{$page}.php";
 
 require './inc/header.php';
