@@ -39,12 +39,7 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
 
-<<<<<<< HEAD
 
-
-require './inc/footer.php';
-?>
-=======
                             <!-- Navbar links -->
                             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                 <ul class="navbar-nav ml-auto">
@@ -164,12 +159,12 @@ require './inc/footer.php';
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top"
+                                <a href="product_detail.php"><img class="card-img-top"
                                         src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
                                         width="525px" height="300px" alt=""></a>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                                        <a href="product_detail.php">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
                                     </h5>
                                     <h5>549.000đ</h5>
 
