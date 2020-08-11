@@ -1,30 +1,53 @@
+<!-- sidebar start -->
+<div id="wp-sidebar" class="bg-light position-fixed">
+    <div id="sidebar-menu" class="">
+        <ul class="list-unstyled">
+            <li>
+                <i class="far fa-folder"></i><a href=""> Dashboard</a>
 
-            <div class="col-2 border-right shadow-sm bg-dark">
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href=""> Sản phẩm</a>
                 <ul class="list-unstyled">
-                    <li class="py-1">
-                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
-                                class="far fa-list-alt"></i> DASHBOARD</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
-                                class="far fa-folder"></i> SẢN PHẨM</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
-                                class="far fa-folder"></i> KHÁCH HÀNG</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
-                                class="far fa-folder"></i> TRANG</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
-                                class="far fa-folder"></i> TIN TỨC</a>
-                    </li>
-                    <li class="py-1">
-                        <a href="" class="text-decoration-none text-decoration-none text-white"><i
-                                class="far fa-folder"></i> USERS</a>
-                    </li>
-
+                    <li><a href="">Thêm sản phẩm</a></li>
+                    <li><a href="">Danh sách</a></li>
                 </ul>
-            </div>
+
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href=""> Khách hàng</a>
+                <ul class="list-unstyled">
+                    <li><a href="">Danh sách</a></li>
+                    <li><a href="">Gửi thông báo</a></li>
+                </ul>
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href=""> Trang</a>
+                <ul class="list-unstyled">
+                    <li><a href="">Thêm mới</a></li>
+                    <li><a href="">Danh sách</a></li>
+                </ul>
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href=""> Tin tức</a>
+                <ul class="list-unstyled">
+                    <li><a href="">Danh sách</a></li>
+                </ul>
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href=""> Bán hàng</a>
+                <ul class="list-unstyled">
+                    <li><a href="">Đơn hàng</a></li>
+                </ul>
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href=""> Users</a>
+                <ul class="list-unstyled">
+                    <li><a href="">Danh sách</a></li>
+                    <li><a href="">Gửi thông báo</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- sidebar end -->
