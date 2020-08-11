@@ -17,12 +17,12 @@ Route::get('/', function () {
     return view('product.show');
 });
 
-Route::get('product/show', function(){
+Route::get('product/show', function () {
     return view('product.show');
 });
-Route::get('product/detail', function(){
+Route::get('product/detail', function () {
     return view('product.detail');
 });
-Route::get('admin', function(){
+Route::get('admin', function () {
     return view('admin.home');
 });

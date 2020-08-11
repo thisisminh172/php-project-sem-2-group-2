@@ -17,5 +17,7 @@ if (file_exists($path)) {
     require "./pages/404.php";
 }
 
+
+
 require './inc/footer.php';
 ?>

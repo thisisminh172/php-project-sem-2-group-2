@@ -46,8 +46,8 @@
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="btn btn-outline-warning nav-link text-white dropdown-toggle font-weight-bolder"
-                                            data-toggle="dropdown" data-display="static" href="#"><i
-                                                class="fas fa-gamepad"></i> Sản
+                                            data-toggle="dropdown" data-display="static"><i class="fas fa-gamepad"></i>
+                                            Sản
                                             phẩm</a>
                                         <div class="dropdown-menu dropdown-menu-left">
                                             <div class="dropdown-header font-weight-bold">GAMING GEARS</div>
@@ -59,7 +59,8 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="btn btn-outline-secondary nav-link text-white font-weight-bold"
-                                            href="#"><i class="far fa-address-card"></i> Giới thiệu</a>
+                                            href=" pages/product_detail.php"> <i class="far fa-address-card"></i> Giới
+                                            thiệu</a>
                                     </li>
 
                                     <li class="nav-item">

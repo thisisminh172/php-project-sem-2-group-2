@@ -4,7 +4,7 @@
 
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
+                    <a href="pages/product_detail.php"><img class="card-img-top"
                             src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
                             width="350px" height="200px" alt=""></a>
                     <div class="card-body">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
                     <a href="#"><img class="card-img-top"

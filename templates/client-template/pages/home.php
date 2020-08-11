@@ -31,12 +31,29 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://product.hstatic.net/1000026716/product/tai-nghe-asus-rog-delta-white-1_05526deab7674a66852f866d006228f3_large.jpg" width=" 525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe ASUS ROG Delta White</a>
+                        </h5>
+                        <h5>480.000đ</h5>
+
+                    </div>
+                    <div class="container text-center">
+                        <div class="row">
+                            <a href="" class="btn btn-success col py-2">Mua hàng</a>
+                            <a href="" class="btn btn-danger col py-2">Thêm vào giỏ</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/5XET1q1m.jpg" width="525px" height="300px" alt=""></a>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="#">Tai nghe Zidli ZH6 3.5 Led RGB USB</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -52,12 +69,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/3VI6VXUm.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe ROG Delta Hi-Resolution ESS ES9281</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -73,12 +88,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/Lig9K65m.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai Nghe Gaming Dareu EH925 RGB Black</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -94,12 +107,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/JYlWjLPm.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe Gaming RAPOO VH300</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -115,12 +126,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/q5ydOSvm.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe Gaming RAPOO VH200</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -136,12 +145,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/fr6HYBvm.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe Gaming RAPOO VH150</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -157,12 +164,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/tendXJYm.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai Nghe Gaming Zidli ZL20 Gaming 7.1</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -178,12 +183,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/BKvCSN1m.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe DAREU EH722S</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -199,12 +202,10 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://i.imgur.com/GeF2E2qm.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="#">Tai nghe DAREU VH350S</a>
                         </h5>
                         <h5>549.000đ</h5>
 
@@ -220,9 +221,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            width="525px" height="300px" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg" width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
                             <a href="#">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
@@ -239,6 +238,14 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
 
         </div>
         <!-- /.row -->
