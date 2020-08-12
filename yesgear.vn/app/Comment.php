@@ -16,6 +16,6 @@ class Comment extends Model
     }
 
     public function customer(){
-        return $this->belongsTo('App\Customer');
+        return $this->belongsTo('App\Commenter');
     }
 }

@@ -16,9 +16,9 @@ class CreateCommentRepsTable extends Migration
         Schema::create('comment_reps', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('comment_id');
-            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('commenter_id');
             $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('commenter_id')->references('id')->on('commenters')->onDelete('cascade');
 
             $table->text('content');
             $table->timestamps();
