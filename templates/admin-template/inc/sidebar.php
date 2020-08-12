@@ -3,7 +3,7 @@
     <div id="sidebar-menu" class="">
         <ul class="list-unstyled">
             <li>
-                <i class="far fa-folder"></i><a href=""> Dashboard</a>
+            <i class="fas fa-book-reader"></i><a href=""> Dashboard</a>
 
             </li>
             <li>
