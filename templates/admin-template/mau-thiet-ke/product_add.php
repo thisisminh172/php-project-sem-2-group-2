@@ -26,6 +26,7 @@
     </div>
     <!-- header end -->
 
+    <div id="wp-container" class="d-flex">
         <!-- sidebar start -->
         <div id="wp-sidebar" class="bg-light position-fixed">
             <div id="sidebar-menu" class="">
@@ -82,14 +83,19 @@
                     </li>
                 </ul>
             </div>
+        </div>
         <!-- sidebar end -->
         <!-- +++++++++++++++++++++ -->
         <!-- content start-->
         <div id="wp-content" class="bg-light">
-            content
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="" class="">Tên sản phẩm</label>
+                </div>
+            </form>
         </div>
         <!-- content end-->
-    
+    </div>
 
 
 

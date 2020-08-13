@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mau thiet ke</title>
+    <title>chi tiet san pham</title>
     <!-- bootstrap start-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -53,7 +53,7 @@
                                                 class="fas fa-gamepad"></i> Sản
                                             phẩm</a>
                                         <div class="dropdown-menu dropdown-menu-left">
-                                            <div class="dropdown-header font-weight-bold">GAMING GEARS</div>
+
                                             <a class="dropdown-item text-dark" href="#">Tai nghe gaming</a>
                                             <a class="dropdown-item" href="#">Bàn phím cơ</a>
                                             <a class="dropdown-item" href="#">Chuột gaming</a>
@@ -158,7 +158,7 @@
             </div>
             <div class="col-lg-5 col-md-5 mb-5">
                 <div class="container">
-                    <h2>Thông tin chi tiết cản phẩm</h2>
+                    <h2>Thông tin chi tiết sản phẩm</h2>
                     <table class="table table-striped table-hover table-bordered">
                         <thead>
                             <tr>
@@ -172,12 +172,12 @@
                                 <td>Asus</td>
                             </tr>
                             <tr>
-                                <td>Bảo hành</td>
-                                <td>24 tháng</td>
-                            </tr>
-                            <tr>
                                 <td>Tình trạng</td>
                                 <td>Mới</td>
+                            </tr>
+                            <tr>
+                                <td>Bảo hành</td>
+                                <td>24 tháng</td>
                             </tr>
                         </tbody>
                     </table>
