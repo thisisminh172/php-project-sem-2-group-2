@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('email',150);
             $table->integer('phone');
             $table->string('address',100);
+            $table->string('bank_account',40);
+            $table->string('status',20)->default('waiting');
             $table->timestamps();
         });
     }

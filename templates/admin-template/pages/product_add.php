@@ -1,10 +1,14 @@
 <!-- +++++++++++++++++++++ -->
 <!-- content start-->
 <div id="wp-content" class="bg-light w-100">
-    <div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 alert alert-light">
+                <h3>Thêm sản phẩm mới</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="col">
-                <h3>Thêm mới sản phẩm</h3>
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="">Tên sản phẩm</label>
