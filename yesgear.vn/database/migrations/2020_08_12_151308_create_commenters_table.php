@@ -15,7 +15,7 @@ class CreateCommentersTable extends Migration
     {
         Schema::create('commenters', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
+            $table->string('name',100);
             $table->string('email',150);
             $table->integer('phone');
             $table->timestamps();
