@@ -1,7 +1,12 @@
 <!-- +++++++++++++++++++++ -->
 <!-- content start-->
 <div id="wp-content" class="bg-light w-100">
-<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 alert alert-light">
+                <h3>Thêm sản phẩm mới</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <table class="table table-hover text-center">
@@ -28,7 +33,8 @@
                             <td>cmt8</td>
                             <td>012345678</td>
                             <td>admin</td>
-                            <td><a href="" class="btn btn-info">Update</a><a href="" class="btn btn-danger">Delete</a></td>
+                            <td><a href="" class="btn btn-info">Update</a><a href="" class="btn btn-danger">Delete</a>
+                            </td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -39,7 +45,8 @@
                             <td>cmt8</td>
                             <td>012345678</td>
                             <td>admin</td>
-                            <td><a href="" class="btn btn-info">Update</a><a href="" class="btn btn-danger">Delete</a></td>
+                            <td><a href="" class="btn btn-info">Update</a><a href="" class="btn btn-danger">Delete</a>
+                            </td>
 
                         </tr>
                         <tr>
@@ -51,7 +58,8 @@
                             <td>cmt8</td>
                             <td>012345678</td>
                             <td>admin</td>
-                            <td><a href="" class="btn btn-info">Update</a><a href="" class="btn btn-danger">Delete</a></td>
+                            <td><a href="" class="btn btn-info">Update</a><a href="" class="btn btn-danger">Delete</a>
+                            </td>
 
                         </tr>
                     </tbody>
