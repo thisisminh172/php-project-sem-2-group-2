@@ -9,7 +9,7 @@
             <li>
                 <i class="far fa-folder"></i><a href="?page=product"> Sản phẩm</a>
                 <ul class="list-unstyled">
-                    <li><a href="">Thêm sản phẩm</a></li>
+                    <li><a href="?page=product_add">Thêm sản phẩm</a></li>
                     <li><a href="?page=product">Danh sách</a></li>
                 </ul>
 

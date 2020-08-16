@@ -66,8 +66,13 @@ body {
 /* content */
 
 #wp-content {
+    height: 1500px;
     flex: auto;
-    min-height: 100vh;
+    min-height: 120vh;
     padding-top: 5rem;
     padding-left: 17rem;
+}
+
+form div label {
+    font-weight: bold;
 }
