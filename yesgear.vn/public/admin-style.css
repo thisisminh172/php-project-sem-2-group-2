@@ -1,0 +1,7 @@
+/* ADMIN STYLE */
+
+@import './css/import/admin-global.css';
+@import './css/import/admin-header.css';
+@import './css/import/admin-sidebar.css';
+@import './css/import/admin-body.css';
+@import './css/import/admin-footer.css';
