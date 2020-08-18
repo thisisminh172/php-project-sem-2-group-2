@@ -36,8 +36,8 @@ Route::get('admin', function () {
 Route::get('admin/order', function () {
     return view('admin.order.show');
 });
-Route::get('admin/product', function () {
-    return view('admin.product.show');
+Route::get('admin/product/add', function () {
+    return view('admin.product.add');
 });
 Route::get('admin/user', function () {
     return view('admin.user.show');
