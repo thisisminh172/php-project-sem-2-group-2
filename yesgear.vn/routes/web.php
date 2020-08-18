@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('product.show');
+    return view('welcome');
 });
 
 Route::get('product/show', function () {
@@ -23,6 +23,26 @@ Route::get('product/show', function () {
 Route::get('product/detail', function () {
     return view('product.detail');
 });
+
+
+//--------------*****----------------
+//-------------MINH LE---------------
+#********ADMIN ROUTES - starts *******
+//--------------*****----------------
+
 Route::get('admin', function () {
-    return view('admin.home');
+    return view('admin.dashboard.dashboard');
 });
+Route::get('admin/order', function () {
+    return view('admin.order.show');
+});
+Route::get('admin/product', function () {
+    return view('admin.product.show');
+});
+Route::get('admin/user', function () {
+    return view('admin.user.show');
+});
+
+//--------------*****----------------
+#********ADMIN ROUTES - ends *******
+//--------------*****----------------

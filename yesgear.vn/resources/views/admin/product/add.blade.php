@@ -1,16 +1,20 @@
+@extends('layout.admin-layout')
+
+@section('content')
 <!-- +++++++++++++++++++++ -->
 <!-- content start-->
 <div id="wp-content" class="bg-light w-100">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 alert alert-light">
-                <h3 class="text-danger">Cập nhật thông tin sản phẩm</h3>
+                <h3 class="text-danger">Thêm sản phẩm mới</h3>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <form action="" method="post">
-                <div class="form-group">
+                <form action="" id="form-add-product" method="post" onsubmit="return check_data_of_new_product()"
+                    enctype="multipart/form-data">
+                    <div class="form-group">
                         <label for="product-name">Tên sản phẩm</label>
                         <input type="text" name="productName" id="product-name" class="form-control">
                     </div>
@@ -18,14 +22,14 @@
                         <label for="product-thumbnail">Thumbnail (Hình đại diện sản phẩm)</label>
                         <input type="file" name="productThumbnail" id="product-thumbnail" class="form-control-file">
                     </div>
-                    
+
                     <div class="form-group d-inline-block">
                         <label for="">Hình sản phẩm</label><br>
                         Hình 1: <input type="file" name="product_image_1" id="" class="form-control-file">
                         Hình 2: <input type="file" name="product_image_2" id="" class="form-control-file">
                         Hình 3: <input type="file" name="product_image_3" id="" class="form-control-file">
                         Hình 4: <input type="file" name="product_image_4" id="" class="form-control-file">
-                        
+
                     </div>
                     <div class="form-group">
                         <label for="product-category">Phân loại</label>
@@ -63,7 +67,7 @@
                         <input type="number" name="productStore" id="product-store" value="1" min="0" max="1000">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Cập nhật sản phẩm" class="btn btn-success">
+                        <input type="submit" value="Thêm sản phẩm mới" class="btn btn-success" name="btn_add_product">
                         <input type="reset" value="Reset" class="btn btn-dark">
                     </div>
                 </form>
@@ -71,4 +75,6 @@
         </div>
     </div>
 </div>
+
 <!-- content end-->
+@endsection

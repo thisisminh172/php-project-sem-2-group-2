@@ -1,3 +1,6 @@
+@extends('layout.admin-layout')
+
+@section('content')
 <!-- +++++++++++++++++++++ -->
 <!-- content start-->
 <div id="wp-content" class="bg-light w-100">
@@ -10,7 +13,7 @@
         <div class="row">
             <div class="col">
                 <form action="" method="post">
-                <div class="form-group">
+                    <div class="form-group">
                         <label for="product-name">Tên sản phẩm</label>
                         <input type="text" name="productName" id="product-name" class="form-control">
                     </div>
@@ -18,14 +21,14 @@
                         <label for="product-thumbnail">Thumbnail (Hình đại diện sản phẩm)</label>
                         <input type="file" name="productThumbnail" id="product-thumbnail" class="form-control-file">
                     </div>
-                    
+
                     <div class="form-group d-inline-block">
                         <label for="">Hình sản phẩm</label><br>
                         Hình 1: <input type="file" name="product_image_1" id="" class="form-control-file">
                         Hình 2: <input type="file" name="product_image_2" id="" class="form-control-file">
                         Hình 3: <input type="file" name="product_image_3" id="" class="form-control-file">
                         Hình 4: <input type="file" name="product_image_4" id="" class="form-control-file">
-                        
+
                     </div>
                     <div class="form-group">
                         <label for="product-category">Phân loại</label>
@@ -72,3 +75,4 @@
     </div>
 </div>
 <!-- content end-->
+@endsection
