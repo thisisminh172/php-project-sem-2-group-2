@@ -16,7 +16,7 @@ class Brand extends Seeder
         //
         DB::table('brands')->insert([
             ['code'=>'rz','name'=>'razor'],
-            ['code'=>'lg','name'=>'logitech'],
+            ['code'=>'lt','name'=>'logitech'],
             ['code'=>'du','name'=>'dareu'],
             ['code'=>'as','name'=>'asus'],
             ['code'=>'cs','name'=>'corsair'],

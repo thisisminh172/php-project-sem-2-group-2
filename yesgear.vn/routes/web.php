@@ -29,19 +29,17 @@ Route::get('product/detail', function () {
 //-------------MINH LE---------------
 #********ADMIN ROUTES - starts *******
 //--------------*****----------------
-
-Route::get('admin', function () {
-    return view('admin.dashboard.dashboard');
-});
-Route::get('admin/order', function () {
-    return view('admin.order.show');
-});
-Route::get('admin/product/add', function () {
-    return view('admin.product.add');
-});
-Route::get('admin/user', function () {
-    return view('admin.user.show');
-});
+//DASHBOARD
+Route::get('admin','AdminDashboardController@index');
+//ORDER
+Route::get('admin/order','AdminOrderController@index');
+//PRODUCT
+Route::get('admin/product', 'AdminProductController@index');
+Route::get('admin/product/add', 'AdminProductController@add');
+Route::post('admin/product/store', 'AdminProductController@store');
+//USER
+Route::get('admin/user', 'AdminUserController@index');
+//POST
 
 //--------------*****----------------
 #********ADMIN ROUTES - ends *******

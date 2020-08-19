@@ -7,12 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //
+    protected $fillable =['name','thumbnail','brand_code','category_code','describe','price','quantity','image_url'];
     public function order_detail(){
         return $this->belongsTo('App\OrderDetail');
-    }
-
-    public function image(){
-        return $this->hasMany('App\Image');
     }
 
     public function comment(){

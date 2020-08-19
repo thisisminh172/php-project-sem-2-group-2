@@ -14,8 +14,16 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    {{-- texteditor starts --}}
+    <script src="https://cdn.tiny.cloud/1/1jc85oh0f27pqf9x8r1nudp0heovwg7jwgsbth4hqwn10mtu/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({selector:'textarea'});
+    </script>
+    {{-- texteditor ends --}}
     {{-- <!-- style --> --}}
     <link rel="stylesheet" href="{{asset('admin-style.css')}}">
+
 
 </head>
 
@@ -41,13 +49,26 @@
     {{-- footer end --}}
 
 
+    {{-- texteditor script starts --}}
+    <script>
+        tinymce.init({
+          selector: 'textarea',
+          plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+          toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+          toolbar_mode: 'floating',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+        });
+    </script>
+    {{-- texteditor script ends --}}
+
 
 
 
     {{-- validation of all forms in this admin  --}}
     {{-- 2 lines below -starts here --}}
-    <script src="public/js/validation/validate.js"></script>
-    <script src="public/js/validation/check-data.js"></script>
+    <script src="{{asset('js/validation/validate.js')}}"></script>
+    <script src="{{asset('js/validation/check-data.js')}}"></script>
     {{-- ends here--}}
 
 

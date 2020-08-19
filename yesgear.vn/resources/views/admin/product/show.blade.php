@@ -23,22 +23,26 @@
                             <th>Phân loại</th>
                             <th>Đơn giá</th>
                             <th>Tồn kho</th>
-                            <th>Cập nhật</th>
+                            <th>Tác vụ</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($products as $product)
                         <tr>
-                            <td>1</td>
-                            <td>hình</td>
-                            <td>tai nghe razor</td>
-                            <td>tai nghe gaming</td>
-                            <td>razor</td>
-                            <td>Tai nghe</td>
-                            <td>2000000</td>
-                            <td>40</td>
-                            <td><a href="" class="btn btn-info btn-sm">Update</a><a href="" class="btn btn-danger btn-sm">Delete</a>
+                            <td><b>{{$product->id}}</b></td>
+                            <td><img width="100px" src="{{url($product->thumbnail)}}" alt=""></td>
+                            <td>{{$product->name}}</td>
+                            <td class="overflow">{{$product->describe}}</td>
+                            <td>{{$product->brand_code}}</td>
+                            <td>{{$product->category_code}}</td>
+                            <td>{{number_format($product->price,0,'','.')}}đ</td>
+                            <td>{{$product->quantity}}</td>
+                            <td><a href="" class="btn btn-info btn-sm">Update</a><a href=""
+                                    class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
