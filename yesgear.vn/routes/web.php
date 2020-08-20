@@ -67,10 +67,18 @@ Route::get('product/show',function(){
 Route::get('product/detail/{id}',function(){
     return view('client.product.detail');
 });
+//----CONTACT
 Route::get('contact', function () {
     return view('client.contact.contact');
 });
-
+//----INTRO
+Route::get('intro',function(){
+    return view('client.pages.intro');
+});
+//----NEWS
+Route::get('news',function(){
+    return view('client.pages.news');
+});
 
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******

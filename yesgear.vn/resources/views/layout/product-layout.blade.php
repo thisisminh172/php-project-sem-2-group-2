@@ -23,17 +23,6 @@
     @include('layout.header')
     {{-- header end --}}
 
-    {{-- something --}}
-
-
-
-
-
-
-
-
-
-    {{-- something --}}
 
     <div class="container-fluid" id="wp-body">
         <div class="row">

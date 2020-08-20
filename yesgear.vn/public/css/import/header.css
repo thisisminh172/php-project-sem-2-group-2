@@ -1,3 +1,15 @@
 .navbar-nav>.navbar-item>a {
     font-size: 2rem;
 }
+
+#logo {
+    font-size: 40px;
+    margin-right: 1rem;
+}
+
+
+/* search box */
+
+#search-box {
+    width: 400px;
+}
