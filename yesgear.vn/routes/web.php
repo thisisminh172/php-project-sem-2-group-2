@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('product/show', function () {
     return view('product.show');
@@ -52,9 +52,23 @@ Route::get('admin/user', 'AdminUserController@index');
 //-------------TUAN DUONG---------------
 #********CLIENT ROUTES - starts *******
 //--------------*****----------------
-
+//=====HOME
+Route::get('/', function () {
+    return view('client.home.home');
+});
+Route::get('home', function () {
+    return view('client.home.home');
+});
+//=====product show
+Route::get('product/show',function(){
+    return view('client.product.show');
+});
+//=====product detail
+Route::get('product/detail/{id}',function(){
+    return view('client.product.detail');
+});
 Route::get('contact', function () {
-    return view('client.product.contact');
+    return view('client.contact.contact');
 });
 
 

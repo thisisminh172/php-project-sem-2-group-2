@@ -1,0 +1,9 @@
+#sidebar-wp div ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#sidebar-wp div ul li a:hover {
+    text-decoration: none;
+    color: black;
+}

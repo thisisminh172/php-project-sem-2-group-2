@@ -1,0 +1,8 @@
+#wp-footer {
+    box-sizing: content-box;
+    min-height: auto;
+}
+
+#wp-footer>p:last-child {
+    margin-bottom: 0px;
+}

@@ -1,5 +1,6 @@
-@extends('layout.layout')
+@extends('layout.product-layout')
 
 @section('content')
-    product detail
+<!-- content start -->
+<!-- content end -->
 @endsection

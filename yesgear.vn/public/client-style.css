@@ -1,0 +1,7 @@
+/* CLIENT STYLES */
+
+@import './css/import/global.css';
+@import './css/import/header.css';
+@import './css/import/sidebar.css';
+@import './css/import/body.css';
+@import './css/import/footer.css';
