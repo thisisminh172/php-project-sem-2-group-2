@@ -40,9 +40,7 @@ function checkPhoneNumber(phoneNumber) {
     return pattern.test(phoneNumber);
 }
 //use for all product data: name,brand,category
-function checkProductData() {
 
-}
 
 
 function checkNameSlug(nameSlug) {

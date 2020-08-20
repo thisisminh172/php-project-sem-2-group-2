@@ -13,12 +13,7 @@ class Product extends Seeder
     public function run()
     {
         //
-        // $table->string('name',150);
-        //     $table->string('brand',100);
-        //     $table->string('category',100);
-        //     $table->text('describe',150);
-        //     $table->integer('price');
-        //     $table->smallInteger('quantity');
+
         DB::table('products')->insert([
             'name'=> 'tai nghe 1',
             'brand'=>'razor',
@@ -43,5 +38,6 @@ class Product extends Seeder
             'price'=> 1500000,
             'quantity'=>100
         ]);
+
     }
 }
