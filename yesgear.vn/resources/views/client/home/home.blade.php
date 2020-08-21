@@ -71,66 +71,21 @@
         <hr>
         <div class="product-category text-center">TAI NGHE</div>
         <div class="row">
+            @foreach ($headphones as $headphone)
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="card">
                     <a href="">
-                        <img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            alt="">
+                        <img class="card-img-top" src="{{asset($headphone->thumbnail)}}" alt="">
                     </a>
                     <div class="card-body">
                         <a href="">
-                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                            <h6>{{$headphone->name}}</h6>
                         </a>
-                        <h6 class="text-danger">549.000d</h6>
+                        <h6 class="text-danger">{{number_format($headphone->price,0,'','.')}}đ</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card">
-                    <a href="">
-                        <img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="">
-                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
-                        </a>
-                        <h6 class="text-danger">549.000d</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card">
-                    <a href="">
-                        <img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="">
-                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
-                        </a>
-                        <h6 class="text-danger">549.000d</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="card">
-                    <a href="">
-                        <img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="">
-                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
-                        </a>
-                        <h6 class="text-danger">549.000d</h6>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="row text-center mt-1">
             <div class="col">
@@ -141,22 +96,21 @@
         <hr>
         <div class="product-category text-center">BÀN PHÍM</div>
         <div class="row">
-
-            <div class="col-6 col-sm-3">
+            @foreach ($keyboards as $keyboard)
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="card">
                     <a href="">
-                        <img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            alt="">
+                        <img class="card-img-top" src="{{asset($keyboard->thumbnail)}}" alt="">
                     </a>
                     <div class="card-body">
                         <a href="">
-                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                            <h6>{{$keyboard->name}}</h6>
                         </a>
-                        <h6 class="text-danger">549.000d</h6>
+                        <h6 class="text-danger">{{number_format($keyboard->price,0,'','.')}}đ</h6>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="row text-center mt-1">
             <div class="col">
@@ -168,22 +122,21 @@
         <hr>
         <div class="product-category text-center">CHUỘT GAMING</div>
         <div class="row">
-
-            <div class="col-6 col-sm-3">
+            @foreach ($mouses as $mouse)
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="card">
                     <a href="">
-                        <img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
-                            alt="">
+                        <img class="card-img-top" src="{{asset($mouse->thumbnail)}}" alt="">
                     </a>
                     <div class="card-body">
                         <a href="">
-                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                            <h6>{{$mouse->name}}</h6>
                         </a>
-                        <h6 class="text-danger">549.000d</h6>
+                        <h6 class="text-danger">{{number_format($mouse->price,0,'','.')}}đ</h6>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="row text-center mb-2 mt-1">
             <div class="col">

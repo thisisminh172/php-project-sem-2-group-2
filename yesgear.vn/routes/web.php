@@ -56,13 +56,9 @@ Route::get('admin/user', 'AdminUserController@index');
 Route::get('/', function () {
     return view('client.home.home');
 });
-Route::get('home', function () {
-    return view('client.home.home');
-});
+Route::get('home', 'ClientProductController@index');
 //=====product show
-Route::get('product/show',function(){
-    return view('client.product.show');
-});
+Route::get('product/show','ClientProductController@show');
 //=====product detail
 Route::get('product/detail/{id}',function(){
     return view('client.product.detail');
