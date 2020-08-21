@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('category_code',10);
             $table->string('image_url',300);
             $table->text('describe');
+            $table->text('tech_info')->nullable();
             $table->integer('price');
             $table->smallInteger('quantity');
             $table->timestamps();

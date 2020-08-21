@@ -41,8 +41,8 @@
             </div>
         </div>
         {{-- calrosel ends--}}
-
-
+        <hr>
+        <div class="product-category text-center">SẢN PHẨM BÁN CHẠY</div>
         <div class="row">
 
             <div class="col-lg-4 col-md-6 mb-4">
@@ -65,6 +65,129 @@
 
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+        <div class="product-category text-center">TAI NGHE</div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top"
+                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                            alt="">
+                    </a>
+                    <div class="card-body">
+                        <a href="">
+                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                        </a>
+                        <h6 class="text-danger">549.000d</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top"
+                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                            alt="">
+                    </a>
+                    <div class="card-body">
+                        <a href="">
+                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                        </a>
+                        <h6 class="text-danger">549.000d</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top"
+                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                            alt="">
+                    </a>
+                    <div class="card-body">
+                        <a href="">
+                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                        </a>
+                        <h6 class="text-danger">549.000d</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top"
+                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                            alt="">
+                    </a>
+                    <div class="card-body">
+                        <a href="">
+                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                        </a>
+                        <h6 class="text-danger">549.000d</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mt-1">
+            <div class="col">
+                <a href="" class="btn btn-warning w-25 ">Xem tất cả</a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+        <div class="product-category text-center">BÀN PHÍM</div>
+        <div class="row">
+
+            <div class="col-6 col-sm-3">
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top"
+                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                            alt="">
+                    </a>
+                    <div class="card-body">
+                        <a href="">
+                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                        </a>
+                        <h6 class="text-danger">549.000d</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mt-1">
+            <div class="col">
+                <a href="" class="btn btn-warning w-25 ">Xem tất cả</a>
+            </div>
+        </div>
+
+        <!-- /.row -->
+        <hr>
+        <div class="product-category text-center">CHUỘT GAMING</div>
+        <div class="row">
+
+            <div class="col-6 col-sm-3">
+                <div class="card">
+                    <a href="">
+                        <img class="card-img-top"
+                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                            alt="">
+                    </a>
+                    <div class="card-body">
+                        <a href="">
+                            <h6>Tai nghe Zidli ZH20 7.1 Led RGB USB</h6>
+                        </a>
+                        <h6 class="text-danger">549.000d</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mb-2 mt-1">
+            <div class="col">
+                <a href="" class="btn btn-warning w-25 ">Xem tất cả</a>
             </div>
         </div>
         <!-- /.row -->

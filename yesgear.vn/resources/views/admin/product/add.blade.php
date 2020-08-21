@@ -39,22 +39,18 @@
                         <label for="product-category">Phân loại</label>
                         <select class="form-control" id="product-category" name="category_code" required>
                             <option value="" checked>---Chọn phân loại---</option>
-                            <option value="tn">Tai nghe</option>
-                            <option value="bp">Bàn phím</option>
-                            <option value="ch">Chuột</option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->code}}">{{$category->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="product-brand">Thương hiệu</label>
                         <select class="form-control" id="product-brand" name="brand_code" required>
                             <option value="" checked>---Chọn thương hiệu---</option>
-                            <option value="rz">RAZOR</option>
-                            <option value="lt">LOGITECH</option>
-                            <option value="du">DAREU</option>
-                            <option value="as">ASUS</option>
-                            <option value="cs">CORSAIR</option>
-                            <option value="ed">E-DRA</option>
-                            <option value="ss">STEELSERIES</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{$brand->code}}">{{$brand->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
@@ -69,6 +65,11 @@
                         <label for="product-description">Mô tả</label>
                         <textarea name="describe" id="product-description" cols="30" rows="10" class="form-control"
                             placeholder="Nội dung..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tech-info">Thông số kỹ thuật (Lưu ý: nên nhập dạng bảng) (Không bắt buộc)</label>
+                        <textarea name="tech_info" id="tech-info" cols="30" rows="10" class="form-control"
+                            placeholder="Thông số kỹ thuật..."></textarea>
                     </div>
 
                     <div class="form-group">

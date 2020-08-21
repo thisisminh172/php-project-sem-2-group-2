@@ -12,6 +12,9 @@
                             class="text-danger font-weight-bold">GEAR</span></a>
                     <p class="text-light d-inline-block">BẤT cần đời, BUT cần gear</p>
                 </div>
+                <div id="cart-wp" class="col mt-3 text-right">
+                    <a href="" id="cart" class="text-light p-2"><i class="fas fa-shopping-cart"></i> Giỏ hàng <span class="text-danger"> (5 sản phẩm)</span></a>
+                </div>
             </div>
         </div>
         <div class="container">

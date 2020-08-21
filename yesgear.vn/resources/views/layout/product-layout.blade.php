@@ -26,13 +26,13 @@
 
     <div class="container-fluid" id="wp-body">
         <div class="row">
-            <div class="col-sm-3 bg-light p-0 mt-2">
+            <div class="col-sm-2 bg-light p-0 mt-2">
                 {{-- sidebar start --}}
                 @include('layout.product-sidebar')
                 {{-- sidebar and --}}
             </div>
 
-            <div class="col-sm-9 bg-light p-0 mt-2">
+            <div class="col-sm-10 bg-light p-0 mt-2">
                 {{-- content start --}}
 
                 @yield('content')

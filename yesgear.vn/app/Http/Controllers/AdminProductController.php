@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Image;
+use App\Brand;
+use App\Category;
 
 class AdminProductController extends Controller
 {
@@ -16,7 +18,9 @@ class AdminProductController extends Controller
 
     //show view add san pham moi
     public function add(){
-        return view('admin.product.add');
+        $brands = Brand::all();
+        $categories = Category::all();
+        return view('admin.product.add')->with(['brands'=>$brands,'categories'=>$categories]);
     }
 
     //sau khi add se luu thong tin vao db
