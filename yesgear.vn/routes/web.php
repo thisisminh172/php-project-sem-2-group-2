@@ -58,7 +58,7 @@ Route::get('home', 'ClientProductController@index');
 //=====product show
 Route::get('product/show','ClientProductController@show');
 //=====product detail
-Route::get('product/detail/{id}',function(){
+Route::get('product/show/{id}',function(){
     return view('client.product.detail');
 });
 //----CONTACT
@@ -72,6 +72,10 @@ Route::get('intro',function(){
 //----NEWS
 Route::get('news',function(){
     return view('client.pages.news');
+});
+//CART
+Route::get('cart',function(){
+    return view('client.cart.cart');
 });
 
 //--------------*****----------------

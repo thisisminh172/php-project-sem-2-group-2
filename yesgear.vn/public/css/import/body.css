@@ -28,11 +28,22 @@
     display: inline-block;
 }
 
-.product-detail-image .product-detail-thumbnails {
-    box-sizing: content-box;
-}
+.product-detail-image .product-detail-thumbnails {}
 
 .product-detail-image .product-detail-thumbnails .product-detail-thumbnail img {
     width: 7rem;
     border: 1px solid #bdc3c7;
+}
+
+.why-us {
+    border: 1px solid #bdc3c7;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+
+/* cart */
+
+#btn-check-out {
+    right: 0px;
 }
