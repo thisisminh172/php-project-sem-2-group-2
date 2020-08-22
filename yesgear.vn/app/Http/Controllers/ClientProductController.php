@@ -39,9 +39,8 @@ class ClientProductController extends Controller
                 ->get();
             $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
             foreach ($data as $row) {
-                $output .= '
-       <li><a href="page_detail">' . $row->name . '</a></li>
-       ';
+                $page_url = "{{url('product/show/{$row->id}')}}";
+                $output .= '<li><a href="'.$page_url.'">' . $row->name . '</a></li>';
             }
             $output .= '</ul>';
             echo $output;

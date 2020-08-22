@@ -60,7 +60,7 @@ Route::get('product/show','ClientProductController@show');
 //=====product detail
 Route::get('product/show/{id}',function(){
     return view('client.product.detail');
-});
+})->name('product.detail');
 //----CONTACT
 Route::get('contact', function () {
     return view('client.contact.contact');
