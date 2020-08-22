@@ -40,7 +40,7 @@ class ClientProductController extends Controller
             $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
             foreach ($data as $row) {
                 $output .= '
-       <li><a href="https://www.youtube.com/watch?v=D4ny-CboZC0&feature=emb_title">' . $row->name . '</a></li>
+       <li><a href="page_detail">' . $row->name . '</a></li>
        ';
             }
             $output .= '</ul>';
