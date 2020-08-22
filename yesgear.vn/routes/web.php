@@ -78,6 +78,8 @@ Route::get('cart',function(){
     return view('client.cart.cart');
 });
 
+Route::post('/home/find', 'ClientProductController@find')->name('home.find');
+
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 //--------------*****----------------
