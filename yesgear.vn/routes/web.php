@@ -74,6 +74,8 @@ Route::get('news',function(){
     return view('client.pages.news');
 });
 
+Route::post('/home/find', 'ClientProductController@find')->name('home.find');
+
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 //--------------*****----------------

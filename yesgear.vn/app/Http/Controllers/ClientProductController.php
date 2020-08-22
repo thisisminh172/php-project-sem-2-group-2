@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use App\CustomClass\ShowProductWithCondition;
+use DB;
 
 class ClientProductController extends Controller
 {
@@ -28,8 +29,23 @@ class ClientProductController extends Controller
 
     }
 
-    public function find_product(){
 
+    public function find(Request $request)
+    {
+        if ($request->get('query')) {
+            $query = $request->get('query');
+            $data = DB::table('products')
+                ->where('name', 'like', "%{$query}%")
+                ->get();
+            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+            foreach ($data as $row) {
+                $output .= '
+       <li><a href="https://www.youtube.com/watch?v=D4ny-CboZC0&feature=emb_title">' . $row->name . '</a></li>
+       ';
+            }
+            $output .= '</ul>';
+            echo $output;
+        }
     }
 
 }
