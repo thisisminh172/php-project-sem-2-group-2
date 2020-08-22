@@ -28,4 +28,8 @@ class ClientProductController extends Controller
 
     }
 
+    public function find_product(){
+
+    }
+
 }

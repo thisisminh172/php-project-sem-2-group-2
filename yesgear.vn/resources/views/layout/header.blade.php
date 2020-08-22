@@ -1,4 +1,25 @@
 <!-- header start -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YES GEAR</title>
+    <!-- bootstrap start-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- bootstrap end-->
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- style -->
+    <link rel="stylesheet" href="{{asset('client-style.css')}}">
+
+</head>
+
+<body>
 <!-- navigation -->
 <div id="header-wp">
     <div class="container-fluid bg-dark">
@@ -39,6 +60,7 @@
                                         <input type="submit" value="Search" class="btn btn-success">
                                     </div>
                             </form>
+
                         </li>
                     </ul>
                 </div>
