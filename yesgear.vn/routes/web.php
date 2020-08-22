@@ -53,9 +53,7 @@ Route::get('admin/user', 'AdminUserController@index');
 #********CLIENT ROUTES - starts *******
 //--------------*****----------------
 //=====HOME
-Route::get('/', function () {
-    return view('client.home.home');
-});
+Route::get('/', 'ClientProductController@index');
 Route::get('home', 'ClientProductController@index');
 //=====product show
 Route::get('product/show','ClientProductController@show');
