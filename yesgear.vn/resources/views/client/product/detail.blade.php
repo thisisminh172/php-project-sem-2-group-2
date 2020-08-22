@@ -2,36 +2,37 @@
 
 @section('content')
 <!-- content start -->
+<script>
+    $(document).ready(function(){
+        // alert('hello');
+        // lay src tu hinh anh duoc chon
+        var src_img_click;
+        $('.product-detail-thumbnails ul li .product-detail-thumbnail').click(function(){
+            src_img_click = $(this).children('img').attr('src');
+            console.log(src_img_click);
+            $('.product-detail-image-large').children('img').attr('src',src_img_click);
+
+        });
+    });
+</script>
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6 mt-3">
             <div class="product-detail-image">
                 <div class="product-detail-image-large">
-                    <img src="https://hanoicomputercdn.com/media/product/6075_chuot_logitech_m325_wireless_0000_1.jpg"
+                    <img src="{{asset($images[0])}}"
                         alt="">
                 </div>
                 <div class="product-detail-thumbnails mt-3 ml-3">
                     <ul class="row">
+                        @foreach ($images as $image)
                         <li class="mr-1">
                             <div class="product-detail-thumbnail"><img
-                                    src="https://hanoicomputercdn.com/media/product/6075_chuot_logitech_m325_wireless_0001_2.jpg"
+                                    src="{{asset($image)}}"
                                     alt=""></div>
                         </li>
-                        <li class="mr-1">
-                            <div class="product-detail-thumbnail"><img
-                                    src="https://hanoicomputercdn.com/media/product/6075_chuot_logitech_m325_wireless_0000_1.jpg"
-                                    alt=""></div>
-                        </li>
-                        <li class="mr-1">
-                            <div class="product-detail-thumbnail"><img
-                                    src="https://hanoicomputercdn.com/media/product/6075_chuot_logitech_m325_wireless_0001_2.jpg"
-                                    alt=""></div>
-                        </li>
-                        <li class="mr-1">
-                            <div class="product-detail-thumbnail"><img
-                                    src="https://hanoicomputercdn.com/media/product/6075_chuot_logitech_m325_wireless_0000_1.jpg"
-                                    alt=""></div>
-                        </li>
+                        @endforeach
+
                     </ul>
                 </div>
             </div>

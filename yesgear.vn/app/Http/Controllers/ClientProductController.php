@@ -31,7 +31,8 @@ class ClientProductController extends Controller
     public function detail($id)
     {
         $product = Product::find($id);
-        return view('client.product.detail')->with('product',$product);
+        $images = json_decode($product->image_url);
+        return view('client.product.detail')->with(['product'=>$product,'images'=>$images]);
     }
 
     public function find(Request $request)
