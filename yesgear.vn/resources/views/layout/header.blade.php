@@ -29,7 +29,7 @@
 
 <body>
     <!-- navigation -->
-    <div id="header-wp" class="mb-5">
+    <div id="header-wp">
         <div class="container-fluid bg-dark">
             <!-- navbar link -->
             <!-- LOGO -->
