@@ -35,7 +35,7 @@ $(document).ready(function() {
                 },
                 success: function(data) { //dữ liệu nhận về
                     $('#productList').fadeIn();
-                    $('#productList').html(data); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là countryList
+                    $('#productList').html(data); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là productList
                 }
             });
         }
