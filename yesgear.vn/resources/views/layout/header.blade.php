@@ -14,7 +14,8 @@
 
     <!-- ajax start (jquery)-->
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> --}}
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- ajax end-->
 
     <!-- fontawesome -->
@@ -28,7 +29,7 @@
 
 <body>
     <!-- navigation -->
-    <div id="header-wp">
+    <div id="header-wp" class="mb-5">
         <div class="container-fluid bg-dark">
             <!-- navbar link -->
             <!-- LOGO -->
@@ -79,4 +80,38 @@
     </div>
 
     <!--end navigation -->
+    {{-- script starts --}}
+
+    <script>
+        $(document).ready(function() {
+
+        $('#search-box').keyup(function() { //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
+            var query = $(this).val(); //lấy gía trị ng dùng gõ
+            if (query != '') //kiểm tra khác rỗng thì thực hiện đoạn lệnh bên dưới
+            {
+                var _token = $('input[name="_token"]').val(); // token để mã hóa dữ liệu
+                $.ajax({
+                    url: "{{ route('home.find') }}", // đường dẫn khi gửi dữ liệu đi 'search', là tên route đã đặt
+                    method: "POST", // phương thức gửi dữ liệu.
+                    data: {
+                        query: query,
+                        _token: _token
+                    },
+                    success: function(data) { //dữ liệu nhận về
+                        $('#productList').fadeIn();
+                        $('#productList').html(data); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là productList
+                    }
+                });
+            }
+        });
+
+        $(document).on('click', 'li', function() {
+            $('#search-box').val($(this).text());
+            $('#productList').fadeOut();
+        });
+
+    });
+    </script>
+
+    {{-- script ends --}}
     <!-- header end -->

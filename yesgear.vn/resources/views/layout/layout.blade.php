@@ -3,12 +3,8 @@
 {{-- header end --}}
 
 
-<div class="container" id="wp-body">
-    <div class="row">
-        <div class="col">
-            @yield('content')
-        </div>
-    </div>
+<div id="wp-body">
+    @yield('content')
 </div>
 
 
