@@ -28,9 +28,10 @@ class ClientProductController extends Controller
         return view('client.product.show')->with(['products' => $products]);
     }
 
-    public function detail()
+    public function detail($id)
     {
-
+        $product = Product::find($id);
+        return view('client.product.detail')->with('product',$product);
     }
 
     public function find(Request $request)
