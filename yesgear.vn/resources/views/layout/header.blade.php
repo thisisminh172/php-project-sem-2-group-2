@@ -63,32 +63,13 @@
                                     class="text-light font-weight-bold mr-5">LIÊN
                                     HỆ</a></li>
                             <li class="d-inline-block">
-                                <!-- <form action="" id="search-box" class="input-group">
-                                    <input type="text" name="product_name" id="product_name"
-                                        class="form-control" placeholder="Tên sản phẩm...">
-                                    <div id="productList">
-                                    </div>
-                                    <div class="input-group-append">
-                                        <input type="submit" value="Search" class="btn btn-success">
-                                    </div>
-                                </form> -->
                                 <div class="form-group" style="position: relative">
                                     <input type="text" id="search-box" class="form-control"
                                         placeholder="Nhập tên sản phẩm muốn tìm kiếm...">
                                     <div id="productList" style="position: absolute"></div>
                                 </div>
                                 {{ csrf_field() }}
-                                <!-- <div class="form-group">
-                                    <input type="text" name="product_name" id="product_name"
-                                        class="form-control input-lg" placeholder="Tên sản phẩm..." />
-                                    <div id="productList">
-                                    </div>
-                                </div> -->
-
                             </li>
-                            <!-- <li class="d-inline-block">
-                                <div id="productList"></div>
-                            </li> -->
                         </ul>
                     </div>
                 </div>
