@@ -19,8 +19,8 @@
                     <h6 class="text-danger">{{number_format($product->price,0,'','.')}}đ</h6>
                     <div class="container-fluid text-center">
                         <div class="row">
-                            <a href="" class="col btn-buy btn btn-success">Mua hàng</a>
-                            <a href="" class="col btn-add-to-cart btn btn-danger">Thêm vào giỏ</a>
+                            <a href="{{route('cart.add',$product->id)}}" class="col btn-buy btn btn-outline-success">Mua hàng</a>
+                            <a href="{{route('cart.add',$product->id)}}" class="col btn-add-to-cart btn btn-outline-danger">Thêm vào giỏ</a>
                         </div>
 
                     </div>

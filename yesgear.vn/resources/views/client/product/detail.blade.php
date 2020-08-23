@@ -51,7 +51,7 @@
                 </ul>
             </div>
             <p class="mt-5">Mã sản phẩm: <b> {{$product->category_code}}{{$product->brand_code}}{{$product->id}}</b></p>
-            <p>Đang còn: <span class="text-success font-weight-bold">{{$product->quantity}}</span></p>
+            <p>Đang còn: <span class="text-success font-weight-bold">{{$product->quantity}} sản phẩm</span></p>
             <div class="row">
                 <div class="col"><a href="{{url('cart')}}" class="btn btn-success w-100">Mua ngay</a></div>
                 <div class="col"><a href="" class="btn btn-danger w-100">Thêm vào giỏ hàng</a></div>
