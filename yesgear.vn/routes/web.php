@@ -74,6 +74,7 @@ Route::get('news',function(){
 //CART
 Route::get('cart/show','ClientCartController@show');
 Route::get('cart/add/{id}','ClientCartController@add')->name('cart.add');
+Route::post('cart/store','ClientCartController@store')->name('cart.store');
 Route::get('cart/remove/{rowId}','ClientCartController@remove')->name('cart.remove');
 Route::get('cart/destroy','ClientCartController@destroy')->name('cart.destroy');
 Route::post('cart/update','ClientCartController@update')->name('cart.update');

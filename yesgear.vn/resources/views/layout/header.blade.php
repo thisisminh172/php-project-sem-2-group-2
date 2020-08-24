@@ -43,7 +43,7 @@
                     </div>
                     <div id="cart-wp" class="col mt-3 text-right">
                         <a href="{{url('cart/show')}}" id="cart" class="text-danger p-2"><i class="fas fa-shopping-cart"></i> Giỏ hàng <span
-                                class="text-success"> ({{Cart::count()}} sản phẩm)</span></a>
+                                class="text-success"> (<span id="cart-count">{{Cart::count()}}</span> sản phẩm)</span></a>
                     </div>
                 </div>
             </div>

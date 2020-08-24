@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
-use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Http\Request;
 
 class ClientCartController extends Controller
 {
@@ -16,13 +15,13 @@ class ClientCartController extends Controller
         return view('client.cart.show');
     }
 
-    public function add(Request $reques,$id)
+    //when the customer clicks on buy now
+    public function add(Request $reques, $id)
     {
-        // Cart::destroy();
         $product = Product::find($id);
         // return $product;
         Cart::add([
-            'id' =>$product->id,
+            'id' => $product->id,
             'name' => $product->name,
             'qty' => 1,
             'price' => $product->price,
@@ -32,21 +31,47 @@ class ClientCartController extends Controller
         // return Cart::content();
         return redirect('cart/show');
     }
-    public function remove($rowId){
+
+    //when the customer clicks on add to cart
+    public function store(Request $request)
+    {
+        $product_id = $request->get('product_id');
+        $product = Product::find($product_id);
+        // return $product;
+        Cart::add([
+            'id' => $product->id,
+            'name' => $product->name,
+            'qty' => 1,
+            'price' => $product->price,
+            'options' => ['thumbnail' => $product->thumbnail]
+        ]);
+        $result = array(
+            'cartCount'=> Cart::count(),
+            'message' => "Thêm sản phẩm thành công",
+        );
+        // return Cart::content();
+        //xuất thì echo
+        echo json_encode($result);
+    }
+
+    public function remove($rowId)
+    {
         Cart::remove($rowId);
         return redirect('cart/show');
     }
 
-    public function destroy(){
+    public function destroy()
+    {
         Cart::destroy();
         return redirect('cart/show');
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         // dd($request->all());
         $data = $request->get('qty');
-        foreach($data as $k=>$v){
-            Cart::update($k,$v);
+        foreach ($data as $k => $v) {
+            Cart::update($k, $v);
         }
         return redirect('cart/show');
 
