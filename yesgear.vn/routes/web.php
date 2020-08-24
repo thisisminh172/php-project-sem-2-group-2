@@ -79,7 +79,9 @@ Route::get('cart/remove/{rowId}','ClientCartController@remove')->name('cart.remo
 Route::get('cart/destroy','ClientCartController@destroy')->name('cart.destroy');
 Route::post('cart/update','ClientCartController@update')->name('cart.update');
 Route::post('/home/find', 'ClientProductController@find')->name('home.find');
-
+//PAYMENT
+Route::get('order/add','ClientOrderController@index');
+Route::get('order/store','ClientOrderController@store');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 //--------------*****----------------

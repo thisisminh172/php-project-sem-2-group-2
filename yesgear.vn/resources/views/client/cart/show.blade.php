@@ -57,7 +57,7 @@
                     </div>
                     <div class="mt-5 position-relative">
                         <a href="" class="btn btn-info">Tiếp tục mua hàng</a>
-                        <a href="" id="btn-check-out"
+                        <a href="{{url('order/add')}}" id="btn-check-out"
                             class="btn btn-danger position-absolute w-25 font-weight-bold">Thanh
                             toán</a>
                     </div>
