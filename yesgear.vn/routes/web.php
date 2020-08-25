@@ -33,6 +33,7 @@ Route::get('product/detail', function () {
 Route::get('admin','AdminDashboardController@index');
 //ORDER
 Route::get('admin/order','AdminOrderController@index');
+Route::get('admin/order/cancel/{order_id}','AdminOrderController@cancel');
 //PRODUCT
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');
@@ -81,7 +82,12 @@ Route::post('cart/update','ClientCartController@update')->name('cart.update');
 Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 //PAYMENT
 Route::get('order/add','ClientOrderController@index');
-Route::get('order/store','ClientOrderController@store');
+Route::post('order/store','ClientOrderController@store');
+Route::get('order/success/{order_id}','ClientOrderController@success')->name('order.success');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 //--------------*****----------------
+// test
+// Route::get('order/success',function(){
+//     return view('client.cart.payment_success');
+// });
