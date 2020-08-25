@@ -113,7 +113,6 @@ Route::get('order/add','ClientOrderController@index');
 <<<<<<< HEAD
 Route::get('order/store','ClientOrderController@store');
 //Mail
-// Route::get('/sendemail', 'ContactusMailController@index');
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 =======
 Route::post('order/store','ClientOrderController@store');
