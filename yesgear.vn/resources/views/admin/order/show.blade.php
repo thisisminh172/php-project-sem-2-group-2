@@ -20,48 +20,38 @@
                             <th>Email</th>
                             <th>Số điện thoại</th>
                             <th>Địa chỉ</th>
-                            <th>Tài khoản ngân hàng</th>
+                            <th>Nội dung chuyển khoản</th>
                             <th>Tình trạng</th>
                             <th>Cập nhật</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($orders as $order)
                         <tr>
-                            <th>1</th>
-                            <td>Lê Minh</td>
-                            <td>minh@gmail.com</td>
-                            <td>0901231313</td>
-                            <td>cmt8</td>
-                            <td>12345678909</td>
+                            <th>{{$order->id}}</th>
+                            <td>{{$order->name}}</td>
+                            <td>{{$order->email}}</td>
+                            <td>{{$order->phone}}</td>
+                            <td>{{$order->address}}</td>
+                            <td>{{$order->payment_content}}</td>
+                            @if ($order->status == 'waiting')
                             <td><span class="btn btn-warning text-dark font-weight-bold btn-sm">waiting</span></td>
-                            <td><a href="" class="btn btn-info mr-1 btn-sm">Detail</a><a href=""
-                                    class="btn btn-primary mr-1 btn-sm">Edit</a><a href=""
-                                    class="btn btn-danger mr-1 btn-sm">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <td>Lê Minh</td>
-                            <td>minh@gmail.com</td>
-                            <td>0901231313</td>
-                            <td>cmt8</td>
-                            <td>12345678909</td>
+                            @elseif($order->status == 'successed')
                             <td><span class="btn btn-success text-light font-weight-bold btn-sm">successed</span></td>
-                            <td><a href="" class="btn btn-info mr-1 btn-sm">Detail</a><a href=""
-                                    class="btn btn-primary mr-1 btn-sm">Edit</a><a href=""
-                                    class="btn btn-danger mr-1 btn-sm">Delete</a></td>
+                            @elseif($order->status == 'canceled')
+                            <td><span class="btn btn-dark text-light font-weight-bold btn-sm">canceled</span></td>
+                            @endif
+
+                            <td>
+                                <ul>
+                                    <li><a href="" class="btn btn-info mr-1 btn-sm">Detail</a></li>
+                                    <li><a href=""class="btn btn-primary mr-1 btn-sm">Edit</a></li>
+                                    <li><a href=""class="btn btn-danger mr-1 btn-sm">Cancel</a></td></li>
+                                </ul>
+
                         </tr>
-                        <tr>
-                            <th>1</th>
-                            <td>Lê Minh</td>
-                            <td>minh@gmail.com</td>
-                            <td>0901231313</td>
-                            <td>cmt8</td>
-                            <td>12345678909</td>
-                            <td><span class="btn btn-warning text-dark font-weight-bold btn-sm">waiting</span></td>
-                            <td><a href="" class="btn btn-info mr-1 btn-sm">Detail</a><a href=""
-                                    class="btn btn-primary mr-1 btn-sm">Edit</a><a href=""
-                                    class="btn btn-danger mr-1 btn-sm">Delete</a></td>
-                        </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>

@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col">
             <h4 class="alert alert-info mt-5 text-center">Điền thông tin khách hàng</h4>
-            <form action="" method="post">
+            <form action="{{url('order/store')}}" method="post">
+                {{ csrf_field() }}
                 <p>(<span class="text-danger">*</span>) : thông tin bắt buộc</p>
                 <div class="form-group">
                     <label for="name">Họ tên</label>&nbsp;<span class="text-danger">*</span>
@@ -22,11 +23,6 @@
                 <div class="form-group">
                     <label for="address">Địa chỉ giao hàng</label>&nbsp;<span class="text-danger">*</span>
                     <input type="text" name="address" id="address" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="bank_account">Mã tài khoản ngân hàng (dùng để xác nhận)</label>&nbsp;<span class="text-danger">*</span>
-                    <input type="text" name="bank_account" id="bank_account" class="form-control"
-                        placeholder="Mã số thẻ...">
                 </div>
                 <div class="alert alert-danger">
                     <p>Quý khách vui lòng kiểm tra thông tin giỏ hàng trước khi nhấn thực hiện thanh toán!</p>

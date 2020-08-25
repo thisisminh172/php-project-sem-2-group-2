@@ -9,6 +9,13 @@
             <div class="col-12 alert alert-light">
                 <h3>Dashboard</h3>
             </div>
+            <div class="col-12 alert alert-success">
+                <h4>
+                    @if (session('message')) {{ session('message') }}
+                    @endif
+                </h4>
+            </div>
+
         </div>
         <div class="row">
             <div class="col col-sm-6 col-md-3">
@@ -50,6 +57,7 @@
             </div>
         </div>
     </div>
+
 </div>
 <!-- content end-->
 @endsection
