@@ -27,7 +27,9 @@
                     <h2>CREATE NEW ADMIN ACCOUNT</h2>
                     <hr>
                     <h4>
-                        @if (session('message')) {{ session('message') }}
+                        @if (session('message'))
+
+                         {{ session('message') }}
                         @endif
                     </h4>
                     <div class="form-group">

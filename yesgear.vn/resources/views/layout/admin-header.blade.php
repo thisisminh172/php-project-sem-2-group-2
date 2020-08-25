@@ -8,7 +8,7 @@
                         class="text-light">HELLO</span><span class="text-danger">ADMIN</span></a>
             </div>
             <div class="col">
-                <p class="text-light text-right" id="user-login">hello minh@gmail.cm</p>
+                <p class="text-light text-right" id="user-login">hello {{session('name')}}</p>
 
             </div>
         </div>

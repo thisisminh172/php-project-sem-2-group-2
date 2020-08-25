@@ -41,9 +41,7 @@ Route::post('admin/product/store', 'AdminProductController@store');
 //USER
 Route::get('login', 'AccountController@login');
 Route::post('checkLogin', 'AccountController@checkLogin');
-Route::get('home', function () {
-    return view('client.home.home');
-});
+
 Route::get('relogin', function () {
     return view('admin.user.relogin');
 });
@@ -51,6 +49,13 @@ Route::get('relogin', function () {
 Route::get('addUser', function () {
     return view('admin.user.createUser');
 });
+//test logout
+use Illuminate\Http\Request;
+Route::get('admin/user/logout',function(Request $request){
+    $request->session()->flush();
+    return view('admin.user.login');
+});
+//test logout
 
 Route::get('createUser', 'AccountController@addUser');
 

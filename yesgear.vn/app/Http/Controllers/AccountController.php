@@ -26,8 +26,11 @@ class AccountController extends Controller
         $email = $request->email;
         $pwd = $request->password;
         $user = DB::table('users')->where('email', $email)->first();
+        print_r($user);
         if ($user != null && $user->password == $pwd) {
-            //$request->session()->push('user', $user);
+            // $name = $user->name;
+            $r = $request->session()->put('name', $user->name);
+
             return redirect('admin');
         } else {
             return redirect('relogin');
