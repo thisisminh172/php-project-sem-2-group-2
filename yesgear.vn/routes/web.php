@@ -82,6 +82,9 @@ Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 //PAYMENT
 Route::get('order/add','ClientOrderController@index');
 Route::get('order/store','ClientOrderController@store');
+//Mail
+// Route::get('/sendemail', 'ContactusMailController@index');
+Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 //--------------*****----------------

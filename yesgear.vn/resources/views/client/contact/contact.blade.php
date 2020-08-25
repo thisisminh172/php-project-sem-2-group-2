@@ -6,27 +6,45 @@
         <div class="col-sm-6">
             <h3>Hệ thống phân phối đồ chơi gaming</h3>
             <hr>
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+            @endif
             <div>
-                <form action="" method="post">
+                <form method="post" action="{{url('sendemailcontact/send')}}" >
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="">Họ tên</label>
-                        <input type="text" name="name" id="" class="form-control">
+                        <input type="text" name="name" class="form-control" value="">
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="text" name="name" id="" class="form-control">
+                        <input type="text" name="email" class="form-control" value="">
                     </div>
                     <div class="form-group">
                         <label for="">Số điện thoại</label>
-                        <input type="text" name="name" id="" class="form-control">
+                        <input type="text" name="phone" class="form-control" value="">
                     </div>
                     <div class="form-group">
                         <label for="">Nội dung</label>
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Nội dung..." class="form-control"></textarea>
+                        <textarea name="feeback" id="feedback" cols="30" rows="10" placeholder="Nội dung..."
+                            class="form-control"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Submit" class="btn btn-success">
-                        <input type="reset" value="Reset" class="btn btn-dark">
+                        <input type="submit" name="send" class="btn btn-info" value="Gửi">
+                        <input type="reset" value="Hủy" class="btn btn-dark">
                     </div>
                 </form>
             </div>
