@@ -741,6 +741,7 @@
         },
         {
             "name": "hardevine/shoppingcart",
+<<<<<<< HEAD
             "version": "2.8.2",
             "source": {
                 "type": "git",
@@ -751,6 +752,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/hardevine/LaravelShoppingcart/zipball/08f7e198452f27a1eb75a144b0b34ec1f4efae03",
                 "reference": "08f7e198452f27a1eb75a144b0b34ec1f4efae03",
+=======
+            "version": "2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hardevine/LaravelShoppingcart.git",
+                "reference": "00e180b6cb968d6453426fdc7bd6475fcea2335c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hardevine/LaravelShoppingcart/zipball/00e180b6cb968d6453426fdc7bd6475fcea2335c",
+                "reference": "00e180b6cb968d6453426fdc7bd6475fcea2335c",
+>>>>>>> fb4d41e132a285e30aa595f6a28ad99dbb522e12
                 "shasum": ""
             },
             "require": {
@@ -797,7 +810,11 @@
                 "laravel",
                 "shoppingcart"
             ],
+<<<<<<< HEAD
             "time": "2020-07-05T02:23:00+00:00"
+=======
+            "time": "2020-04-15T07:11:21+00:00"
+>>>>>>> fb4d41e132a285e30aa595f6a28ad99dbb522e12
         },
         {
             "name": "laravel/framework",

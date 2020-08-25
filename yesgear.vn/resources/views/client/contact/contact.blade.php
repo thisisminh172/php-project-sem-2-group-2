@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('content')
 <!-- content start -->
-<div class="container-fluid">
+<div class="container mt-5">
     <div class="row">
         <div class="col-sm-6">
             <h3>Hệ thống phân phối đồ chơi gaming</h3>

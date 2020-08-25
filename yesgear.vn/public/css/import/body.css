@@ -10,8 +10,40 @@
 /* button design */
 
 .btn-buy,
-.btn-add-to-cart {
+.btn-add-to-cart-style {
     font-size: 0.8rem;
     display: block;
     width: 200px;
+}
+
+
+/* product-detail-page */
+
+.product-detail-image .product-detail-image-large img {
+    width: 31rem;
+    border: 1px solid #bdc3c7;
+}
+
+.product-detail-image .product-detail-thumbnails ul li {
+    display: inline-block;
+}
+
+.product-detail-image .product-detail-thumbnails {}
+
+.product-detail-image .product-detail-thumbnails .product-detail-thumbnail img {
+    width: 7rem;
+    border: 1px solid #bdc3c7;
+}
+
+.why-us {
+    border: 1px solid #bdc3c7;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+
+/* cart */
+
+#btn-check-out {
+    right: 0px;
 }

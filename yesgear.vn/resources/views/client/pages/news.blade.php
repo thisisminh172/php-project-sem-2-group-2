@@ -1,5 +1,6 @@
 @extends('layout.layout')
 @section('content')
+<<<<<<< HEAD
     <!-- content start -->
     <br><br>
     <div class="card" style="">
@@ -44,4 +45,15 @@
         </div>
     </div>
     <!-- content end -->
+=======
+<!-- content start -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            tin tức
+        </div>
+    </div>
+</div>
+<!-- content end -->
+>>>>>>> fb4d41e132a285e30aa595f6a28ad99dbb522e12
 @endsection

@@ -74,11 +74,11 @@
             @foreach ($headphones as $headphone)
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="card">
-                    <a href="">
+                    <a href='{{url("product/show/$headphone->id")}}'>
                         <img class="card-img-top" src="{{asset($headphone->thumbnail)}}" alt="">
                     </a>
                     <div class="card-body">
-                        <a href="">
+                        <a href='{{url("product/show/$headphone->id")}}'>
                             <h6>{{$headphone->name}}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($headphone->price,0,'','.')}}đ</h6>
@@ -99,11 +99,11 @@
             @foreach ($keyboards as $keyboard)
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="card">
-                    <a href="">
+                    <a href='{{url("product/show/$keyboard->id")}}'>
                         <img class="card-img-top" src="{{asset($keyboard->thumbnail)}}" alt="">
                     </a>
                     <div class="card-body">
-                        <a href="">
+                        <a href='{{url("product/show/$keyboard->id")}}'>
                             <h6>{{$keyboard->name}}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($keyboard->price,0,'','.')}}đ</h6>
@@ -125,11 +125,11 @@
             @foreach ($mouses as $mouse)
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="card">
-                    <a href="">
+                    <a href='{{url("product/show/$mouse->id")}}'>
                         <img class="card-img-top" src="{{asset($mouse->thumbnail)}}" alt="">
                     </a>
                     <div class="card-body">
-                        <a href="">
+                        <a href='{{url("product/show/$mouse->id")}}'>
                             <h6>{{$mouse->name}}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($mouse->price,0,'','.')}}đ</h6>
