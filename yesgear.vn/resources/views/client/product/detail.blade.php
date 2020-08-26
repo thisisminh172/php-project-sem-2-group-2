@@ -76,6 +76,15 @@
 
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="page-header">
+                <h1>review sản phẩm</h1>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(document).ready(function(){
         // alert('hello');
