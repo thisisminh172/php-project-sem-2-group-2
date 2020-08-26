@@ -34,8 +34,18 @@ class ClientOrderController extends Controller
                 $order_detail->price = $row->total;
                 $order_detail->save();
             }
+            $data=array(
+                'name'=> $order->name,
+                'phone'=>$order->phone,
+                'email'=>$order->email,
+                'address'=>$order->address,
+                'payment_content'=>$order->payment_content,
+                'total'=>Cart::total(),
+                'home_page'=>url('home')
+            );
+
+            Mail::to($order->email)->send(new PaymentMail($data));
             Cart::destroy();
-            Mail::to($order->email)->send(new PaymentMail);
             return redirect()->route('order.success',$order->id);
         }
         return view('client.product.show');

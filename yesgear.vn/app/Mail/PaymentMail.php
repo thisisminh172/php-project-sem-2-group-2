@@ -16,9 +16,11 @@ class PaymentMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
         //
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +30,9 @@ class PaymentMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.payment');
+        return $this->view('emails.payment')
+        ->from('yesgearvn@gmail.com','YESGEAR shop')
+        ->subject('[YESGEAR] Nội dung chuyển khoản')
+        ->with($this->data);
     }
 }

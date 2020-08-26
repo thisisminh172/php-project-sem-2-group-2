@@ -118,7 +118,4 @@ Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 #********CLIENT ROUTES - ends *******
 
 // test
-// Route::get('order/success',function(){
-//     return view('client.cart.payment_success');
-// });
 
