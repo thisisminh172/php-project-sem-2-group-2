@@ -110,14 +110,10 @@ Route::post('cart/update','ClientCartController@update')->name('cart.update');
 Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 //PAYMENT
 Route::get('order/add','ClientOrderController@index');
-<<<<<<< HEAD
-Route::get('order/store','ClientOrderController@store');
-//Mail
-Route::post('/sendemailcontact/send', 'ContactusMailController@send');
-=======
 Route::post('order/store','ClientOrderController@store');
 Route::get('order/success/{order_id}','ClientOrderController@success')->name('order.success');
->>>>>>> 117d160c5e0f3f9f4251585702cb75b52fe83c9a
+//Mail
+Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 

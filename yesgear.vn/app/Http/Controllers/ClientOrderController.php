@@ -7,6 +7,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Order;
 use App\OrderDetail;
 use Illuminate\Support\Str;
+use App\Mail\PaymentMail;
+use Illuminate\Support\Facades\Mail;
 
 
 class ClientOrderController extends Controller
@@ -33,6 +35,7 @@ class ClientOrderController extends Controller
                 $order_detail->save();
             }
             Cart::destroy();
+            Mail::to($order->email)->send(new PaymentMail);
             return redirect()->route('order.success',$order->id);
         }
         return view('client.product.show');
