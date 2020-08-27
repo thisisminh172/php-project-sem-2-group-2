@@ -33,7 +33,8 @@ Route::get('product/detail', function () {
 Route::get('admin', 'AdminDashboardController@index');
 //ORDER
 Route::get('admin/order','AdminOrderController@index');
-Route::get('admin/order/cancel/{order_id}','AdminOrderController@cancel');
+Route::get('admin/order/cancel/{order_id}','AdminOrderController@cancel')->name('admin.order.cancel');
+Route::get('admin/order/success/{order_id}','AdminOrderController@success')->name('admin.order.success');
 //PRODUCT
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');

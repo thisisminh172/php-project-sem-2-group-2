@@ -43,10 +43,10 @@
                             @endif
 
                             <td>
-                                <ul>
+                                <ul class="list-unstyled">
                                     <li><a href="" class="btn btn-info mr-1 btn-sm">Detail</a></li>
-                                    <li><a href=""class="btn btn-primary mr-1 btn-sm">Edit</a></li>
-                                    <li><a href=""class="btn btn-danger mr-1 btn-sm">Cancel</a></td></li>
+                                    <li><a href="{{route('admin.order.success',$order->id)}}"class="btn btn-success mr-1 btn-sm">Success</a></li>
+                                    <li><a href="{{route('admin.order.cancel',$order->id)}}"class="btn btn-danger mr-1 btn-sm">Cancel</a></td></li>
                                 </ul>
 
                         </tr>
