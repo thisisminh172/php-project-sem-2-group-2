@@ -7,6 +7,7 @@ use App\Product;
 use App\Image;
 use App\Brand;
 use App\Category;
+use App\CustomClass\ChangeFileName;
 
 class AdminProductController extends Controller
 {
@@ -25,10 +26,12 @@ class AdminProductController extends Controller
 
     //sau khi add se luu thong tin vao db
     public function store(Request $request){
+        $cfn = new ChangeFileName;
         $input = $request->all();
         if($request->hasFile('thumbnail')){
             $file = $request->file('thumbnail');
             $fileName = $file->getClientOriginalName();
+            $fileName = $cfn->change_file_name($fileName,'uploads');
             //get image type
             // $file->getClientOriginalExtension();
             //get emage size
@@ -44,6 +47,7 @@ class AdminProductController extends Controller
             foreach($files as $file){
 
                 $name = $file->getClientOriginalName();
+                $name = $cfn->change_file_name($name,'uploads');
                 $file->move('uploads',$name);
                 $path = 'uploads/'.$name;
                 $array_url[]=$path;
