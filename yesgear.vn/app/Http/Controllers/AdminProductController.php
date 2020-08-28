@@ -31,7 +31,7 @@ class AdminProductController extends Controller
         if($request->hasFile('thumbnail')){
             $file = $request->file('thumbnail');
             $fileName = $file->getClientOriginalName();
-            $fileName = $cfn->change_file_name($fileName,'uploads');
+            $fileName = $cfn->change_file_name('uploads',$fileName);
             //get image type
             // $file->getClientOriginalExtension();
             //get emage size
@@ -47,7 +47,7 @@ class AdminProductController extends Controller
             foreach($files as $file){
 
                 $name = $file->getClientOriginalName();
-                $name = $cfn->change_file_name($name,'uploads');
+                $name = $cfn->change_file_name('uploads',$name);
                 $file->move('uploads',$name);
                 $path = 'uploads/'.$name;
                 $array_url[]=$path;
@@ -62,4 +62,46 @@ class AdminProductController extends Controller
     public function update($id){
 
     }
+
+
+    //CATEGORY functions start>>>>>>>>>>>>
+    public function add_category(){
+        $categories = Category::all();
+        return view('admin.product.add_category',compact('categories'));
+    }
+
+    public function store_category(Request $request){
+        $category = $request->all();
+        Category::create($category);
+        return redirect()->action('AdminProductController@add_category')->with(['success'=>'Thêm mới loại sản phẩm thành công']);
+    }
+    public function delete_category($category_code){
+        $category = Category::where('code',$category_code)->first();
+        // return $category;
+        $category->delete();
+        return redirect()->action('AdminProductController@add_category')->with(['success'=>'Xóa thành công']);
+    }
+    //CATEGORY functions end<<<<<<<<<<<<<<<
+
+
+    //BRAND functions start>>>>>>>>>>>>
+    public function add_brand(){
+        $brands = Brand::all();
+        return view('admin.product.add_brand',compact('brands'));
+    }
+
+
+    public function store_brand(Request $request){
+        $brand = $request->all();
+        Brand::create($brand);
+        return redirect()->action('AdminProductController@add_brand')->with(['success'=>'Thêm mới thương hiệu thành công']);
+    }
+    public function delete_brand($brand_code){
+        $brand = Brand::where('code',$brand_code)->first();
+        // return $category;
+        $brand->delete();
+        return redirect()->action('AdminProductController@add_brand')->with(['success'=>'Xóa thành công']);
+    }
+    //BRAND functions end<<<<<<<<<<<<<
+
 }
