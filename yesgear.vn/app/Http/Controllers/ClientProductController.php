@@ -32,7 +32,7 @@ class ClientProductController extends Controller
     {
         $product = Product::find($id);
         $images = json_decode($product->image_url);
-        return view('client.product.detail')->with(['product'=>$product,'images'=>$images]);
+        return view('client.product.detail')->with(['product' => $product, 'images' => $images]);
     }
 
     public function find(Request $request)
@@ -49,5 +49,36 @@ class ClientProductController extends Controller
             echo $output;
         }
     }
+    //ham chay filter product
+    public function getProductFilter(Request $request)
+    {
+        $product = Product::query();
 
+        // $test = $request->get('brand_code');
+        // dd($test);
+        if ($request->has('brand_code[]')) {
+            $product->where(
+                'brand_code[]',
+                '=',
+                "%{$request->brand_code}%"
+            );
+        }
+        if ($request->has('category_code[]')) {
+            $product->where(
+                'category_code',
+                'LIKE',
+                '%' . $request->category_code . '%'
+            );
+        }
+        if ($request->has('price')) {
+            $product->where(
+                'price',
+                $request->price
+            );
+        }
+
+
+        $products =  $product->get();
+        return view('client.product.show', ['products' => $products]);
+    }
 }
