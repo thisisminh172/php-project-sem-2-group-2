@@ -5,7 +5,7 @@
     <div class="row">
         {{-- san pham starts --}}
         @foreach ($products as $product)
-        <div class="col-6 col-sm-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card">
                 <a href='{{url("product/show/$product->id")}}'>
                     <img class="card-img-top" src="{{asset($product->thumbnail)}}" alt="">

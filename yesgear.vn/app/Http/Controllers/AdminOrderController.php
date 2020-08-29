@@ -38,4 +38,11 @@ class AdminOrderController extends Controller
         return redirect()->action('AdminOrderController@index');
     }
 
+    public function search(Request $request){
+        $payment_content = $request->get('payment_content');
+        $orders = Order::where('payment_content','like',"%{$payment_content}%")->get();
+
+
+    }
+
 }

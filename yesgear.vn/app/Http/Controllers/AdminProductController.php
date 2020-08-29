@@ -13,6 +13,7 @@ class AdminProductController extends Controller
 {
     //show danh sach sản phẩm
     public function index(){
+
         $products = Product::all();
         return view('admin.product.show')->with(['products'=>$products]);
     }

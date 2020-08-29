@@ -10,6 +10,22 @@
                 <h3>Danh sách đơn hàng</h3>
             </div>
         </div>
+        <div class="row p-3">
+            <div class="col-12 col-md-6"></div>
+            <div class="col-12 col-md-6">
+                <form action="{{url('')}}" method="post">
+                    <div class="input-group">
+                        <input type="text" name="" class="form-control" id="search-box"
+                            placeholder="Nhập mã đơn hàng...">
+                        <div class="input-group-append">
+                            <input type="submit" class="btn btn-outline-info" id="search-btn" value="Tìm kím mã đơn"/>
+                        </div>
+                        {{ csrf_field() }}
+                    </div>
+                </form>
+
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <table class="table table-hover text-center">
@@ -20,7 +36,7 @@
                             <th>Email</th>
                             <th>Số điện thoại</th>
                             <th>Địa chỉ</th>
-                            <th>Nội dung chuyển khoản</th>
+                            <th>Mã đơn hàng</th>
                             <th>Tình trạng</th>
                             <th>Cập nhật</th>
                         </tr>
@@ -45,9 +61,13 @@
                             <td>
                                 <ul class="list-unstyled">
                                     <li><a href="" class="btn btn-info mr-1 btn-sm">Detail</a></li>
-                                    <li><a href="{{route('admin.order.success',$order->id)}}"class="btn btn-success mr-1 btn-sm">Success</a></li>
-                                    <li><a href="{{route('admin.order.cancel',$order->id)}}"class="btn btn-danger mr-1 btn-sm">Cancel</a></td></li>
-                                </ul>
+                                    <li><a href="{{route('admin.order.success',$order->id)}}"
+                                            class="btn btn-success mr-1 btn-sm">Success</a></li>
+                                    <li><a href="{{route('admin.order.cancel',$order->id)}}"
+                                            class="btn btn-danger mr-1 btn-sm">Cancel</a>
+                            </td>
+                            </li>
+                            </ul>
 
                         </tr>
                         @endforeach
@@ -58,5 +78,6 @@
         </div>
     </div>
 </div>
+
 <!-- content end-->
 @endsection
