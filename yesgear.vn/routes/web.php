@@ -32,21 +32,25 @@ Route::get('product/detail', function () {
 //DASHBOARD
 Route::get('admin', 'AdminDashboardController@index');
 //ORDER
-Route::get('admin/order','AdminOrderController@index');
-Route::get('admin/order/cancel/{order_id}','AdminOrderController@cancel')->name('admin.order.cancel');
-Route::get('admin/order/success/{order_id}','AdminOrderController@success')->name('admin.order.success');
+
+Route::get('admin/order', 'AdminOrderController@index');
+Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name('admin.order.cancel');
+Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success');
+
 //PRODUCT
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');
 Route::post('admin/product/store', 'AdminProductController@store');
+//route nút lọc
+Route::get('client/filter', 'ClientProductController@getProductFilter');
 //CATEGORY
-Route::get('admin/product/add_category','AdminProductController@add_category');
-Route::post('admin/product/store_category','AdminProductController@store_category');
-Route::get('admin/product/delete_category/{category_code}','AdminProductController@delete_category')->name('admin.category.delete');
+Route::get('admin/product/add_category', 'AdminProductController@add_category');
+Route::post('admin/product/store_category', 'AdminProductController@store_category');
+Route::get('admin/product/delete_category/{category_code}', 'AdminProductController@delete_category')->name('admin.category.delete');
 //BRAND
-Route::get('admin/product/add_brand','AdminProductController@add_brand');
-Route::post('admin/product/store_brand','AdminProductController@store_brand');
-Route::get('admin/product/delete_brand/{brand_code}','AdminProductController@delete_brand')->name('admin.brand.delete');
+Route::get('admin/product/add_brand', 'AdminProductController@add_brand');
+Route::post('admin/product/store_brand', 'AdminProductController@store_brand');
+Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete');
 
 //USER
 Route::get('login', 'AccountController@login');
@@ -61,7 +65,8 @@ Route::get('addUser', function () {
 });
 //test logout
 use Illuminate\Http\Request;
-Route::get('admin/user/logout',function(Request $request){
+
+Route::get('admin/user/logout', function (Request $request) {
     $request->session()->flush();
     return view('admin.user.login');
 });
@@ -111,21 +116,20 @@ Route::get('news', function () {
     return view('client.pages.news');
 });
 //CART
-Route::get('cart/show','ClientCartController@show');
-Route::get('cart/add/{id}','ClientCartController@add')->name('cart.add');
-Route::post('cart/store','ClientCartController@store')->name('cart.store');
-Route::get('cart/remove/{rowId}','ClientCartController@remove')->name('cart.remove');
-Route::get('cart/destroy','ClientCartController@destroy')->name('cart.destroy');
-Route::post('cart/update','ClientCartController@update')->name('cart.update');
+Route::get('cart/show', 'ClientCartController@show');
+Route::get('cart/add/{id}', 'ClientCartController@add')->name('cart.add');
+Route::post('cart/store', 'ClientCartController@store')->name('cart.store');
+Route::get('cart/remove/{rowId}', 'ClientCartController@remove')->name('cart.remove');
+Route::get('cart/destroy', 'ClientCartController@destroy')->name('cart.destroy');
+Route::post('cart/update', 'ClientCartController@update')->name('cart.update');
 Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 //PAYMENT
-Route::get('order/add','ClientOrderController@index');
-Route::post('order/store','ClientOrderController@store');
-Route::get('order/success/{order_id}','ClientOrderController@success')->name('order.success');
+Route::get('order/add', 'ClientOrderController@index');
+Route::post('order/store', 'ClientOrderController@store');
+Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('order.success');
 //Mail
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 
 // test
-
