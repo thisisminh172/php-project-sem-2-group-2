@@ -3,17 +3,17 @@
 @section('content')
 <!-- content start -->
 <script>
-    $(document).ready(function(){
-        // alert('hello');
-        // lay src tu hinh anh duoc chon
-        var src_img_click;
-        $('.product-detail-thumbnails ul li .product-detail-thumbnail').click(function(){
-            src_img_click = $(this).children('img').attr('src');
-            console.log(src_img_click);
-            $('.product-detail-image-large').children('img').attr('src',src_img_click);
+$(document).ready(function() {
+    // alert('hello');
+    // lay src tu hinh anh duoc chon
+    var src_img_click;
+    $('.product-detail-thumbnails ul li .product-detail-thumbnail').click(function() {
+        src_img_click = $(this).children('img').attr('src');
+        console.log(src_img_click);
+        $('.product-detail-image-large').children('img').attr('src', src_img_click);
 
-        });
     });
+});
 </script>
 <div class="container">
     <div class="row">
@@ -63,20 +63,65 @@
 
 <div class="container mt-5">
     <div class="row">
+        @if(session('success'))
+            <script>
+            alert("{{session('success')}}");
+            </script>
+        @endif
+    </div>
+    <div class="row">
         <div class="col-12 col-lg-9">
-            <h5>Mô tả sản phẩm</h5>
-            <hr>
-            {!!$product->describe!!}
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#detail"><b>Mô tả sản phẩm</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#comment"><b>Bình luận và đánh giá</b></a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="detail" class="container tab-pane active"><br>
+                    {!!$product->describe!!}
+                </div>
+                <div id="comment" class="container tab-pane fade"><br>
+                    <!-- form bình luận và đánh giá -->
+                    <div class="container">
+
+                        <form method="post" action="{{url('client/comment')}}">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <div class="form-group">
+                                <label for="name">Họ và tên:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại:</label>
+                                <input type="number" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cm">Bình luận:</label>
+                                <textarea class="form-control" row="10" id="cm" name="content"></textarea>
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="submit" class="btn btn-success">Gửi</button>
+                            </div>
+                            {{csrf_field()}}
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-12 col-lg-3">
             <h5>Thông số sản phẩm</h5>
             <hr>
             {!!$product->tech_info!!}
         </div>
-
     </div>
 </div>
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col">
             <div class="page-header">
@@ -84,32 +129,34 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <script>
-    $(document).ready(function(){
-        // alert('hello');
-        $('.btn-add-to-cart').click(function(){
-            let product_id = $(this).attr('product-id');
-            if(product_id != ''){
-                var _token = $('input[name="_token"]').val();
-                $.ajax({
-                    url:"{{ route('cart.store') }}",
-                    method:"POST",
-                    data:{product_id:product_id, _token:_token},
-                    dataType:'json',
-                    success:function(data)
-                    {
-                        // console.log(data);
-                        alert(data.message);
-                        if(data.cartCount !== ""){
-                            $('#cart-count').html(data.cartCount);
-                        }
+$(document).ready(function() {
+    // alert('hello');
+    $('.btn-add-to-cart').click(function() {
+        let product_id = $(this).attr('product-id');
+        if (product_id != '') {
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "{{ route('cart.store') }}",
+                method: "POST",
+                data: {
+                    product_id: product_id,
+                    _token: _token
+                },
+                dataType: 'json',
+                success: function(data) {
+                    // console.log(data);
+                    alert(data.message);
+                    if (data.cartCount !== "") {
+                        $('#cart-count').html(data.cartCount);
                     }
-                });
-            }//if end
-        });
-
+                }
+            });
+        } //if end
     });
+
+});
 </script>
 <!-- content end -->
 @endsection

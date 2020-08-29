@@ -114,6 +114,8 @@ Route::post('order/store','ClientOrderController@store');
 Route::get('order/success/{order_id}','ClientOrderController@success')->name('order.success');
 //Mail
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
+//Comment
+Route::post('client/comment', 'CommentController@comment');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 
