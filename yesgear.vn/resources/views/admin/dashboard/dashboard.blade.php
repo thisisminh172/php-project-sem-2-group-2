@@ -9,12 +9,15 @@
             <div class="col-12 alert alert-light">
                 <h3>Dashboard</h3>
             </div>
+
+            @if (session('message'))
             <div class="col-12 alert alert-success">
                 <h4>
-                    @if (session('message')) {{ session('message') }}
-                    @endif
+                    {{ session('message') }}
                 </h4>
             </div>
+            @endif
+
 
         </div>
         <div class="row">

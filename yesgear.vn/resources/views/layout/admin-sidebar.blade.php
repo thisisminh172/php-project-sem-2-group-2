@@ -9,8 +9,11 @@
             <li>
                 <i class="far fa-folder"></i><a href="{{ url('admin/product') }}"> Sản phẩm</a>
                 <ul class="list-unstyled">
-                    <li><a href="{{ url('admin/product/add') }}">Thêm sản phẩm</a></li>
                     <li><a href="{{ url('admin/product') }}">Danh sách</a></li>
+                    <li><a href="{{ url('admin/product/add') }}">Thêm sản phẩm</a></li>
+                    <li><a href="{{url('admin/product/add_category')}}">Thêm loại sản phẩm</a></li>
+                    <li><a href="{{url('admin/product/add_brand')}}">Thêm thương hiệu</a></li>
+
                 </ul>
 
             </li>
