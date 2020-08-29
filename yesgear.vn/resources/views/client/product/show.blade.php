@@ -1,11 +1,12 @@
 @extends('layout.product-layout')
 
 @section('content')
+
     <div class="container">
         <div class="row">
             {{-- san pham starts --}}
             @foreach ($products as $product)
-                <div class="col-6 col-sm-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <a href='{{ url("product/show/$product->id") }}'>
                             <img class="card-img-top" src="{{ asset($product->thumbnail) }}" alt="">
@@ -15,6 +16,7 @@
                                 <h6>{{ $product->name }}</h6>
                             </a>
                             <h6 class="text-danger">{{ number_format($product->price, 0, '', '.') }}đ</h6>
+
 
                         </div>
                         <div class="container-fluid pb-2">

@@ -32,14 +32,26 @@ Route::get('product/detail', function () {
 //DASHBOARD
 Route::get('admin', 'AdminDashboardController@index');
 //ORDER
+
 Route::get('admin/order', 'AdminOrderController@index');
-Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel');
+Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name('admin.order.cancel');
+Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success');
+
 //PRODUCT
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');
 Route::post('admin/product/store', 'AdminProductController@store');
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');
+//CATEGORY
+Route::get('admin/product/add_category', 'AdminProductController@add_category');
+Route::post('admin/product/store_category', 'AdminProductController@store_category');
+Route::get('admin/product/delete_category/{category_code}', 'AdminProductController@delete_category')->name('admin.category.delete');
+//BRAND
+Route::get('admin/product/add_brand', 'AdminProductController@add_brand');
+Route::post('admin/product/store_brand', 'AdminProductController@store_brand');
+Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete');
+
 //USER
 Route::get('login', 'AccountController@login');
 Route::post('checkLogin', 'AccountController@checkLogin');
