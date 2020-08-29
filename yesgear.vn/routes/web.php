@@ -32,12 +32,14 @@ Route::get('product/detail', function () {
 //DASHBOARD
 Route::get('admin', 'AdminDashboardController@index');
 //ORDER
-Route::get('admin/order','AdminOrderController@index');
-Route::get('admin/order/cancel/{order_id}','AdminOrderController@cancel');
+Route::get('admin/order', 'AdminOrderController@index');
+Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel');
 //PRODUCT
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');
 Route::post('admin/product/store', 'AdminProductController@store');
+//route nút lọc
+Route::get('client/filter', 'ClientProductController@getProductFilter');
 //USER
 Route::get('login', 'AccountController@login');
 Route::post('checkLogin', 'AccountController@checkLogin');
@@ -51,7 +53,8 @@ Route::get('addUser', function () {
 });
 //test logout
 use Illuminate\Http\Request;
-Route::get('admin/user/logout',function(Request $request){
+
+Route::get('admin/user/logout', function (Request $request) {
     $request->session()->flush();
     return view('admin.user.login');
 });
@@ -101,21 +104,20 @@ Route::get('news', function () {
     return view('client.pages.news');
 });
 //CART
-Route::get('cart/show','ClientCartController@show');
-Route::get('cart/add/{id}','ClientCartController@add')->name('cart.add');
-Route::post('cart/store','ClientCartController@store')->name('cart.store');
-Route::get('cart/remove/{rowId}','ClientCartController@remove')->name('cart.remove');
-Route::get('cart/destroy','ClientCartController@destroy')->name('cart.destroy');
-Route::post('cart/update','ClientCartController@update')->name('cart.update');
+Route::get('cart/show', 'ClientCartController@show');
+Route::get('cart/add/{id}', 'ClientCartController@add')->name('cart.add');
+Route::post('cart/store', 'ClientCartController@store')->name('cart.store');
+Route::get('cart/remove/{rowId}', 'ClientCartController@remove')->name('cart.remove');
+Route::get('cart/destroy', 'ClientCartController@destroy')->name('cart.destroy');
+Route::post('cart/update', 'ClientCartController@update')->name('cart.update');
 Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 //PAYMENT
-Route::get('order/add','ClientOrderController@index');
-Route::post('order/store','ClientOrderController@store');
-Route::get('order/success/{order_id}','ClientOrderController@success')->name('order.success');
+Route::get('order/add', 'ClientOrderController@index');
+Route::post('order/store', 'ClientOrderController@store');
+Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('order.success');
 //Mail
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 
 // test
-
