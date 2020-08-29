@@ -52,33 +52,36 @@ class ClientProductController extends Controller
     //ham chay filter product
     public function getProductFilter(Request $request)
     {
-        $product = Product::query();
+        // $product = Product::query();
 
-        // $test = $request->get('brand_code');
+        $brand_codes = $request->get('brand_code');
         // dd($test);
-        if ($request->has('brand_code[]')) {
-            $product->where(
-                'brand_code[]',
-                '=',
-                "%{$request->brand_code}%"
-            );
+        foreach($brand_codes as $brand_code){
+            $products = Product::where('brand_code',$brand_code)->get();
         }
-        if ($request->has('category_code[]')) {
-            $product->where(
-                'category_code',
-                'LIKE',
-                '%' . $request->category_code . '%'
-            );
-        }
-        if ($request->has('price')) {
-            $product->where(
-                'price',
-                $request->price
-            );
-        }
+        // if ($request->has('brand_code[]')) {
+        //     $product->where(
+        //         'brand_code[]',
+        //         '=',
+        //         "%{$request->brand_code}%"
+        //     );
+        // }
+        // if ($request->has('category_code[]')) {
+        //     $product->where(
+        //         'category_code',
+        //         'LIKE',
+        //         '%' . $request->category_code . '%'
+        //     );
+        // }
+        // if ($request->has('price')) {
+        //     $product->where(
+        //         'price',
+        //         $request->price
+        //     );
+        // }
 
 
-        $products =  $product->get();
+        // $products =  $product->get();
         return view('client.product.show', ['products' => $products]);
     }
 }
