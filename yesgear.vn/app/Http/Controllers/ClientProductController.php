@@ -7,6 +7,7 @@ use App\Product;
 use DB;
 use Illuminate\Http\Request;
 
+
 class ClientProductController extends Controller
 {
     //goi truoc khi
@@ -52,36 +53,26 @@ class ClientProductController extends Controller
     //ham chay filter product
     public function getProductFilter(Request $request)
     {
-        // $product = Product::query();
+        $product = Product::query();
 
-        $brand_codes = $request->get('brand_code');
-        // dd($test);
-        foreach($brand_codes as $brand_code){
-            $products = Product::where('brand_code',$brand_code)->get();
+        // $brand_codes = $request->get('brand_code');
+        // dd($brand_codes);
+        // foreach ($brand_codes as $brand_code) {
+        //     echo $brand_code;
+        //     $products = Product::where('brand_code', $brand_code)->get();
+        // }
+
+        if ($request->has('brand_code')) {
+            $product->where('brand_code', $request->brand_code);
         }
-        // if ($request->has('brand_code[]')) {
-        //     $product->where(
-        //         'brand_code[]',
-        //         '=',
-        //         "%{$request->brand_code}%"
-        //     );
-        // }
-        // if ($request->has('category_code[]')) {
-        //     $product->where(
-        //         'category_code',
-        //         'LIKE',
-        //         '%' . $request->category_code . '%'
-        //     );
-        // }
-        // if ($request->has('price')) {
-        //     $product->where(
-        //         'price',
-        //         $request->price
-        //     );
-        // }
 
-
-        // $products =  $product->get();
+        if ($request->has('category_code')) {
+            $product->where('category_code', $request->category_code);
+        }
+        if ($request->has('price')) {
+            $product->whereBetween('price', '[0, 500000]', $request->price);
+        }
+        $products =  $product->get();
         return view('client.product.show', ['products' => $products]);
     }
 }

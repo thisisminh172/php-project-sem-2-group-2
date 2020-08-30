@@ -82,6 +82,12 @@ Route::get('createUser', 'AccountController@addUser');
 // });
 
 Route::get('admin/user', 'AdminUserController@index');
+//root nut delete nhan vien
+Route::get('admin/user/{id}', 'AdminUserController@delete');
+//rout nut update nhan vien
+Route::get('admin/update/{id}', 'AdminUserController@update');
+Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate');
+
 //POST
 
 //--------------*****----------------
