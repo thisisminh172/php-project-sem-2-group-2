@@ -9,7 +9,7 @@ class Product extends Model
     //
     protected $fillable =['name','thumbnail','brand_code','category_code','describe','tech_info','price','quantity','image_url'];
     public function order_detail(){
-        return $this->belongsTo('App\OrderDetail');
+        return $this->hasMany('App\OrderDetail');
     }
 
     public function comment(){

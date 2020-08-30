@@ -12,7 +12,7 @@ class AdminOrderController extends Controller
     //
     public function index(){
         $orders = Order::all();
-        return view('admin.order.show')->with('orders',$orders);
+        return view('admin.order.show',compact('orders'));
     }
 
     public function cancel($order_id){
@@ -39,10 +39,14 @@ class AdminOrderController extends Controller
     }
 
     public function search(Request $request){
-        $payment_content = $request->get('payment_content');
+        $payment_content = $request->input('payment_content');
         $orders = Order::where('payment_content','like',"%{$payment_content}%")->get();
+        return view('admin.order.show',compact('orders'));
+    }
 
-
+    public function show_by_status($status){
+        $orders = Order::where('status',$status)->get();
+        return view('admin.order.show',compact('orders'));
     }
 
 }
