@@ -28,6 +28,52 @@
 </head>
 
 <body>
+    <style>
+        .dropdown-cart {
+            position: relative;
+        }
+
+        .dropdown-cart-list {
+            position: absolute;
+            z-index: 1500;
+            background-color: white;
+            right: 0px;
+            top: 30px
+        }
+
+        li.dropdown-item img {
+            display: inline-block;
+            float: left;
+        }
+
+        li.dropdown-item p {
+            display: inline-block;
+            float: left;
+            padding: 1rem;
+        }
+
+        .dropdown-cart>.dropdown-cart-list {
+            display: none;
+            min-width: 300px;
+            border-radius: 10px;
+            border: 1px solid #949494;
+            transition: 0.3s;
+        }
+
+        .dropdown-cart:hover>.dropdown-cart-list {
+
+            display: block;
+        }
+
+        .dropdown-cart-list>.button-cart {
+            /* margin-top: 2rem; */
+            padding: 1rem;
+        }
+
+        .dropdown-cart-list>.button-cart>a {
+            width: 300px;
+        }
+    </style>
     <!-- navigation -->
     <div id="header-wp">
         <div class="container-fluid bg-dark">
@@ -42,8 +88,35 @@
                         <p class="text-light d-inline-block">BẤT cần đời, BUT cần gear</p>
                     </div>
                     <div id="cart-wp" class="col mt-3 text-right">
-                        <a href="{{url('cart/show')}}" id="cart" class="text-danger p-2"><i class="fas fa-shopping-cart"></i> Giỏ hàng <span
-                                class="text-success"> (<span id="cart-count">{{Cart::count()}}</span> sản phẩm)</span></a>
+
+
+                        <div class="dropdown-cart">
+                            <a href="{{url('cart/show')}}" id="cart" class="text-danger p-2"><i
+                                    class="fas fa-shopping-cart"></i> Giỏ hàng <span class="text-success"> (<span
+                                        id="cart-count">{{Cart::count()}}</span> sản phẩm)</span></a>
+                            <div class="dropdown-cart-list">
+                                <table class="text-center">
+                                    @foreach (Cart::content() as $row)
+                                    <tr class="dropdown-item">
+                                        <td><img src="{{asset($row->options->thumbnail)}}" alt="" width="70px"></td>
+                                        <td class="">
+                                            <p>{{$row->name}}</p>
+                                        </td>
+                                        <td>
+                                            <p class="font-weight-bold text-danger"> x {{$row->qty}}</p>
+                                        </td>
+
+                                    </tr>
+                                    @endforeach
+                                </table>
+                                <p class="text-danger p-2 mr-1">Tổng giá trị giỏ hàng: {{Cart::total()}}</p>
+                                <div class="button-cart">
+                                    <a href="{{url('order/add')}}" class="btn btn-outline-danger">Thanh toán</a>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
