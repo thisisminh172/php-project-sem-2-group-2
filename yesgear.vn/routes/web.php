@@ -42,6 +42,8 @@ Route::get('admin/order/show/{status}','AdminOrderController@show_by_status')->n
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');
 Route::post('admin/product/store', 'AdminProductController@store');
+Route::get('admin/product/update/{id}','AdminProductController@update')->name('admin.product.update');
+Route::post('admin/product/update/store/{id}','AdminProductController@update_store');
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');
 //CATEGORY

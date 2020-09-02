@@ -14,7 +14,8 @@ class AdminProductController extends Controller
     //show danh sach sản phẩm
     public function index(){
 
-        $products = Product::all();
+        $products = Product::orderBy('id','desc')->paginate(5);
+
         return view('admin.product.show')->with(['products'=>$products]);
     }
 
@@ -61,7 +62,57 @@ class AdminProductController extends Controller
         return redirect()->action('AdminProductController@add')->with('status','Thêm sản phẩm mới thành công');
     }
     public function update($id){
+        $product = Product::find($id);
+        $images = json_decode($product->image_url);
+        $brands = Brand::all();
+        $current_brand = Brand::where('code',$product->brand_code)->first();
+        $categories = Category::all();
+        $current_category = Category::where('code',$product->category_code)->first();
+        return view('admin.product.update',compact('brands','current_brand','categories','current_category','product','images'));
+    }
 
+    public function update_store(Request $request,$id){
+        $cfn = new ChangeFileName;
+
+        $product = Product::find($id);
+        $input = $request->all();
+
+        if($request->hasFile('thumbnail')){
+            $file = $request->file('thumbnail');
+            $fileName = $file->getClientOriginalName();
+            $fileName = $cfn->change_file_name('uploads',$fileName);
+            //get image type
+            // $file->getClientOriginalExtension();
+            //get emage size
+            // $file->getSize();
+            $file->move('uploads',$fileName);
+            $path = 'uploads/'.$fileName;
+            $input['thumbnail']= $path;
+            $product->thumbnail = $input['thumbnail'];
+        }else{
+            $product->thumbnail = $product->thumbnail;
+        }
+        if($request->hasFile('product_image')){
+            $files = $request->file('product_image');
+            //tạo mảng rỗng chứa url
+            $array_url = [];
+            foreach($files as $file){
+
+                $name = $file->getClientOriginalName();
+                $name = $cfn->change_file_name('uploads',$name);
+                $file->move('uploads',$name);
+                $path = 'uploads/'.$name;
+                $array_url[]=$path;
+            }
+            $input['image_url']=json_encode($array_url);
+            $product->image_url = $input['image_url'];
+        }else{
+            $product->image_url = $product->image_url;
+        }
+
+        $product->save();
+
+        return redirect()->route('admin.product.update',$id)->with('success','Cập nhật thành công');
     }
 
 

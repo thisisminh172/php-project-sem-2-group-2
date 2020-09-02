@@ -3,7 +3,7 @@
 @section('content')
 <!-- content start -->
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
     // alert('hello');
     // lay src tu hinh anh duoc chon
     var src_img_click;
@@ -49,24 +49,32 @@ $(document).ready(function() {
             </div>
             <p class="mt-5">Mã sản phẩm: <b> {{$product->category_code}}{{$product->brand_code}}{{$product->id}}</b></p>
             <p>Đang còn: <span class="text-success font-weight-bold">{{$product->quantity}} sản phẩm</span></p>
-            <div class="row">
-                <div class="col"><a href="{{route('cart.add',$product->id)}}" class="btn btn-success w-100">Mua ngay</a>
+            @if ($product->quantity <=5) <div class="row">
+                <div class="col">
+                    <a href="{{url('contact')}}" class="btn btn-warning w-100">Liên hệ đặt hàng</a>
                 </div>
-                <div class="col"><button type="button" product-id="{{$product->id}}"
-                        class="btn-add-to-cart btn btn-danger w-100" id="">Thêm giỏ hàng</button></div>
-                {{ csrf_field() }}
-            </div>
-
         </div>
+        @else
+        <div class="row">
+            <div class="col"><a href="{{route('cart.add',$product->id)}}" class="btn btn-success w-100">Mua ngay</a>
+            </div>
+            <div class="col"><button type="button" product-id="{{$product->id}}"
+                    class="btn-add-to-cart btn btn-danger w-100" id="">Thêm giỏ hàng</button></div>
+            {{ csrf_field() }}
+        </div>
+        @endif
+
+
     </div>
+</div>
 </div>
 
 <div class="container mt-5">
     <div class="row">
         @if(session('success'))
-            <script>
+        <script>
             alert("{{session('success')}}");
-            </script>
+        </script>
         @endif
     </div>
     <div class="row">
@@ -131,7 +139,7 @@ $(document).ready(function() {
     </div>
 </div> -->
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
     // alert('hello');
     $('.btn-add-to-cart').click(function() {
         let product_id = $(this).attr('product-id');

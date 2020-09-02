@@ -37,7 +37,7 @@
                             <td>{{$product->category_code}}</td>
                             <td>{{number_format($product->price,0,'','.')}}đ</td>
                             <td>{{$product->quantity}}</td>
-                            <td><a href="" class="btn btn-info btn-sm">Update</a><a href=""
+                            <td class="btn-group"><a href="{{route('admin.product.update',$product->id)}}" class="btn btn-info btn-sm">Update</a><a href=""
                                     class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
@@ -45,6 +45,15 @@
 
                     </tbody>
                 </table>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="paginate-bar">
+                    {{$products->links()}}
+                </div>
             </div>
         </div>
     </div>
