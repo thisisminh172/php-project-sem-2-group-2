@@ -40,9 +40,14 @@ Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->na
 Route::post('admin/order/search', 'AdminOrderController@search')->middleware('checkLogin:user');
 Route::get('admin/order/show/{status}', 'AdminOrderController@show_by_status')->name('order.show.status')->middleware('checkLogin:user');
 //PRODUCT
+
 Route::get('admin/product', 'AdminProductController@index')->middleware('checkLogin:user');
 Route::get('admin/product/add', 'AdminProductController@add')->middleware('checkLogin:user');
 Route::post('admin/product/store', 'AdminProductController@store')->middleware('checkLogin:user');
+
+Route::get('admin/product/update/{id}', 'AdminProductController@update')->name('admin.product.update');
+Route::post('admin/product/update/store/{id}', 'AdminProductController@update_store');
+
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');
 //CATEGORY
