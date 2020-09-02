@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\CustomClass\ShowProductWithCondition;
 use App\Product;
 use DB;
+use App\Comment;
+use App\Commenter;
 use Illuminate\Http\Request;
 
 class ClientProductController extends Controller
@@ -32,7 +34,24 @@ class ClientProductController extends Controller
     {
         $product = Product::find($id);
         $images = json_decode($product->image_url);
-        return view('client.product.detail')->with(['product' => $product, 'images' => $images]);
+        
+        //comment function
+        $comments = Comment::where('product_id', $id)->get();
+        foreach ($comments as $comment){
+            $commenter = Comment::where('commenter_id', 'id')->commenter;
+            return $commenter;
+            $commenter_name = $commenter->name;
+            $comment_detail[] = array(
+                'name'=>$commenter_name,
+                'content'=>$comment->content,
+            );
+        }
+        dd($comment_detail);
+        
+
+        // $comments = Commenter::where('id', 'commenter_id')->get();
+        // $comments = Commenter::find($id->$name)->$comments;
+        return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments]);
     }
 
     public function find(Request $request)

@@ -11,7 +11,7 @@ class CommentRep extends Model
         return $this->belongsTo('App\Comment');
     }
 
-    public function customer(){
+    public function commenter(){
         return $this->belongsTo('App\Commenter');
     }
 }

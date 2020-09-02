@@ -64,9 +64,9 @@ $(document).ready(function() {
 <div class="container mt-5">
     <div class="row">
         @if(session('success'))
-            <script>
-            alert("{{session('success')}}");
-            </script>
+        <script>
+        alert("{{session('success')}}");
+        </script>
         @endif
     </div>
     <div class="row">
@@ -86,7 +86,6 @@ $(document).ready(function() {
                 <div id="comment" class="container tab-pane fade"><br>
                     <!-- form bình luận và đánh giá -->
                     <div class="container">
-
                         <form method="post" action="{{url('client/comment')}}">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <div class="form-group">
@@ -110,6 +109,16 @@ $(document).ready(function() {
                             </div>
                             {{csrf_field()}}
                         </form>
+                        <div class="col-12 col-lg-9">
+                            <ul>
+                            <i><b>Tên {{ $comment_detail['name'] }}</b>|</i>
+                            @foreach ($comments as $comment)
+                            <i><span>Bình luận ngày: {{date('d/m/Y H:i',strtotime($comment->created_at))}}</span></i>
+                            <br><hr>
+                            &emsp;<span>{{ $comment->content }}</span>
+                            </ul>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
