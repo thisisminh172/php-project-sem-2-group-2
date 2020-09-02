@@ -18,41 +18,40 @@
                         <h6>{{ \Illuminate\Support\Str::limit($product->name, 40, $end='...') }}</h6>
                     </a>
                     <h6 class="text-danger">{{ number_format($product->price, 0, '', '.') }}đ</h6>
-
-
-                </div>
-                @if ($product->quantity <=5) <div class="container-fluid pb-2">
-                    <div class="row btn-group">
+                    <div class="row">
                         <div class="col">
-                            <a href="{{url('contact')}}" class="btn-buy btn btn-outline-warning p-0">Liên hệ đặt
+                            @if ($product->quantity <=5) <a href="{{url('contact')}}"
+                                class="btn-buy btn btn-outline-warning p-1">Liên hệ đặt
                                 hàng</a>
+
+                                @elseif($product->quantity >5 )
+                                <div class="row">
+                                    <div class="col-5">
+                                        <a href="{{ route('cart.add', $product->id) }}"
+                                            class="btn-buy btn btn-outline-success p-1">
+                                            Mua hàng</a>
+                                    </div>
+                                    <div class="col-7"><button type="button" product-id="{{ $product->id }}"
+                                            class="btn-add-to-cart btn-add-to-cart-style btn btn-outline-danger p-1"
+                                            id="">Thêm giỏ hàng</button>
+                                    </div>
+                                </div>
+                                {{ csrf_field() }}
+                                @endif
                         </div>
                     </div>
-            </div>
-
-            @else
-            <div class="container-fluid pb-2">
-                <div class="row btn-group">
-                    <div class="col-6">
-                        <a href="{{ route('cart.add', $product->id) }}"><button
-                                class="col btn-buy btn btn-outline-success p-0">
-                                Mua hàng</button></a></div>
-                    <div class="col-6"><button type="button" product-id="{{ $product->id }}"
-                            class="col btn-add-to-cart btn-add-to-cart-style btn btn-outline-danger p-0" id="">Thêm giỏ
-                            hàng</button>
-                    </div>
-                    {{ csrf_field() }}
                 </div>
+
+
+
+
             </div>
-            @endif
+
         </div>
-
+        @endforeach
     </div>
-    @endforeach
-
 </div>
 
-</div>
 {{-- san pham ends --}}
 
 

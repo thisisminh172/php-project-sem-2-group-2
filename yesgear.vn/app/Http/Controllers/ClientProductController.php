@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Brand;
 use App\Category;
 use App\CustomClass\ShowProductWithCondition;
+use App\OrderDetail;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,16 @@ class ClientProductController extends Controller
     public function index()
     {
         $p = new ShowProductWithCondition();
-        $products = Product::all();
+        $product_id_list = OrderDetail::selectRaw("COUNT('id') as number_orders, product_id")
+        ->groupBy('product_id')
+        ->orderBy('number_orders','desc')
+        ->get();
+        $products = [];
+        foreach($product_id_list as $product_id){
+            $product = Product::find($product_id->product_id);
+            $products[] = $product;
+        }
+        // dd($products);
         $headphones = $p->show_headphone();
         $keyboards = $p->show_keyboard();
         $mouses = $p->show_mouse();
