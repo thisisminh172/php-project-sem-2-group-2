@@ -7,8 +7,7 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <label for="sel1">Chọn thương hiệu</label>
-                <select class="form-control" id="du" name="brand_code" value="du" data-filter="make"
-                    class="filter-make filter">
+                <select id="du" name="brand_code" value="du" data-filter="make" class="filter-make filter form-control">
                     @foreach ($brands as $brand)
                         <option>{{ $brand->name }}</option>
                     @endforeach
@@ -16,16 +15,13 @@
             </div>
         </div>
 
-
-
-
         <h4>Loại sản phẩm</h4>
         <hr>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <label for="sel1">Chọn loại sản phẩm</label>
-                <select class="form-control" id="du" name="category_code" value="" data-filter="make"
-                    class="filter-make filter">
+                <select id="du" name="category_code" value="" data-filter="make"
+                    class="filter-make filter form-control">
                     @foreach ($categories as $category)
                         <option>{{ $category->name }}</option>
                     @endforeach
@@ -39,21 +35,24 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="radio">
-                    <label><input type="radio" id="" name="price" value='1'> Ít hơn 500k</label>
+                    <label><input type="radio" id="" name="price" value='1'> Ít
+                        hơn 500k</label>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="radio">
-                    <label><input type="radio" id="" name="price" value='2'> Tu 500k den 3tr</label>
+                    <label><input type="radio" id="" name="price" value='2'> Tu
+                        500k den 3tr</label>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="radio">
-                    <label><input type="radio" id="" name="price" value='3'> Hon 3tr</label>
+                    <label><input type="radio" id="" name="price" value='3'> Hon
+                        3tr</label>
                 </div>
             </div>
         </div>

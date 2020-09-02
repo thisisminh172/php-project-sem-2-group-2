@@ -85,7 +85,7 @@ class ClientProductController extends Controller
                     ->where('price', '<', 3000000);
             }
             if ($price == 3) {
-                $product->where('price', '<=', 3000000);
+                $product->where('price', '>=', 3000000);
             }
         }
         $products =  $product->get();
