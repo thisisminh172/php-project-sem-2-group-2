@@ -6,95 +6,58 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="du" name="brand_code" value="du" data-filter="make"
-                            class="filter-make filter"> Dareu</label>
-                </div>
+                <label for="sel1">Chọn thương hiệu</label>
+                <select class="form-control" id="du" name="brand_code" value="du" data-filter="make"
+                    class="filter-make filter">
+                    @foreach ($brands as $brand)
+                        <option>{{ $brand->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="rz" name="brand_code" value="rz" data-filter="make"
-                            class="filter-make filter"> Razer</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="lt" name="brand_code" value="lt" data-filter="make"
-                            class="filter-make filter"> Logitech</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="cs" name="brand_code" value="cs" data-filter="make"
-                            class="filter-make filter"> Corsair</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="ss" name="brand_code" value="ss" data-filter="make"
-                            class="filter-make filter"> StealSeries</label>
-                </div>
-            </div>
-        </div>
+
+
+
 
         <h4>Loại sản phẩm</h4>
         <hr>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="tn" name="category_code" value="tn" data-filter="make"
-                            class="filter-make filter"> Tai nghe</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="ch" name="category_code" value="ch" data-filter="make"
-                            class="filter-make filter"> Chuột</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="bp" name="category_code" value="bp" data-filter="make"
-                            class="filter-make filter"> Bàn phím</label>
-                </div>
+                <label for="sel1">Chọn loại sản phẩm</label>
+                <select class="form-control" id="du" name="category_code" value="" data-filter="make"
+                    class="filter-make filter">
+                    @foreach ($categories as $category)
+                        <option>{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 
         <h4>Giá tiền</h4>
         <hr>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="radio">
-                    <label><input type="radio" id="" name="price" value='400000'> Ít hơn 500k</label>
+                    <label><input type="radio" id="" name="price" value='1'> Ít hơn 500k</label>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="radio">
-                    <label><input type="radio" id="" name="price" value='1000000'> Từ 500k đến 3tr</label>
+                    <label><input type="radio" id="" name="price" value='2'> Tu 500k den 3tr</label>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="radio">
-                    <label><input type="radio" id="" name="price" value='4000000'> Hơn 3tr</label>
+                    <label><input type="radio" id="" name="price" value='3'> Hon 3tr</label>
                 </div>
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-success" href="{{ url('') }}"> Lọc</button>
