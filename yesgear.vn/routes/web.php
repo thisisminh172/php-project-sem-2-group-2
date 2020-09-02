@@ -36,8 +36,8 @@ Route::get('admin', 'AdminDashboardController@index');
 Route::get('admin/order', 'AdminOrderController@index');
 Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name('admin.order.cancel');
 Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success');
-Route::post('admin/order/search','AdminOrderController@search');
-Route::get('admin/order/show/{status}','AdminOrderController@show_by_status')->name('order.show.status');
+Route::post('admin/order/search', 'AdminOrderController@search');
+Route::get('admin/order/show/{status}', 'AdminOrderController@show_by_status')->name('order.show.status');
 //PRODUCT
 Route::get('admin/product', 'AdminProductController@index');
 Route::get('admin/product/add', 'AdminProductController@add');
@@ -79,12 +79,17 @@ Route::get('createUser', 'AccountController@addUser');
 
 
 
-
 // Route::get('admin/createUser', function () {
 //     return view('admin.user.createUser');
 // });
 
 Route::get('admin/user', 'AdminUserController@index');
+//root nut delete nhan vien
+Route::get('admin/user/{id}', 'AdminUserController@delete');
+//rout nut update nhan vien
+Route::get('admin/update/{id}', 'AdminUserController@update');
+Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate');
+
 //POST
 
 //--------------*****----------------

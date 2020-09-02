@@ -3,11 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminUserController extends Controller
 {
     //
-    public function index(){
-        return view('admin.user.show');
+    public function index()
+    {
+        $users = DB::table('users')->get();
+        return view('admin.user.show')->with(['users' => $users]);
+    }
+    public function delete($u)
+    {
+        DB::table('users')->where('id', intval($u))->delete();
+        return redirect()->action('AdminUserController@index');
+    }
+
+    public function update($id)
+    {
+        $u = DB::table('users')->where('id', intval($id))->first();
+        return view('admin.user.update', ['u' => $u]);
+    }
+    public function postUpdate(Request $request, $id)
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $u = DB::table('users')->where('id', intval($id))->update(['name' => $name, 'email' => $email, 'password' => $password]);
+        return redirect()->action('AdminUserController@index');
     }
 }
