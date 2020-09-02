@@ -29,7 +29,7 @@ class AccountController extends Controller
         print_r($user);
         if ($user != null && $user->password == $pwd) {
             // $name = $user->name;
-            $r = $request->session()->put('name', $user->name);
+            $request->session()->put('name', $user->name);
 
             return redirect('admin');
         } else {
