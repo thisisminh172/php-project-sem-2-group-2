@@ -42,30 +42,27 @@
         </div>
         {{-- calrosel ends--}}
         <hr>
-        <div class="product-category text-center">SẢN PHẨM BÁN CHẠY</div>
+        <div class="product-category text-center text-danger">SẢN PHẨM BÁN CHẠY</div>
         <div class="row">
-
-            <div class="col-lg-4 col-md-6 mb-4">
+            @foreach ($products as $product)
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="card h-100">
-                    <a href="{{url('product/detail/1')}}"><img class="card-img-top"
-                            src="https://hanoicomputercdn.com/media/product/250_48195_tai_nghe_zidli_zh20_led_rgb_usb_1.jpg"
+                    <a href="{{url("product/show/$product->id")}}"><img class="card-img-top"
+                            src="{{asset($product->thumbnail)}}"
                             width="525px" height="300px" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="product_detail.php">Tai nghe Zidli ZH20 7.1 Led RGB USB</a>
+                            <a href="{{url("product/show/$product->id")}}">
+                                <h6>{{ \Illuminate\Support\Str::limit($product->name, 40, $end='...') }}</h6>
+                            </a>
                         </h5>
-                        <h5>549.000đ</h5>
-
-                    </div>
-                    <div class="container text-center">
-                        <div class="row">
-                            <a href="" class="btn btn-success col py-2">Mua hàng</a>
-                            <a href="" class="btn btn-danger col py-2">Thêm vào giỏ</a>
-                        </div>
+                        <h5 class="text-danger">{{number_format($product->price,0,'','.')}}đ</h5>
 
                     </div>
                 </div>
             </div>
+            @endforeach
+
         </div>
         <!-- /.row -->
         <hr>
@@ -79,7 +76,7 @@
                     </a>
                     <div class="card-body">
                         <a href='{{url("product/show/$headphone->id")}}'>
-                            <h6>{{$headphone->name}}</h6>
+                            <h6>{{ \Illuminate\Support\Str::limit($headphone->name, 40, $end='...') }}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($headphone->price,0,'','.')}}đ</h6>
                     </div>
@@ -104,7 +101,7 @@
                     </a>
                     <div class="card-body">
                         <a href='{{url("product/show/$keyboard->id")}}'>
-                            <h6>{{$keyboard->name}}</h6>
+                            <h6>{{ \Illuminate\Support\Str::limit($keyboard->name, 40, $end='...') }}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($keyboard->price,0,'','.')}}đ</h6>
                     </div>
@@ -130,7 +127,7 @@
                     </a>
                     <div class="card-body">
                         <a href='{{url("product/show/$mouse->id")}}'>
-                            <h6>{{$mouse->name}}</h6>
+                            <h6>{{ \Illuminate\Support\Str::limit($mouse->name, 40, $end='...') }}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($mouse->price,0,'','.')}}đ</h6>
                     </div>

@@ -11,7 +11,7 @@ class AdminOrderController extends Controller
 {
     //
     public function index(){
-        $orders = Order::all();
+        $orders = Order::orderBy('id','desc')->paginate(10);
         return view('admin.order.show',compact('orders'));
     }
 
@@ -40,12 +40,12 @@ class AdminOrderController extends Controller
 
     public function search(Request $request){
         $payment_content = $request->input('payment_content');
-        $orders = Order::where('payment_content','like',"%{$payment_content}%")->get();
+        $orders = Order::where('payment_content','like',"%{$payment_content}%")->paginate(10);
         return view('admin.order.show',compact('orders'));
     }
 
     public function show_by_status($status){
-        $orders = Order::where('status',$status)->get();
+        $orders = Order::where('status',$status)->paginate(10);
         return view('admin.order.show',compact('orders'));
     }
 

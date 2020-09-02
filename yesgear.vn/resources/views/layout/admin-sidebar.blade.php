@@ -3,7 +3,7 @@
     <div id="sidebar-menu" class="">
         <ul class="list-unstyled">
             <li>
-                <i class="fas fa-book-reader"></i><a href="{{url('admin')}}"> Dashboard</a>
+                <i class="fas fa-book-reader"></i><a href="{{ url('admin') }}"> Dashboard</a>
 
             </li>
             <li>
@@ -11,8 +11,8 @@
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/product') }}">Danh sách</a></li>
                     <li><a href="{{ url('admin/product/add') }}">Thêm sản phẩm</a></li>
-                    <li><a href="{{url('admin/product/add_category')}}">Thêm loại sản phẩm</a></li>
-                    <li><a href="{{url('admin/product/add_brand')}}">Thêm thương hiệu</a></li>
+                    <li><a href="{{ url('admin/product/add_category') }}">Thêm loại sản phẩm</a></li>
+                    <li><a href="{{ url('admin/product/add_brand') }}">Thêm thương hiệu</a></li>
 
                 </ul>
 
@@ -36,6 +36,8 @@
                     <li><a href="{{ url('admin/user') }}">Danh sách</a></li>
                     <li><a href="{{ url('') }}">Gửi thông báo</a></li>
                     <li><a href="{{ url('addUser') }}">Thêm nhân viên</a></li>
+                    <li><a class="btn btn-success" href="{{ url('admin/user/logout') }}">Đăng xuất</a></li>
+
                 </ul>
             </li>
         </ul>

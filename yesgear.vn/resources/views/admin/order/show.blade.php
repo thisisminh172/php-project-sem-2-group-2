@@ -88,6 +88,9 @@
             </table>
         </div>
     </div>
+    <div class="paginate-bar">
+        {{$orders->links()}}
+    </div>
 </div>
 </div>
 

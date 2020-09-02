@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,31 +31,40 @@ Route::get('product/detail', function () {
 #********ADMIN ROUTES - starts *******
 //--------------*****----------------
 //DASHBOARD
-Route::get('admin', 'AdminDashboardController@index');
+Route::get('admin', 'AdminDashboardController@index')->middleware('checkLogin:user');
 //ORDER
 
-Route::get('admin/order', 'AdminOrderController@index');
-Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name('admin.order.cancel');
-Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success');
-Route::post('admin/order/search','AdminOrderController@search');
-Route::get('admin/order/show/{status}','AdminOrderController@show_by_status')->name('order.show.status');
+Route::get('admin/order', 'AdminOrderController@index')->middleware('checkLogin:user');
+Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name('admin.order.cancel')->middleware('checkLogin:user');
+Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success')->middleware('checkLogin:user');
+Route::post('admin/order/search', 'AdminOrderController@search')->middleware('checkLogin:user');
+Route::get('admin/order/show/{status}', 'AdminOrderController@show_by_status')->name('order.show.status')->middleware('checkLogin:user');
 //PRODUCT
-Route::get('admin/product', 'AdminProductController@index');
-Route::get('admin/product/add', 'AdminProductController@add');
-Route::post('admin/product/store', 'AdminProductController@store');
+
+Route::get('admin/product', 'AdminProductController@index')->middleware('checkLogin:user');
+Route::get('admin/product/add', 'AdminProductController@add')->middleware('checkLogin:user');
+Route::post('admin/product/store', 'AdminProductController@store')->middleware('checkLogin:user');
+
+Route::get('admin/product/update/{id}', 'AdminProductController@update')->name('admin.product.update');
+Route::post('admin/product/update/store/{id}', 'AdminProductController@update_store')->name('admin.product.update');
+
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');
 //CATEGORY
-Route::get('admin/product/add_category', 'AdminProductController@add_category');
-Route::post('admin/product/store_category', 'AdminProductController@store_category');
-Route::get('admin/product/delete_category/{category_code}', 'AdminProductController@delete_category')->name('admin.category.delete');
+Route::get('admin/product/add_category', 'AdminProductController@add_category')->middleware('checkLogin:user');
+Route::post('admin/product/store_category', 'AdminProductController@store_category')->middleware('checkLogin:user');
+Route::get('admin/product/delete_category/{category_code}', 'AdminProductController@delete_category')->name('admin.category.delete')->middleware('checkLogin:user');
 //BRAND
-Route::get('admin/product/add_brand', 'AdminProductController@add_brand');
-Route::post('admin/product/store_brand', 'AdminProductController@store_brand');
-Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete');
+Route::get('admin/product/add_brand', 'AdminProductController@add_brand')->middleware('checkLogin:user');
+Route::post('admin/product/store_brand', 'AdminProductController@store_brand')->middleware('checkLogin:user');
+Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete')->middleware('checkLogin:user');
+
+
+
+Route::get('login', 'AccountController@login');
 
 //USER
-Route::get('login', 'AccountController@login');
+
 Route::post('checkLogin', 'AccountController@checkLogin');
 
 Route::get('relogin', function () {
@@ -63,27 +73,23 @@ Route::get('relogin', function () {
 
 Route::get('addUser', function () {
     return view('admin.user.createUser');
-});
-//test logout
-use Illuminate\Http\Request;
-
+})->middleware('checkLogin:user');
 Route::get('admin/user/logout', function (Request $request) {
     $request->session()->flush();
     return view('admin.user.login');
 });
-//test logout
 
 Route::get('createUser', 'AccountController@addUser');
-
-
-
-
-// Route::get('admin/createUser', function () {
-//     return view('admin.user.createUser');
-// });
-
 Route::get('admin/user', 'AdminUserController@index');
+//root nut delete nhan vien
+Route::get('admin/user/{id}', 'AdminUserController@delete')->middleware('checkLogin:user');
+//rout nut update nhan vien
+Route::get('admin/update/{id}', 'AdminUserController@update')->middleware('checkLogin:user');
+Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate')->middleware('checkLogin:user');
+
+
 //POST
+
 
 //--------------*****----------------
 #********ADMIN ROUTES - ends *******
@@ -101,6 +107,7 @@ Route::get('/', 'ClientProductController@index');
 Route::get('home', 'ClientProductController@index');
 //=====product show
 Route::get('product/show', 'ClientProductController@show');
+Route::post('product/filter','ClientProductController@filter');
 //=====product detail
 
 Route::get('product/show/{id}', 'ClientProductController@detail')->name('product.show.detail');
@@ -132,6 +139,7 @@ Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('o
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //Comment
 Route::post('client/comment', 'CommentController@comment');
+
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 
