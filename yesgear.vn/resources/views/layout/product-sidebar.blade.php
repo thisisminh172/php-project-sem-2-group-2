@@ -1,65 +1,52 @@
 <!-- sidebar start -->
 <div id="product-sidebar-wp" class="">
-    <form class="form-horizontal" action="{{ url('client/filter') }}" method="get">
-        <h4>Thương hiệu</h4>
+    <form class="form-horizontal" action="{{ url('product/filter') }}" method="post">
+        {{csrf_field()}}
+        <h4>Lọc sản phẩm</h4>
         <hr>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <label for="sel1">Chọn thương hiệu</label>
-                <select id="du" name="brand_code" value="du" data-filter="make" class="filter-make filter form-control">
+                <label for="">Chọn thương hiệu</label>
+                <select id="" name="brand_code" value="" class="form-control">
+                    <option value="" checked>--Chọn--</option>
                     @foreach ($brands as $brand)
-                        <option>{{ $brand->name }}</option>
+                    <option value="{{$brand->code}}">{{ $brand->name }}</option>
                     @endforeach
                 </select>
             </div>
         </div>
 
-        <h4>Loại sản phẩm</h4>
         <hr>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <label for="sel1">Chọn loại sản phẩm</label>
-                <select id="du" name="category_code" value="" data-filter="make"
-                    class="filter-make filter form-control">
+                <label for="">Chọn loại sản phẩm</label>
+                <select name="category_code" id="" class="form-control">
+                    <option value="" checked>--Chọn--</option>
                     @foreach ($categories as $category)
-                        <option>{{ $category->name }}</option>
+                    <option value="{{$category->code}}">{{ $category->name }}</option>
                     @endforeach
                 </select>
             </div>
         </div>
 
-        <h4>Giá tiền</h4>
         <hr>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="" name="price" value='1'> Ít
-                        hơn 500k</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="" name="price" value='2'> Tu
-                        500k den 3tr</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="radio">
-                    <label><input type="radio" id="" name="price" value='3'> Hon
-                        3tr</label>
-                </div>
+                <label for="">Chọn khoảng tiền</label>
+                <select name="price" id="" class="form-control">
+                    <option value="" checked>--Chọn--</option>
+                    <option value="1">Dưới 500.000đ</option>
+                    <option value="2">Từ 500.000đ đến 3.000.000đ</option>
+                    <option value="3">Trên 3.000.000đ</option>
+                </select>
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success" href="{{ url('') }}"> Lọc</button>
+            <div class="col-sm-offset-2 col-sm-10 w-100">
+                <input type="submit" value="Lọc sản phẩm" name="btn_search" class="btn btn-success">
             </div>
         </div>
     </form>

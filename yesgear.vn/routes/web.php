@@ -108,6 +108,7 @@ Route::get('/', 'ClientProductController@index');
 Route::get('home', 'ClientProductController@index');
 //=====product show
 Route::get('product/show', 'ClientProductController@show');
+Route::post('product/filter','ClientProductController@filter');
 //=====product detail
 
 Route::get('product/show/{id}', 'ClientProductController@detail')->name('product.show.detail');
@@ -139,6 +140,7 @@ Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('o
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //Comment
 Route::post('client/comment', 'CommentController@comment');
+
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
 

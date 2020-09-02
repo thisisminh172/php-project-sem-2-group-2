@@ -5,15 +5,17 @@
 <div class="container">
     <div class="row">
         {{-- san pham starts --}}
+
         @foreach ($products as $product)
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 py-1">
+            <div class="card card-product">
                 <a href='{{ url("product/show/$product->id") }}'>
                     <img class="card-img-top" src="{{ asset($product->thumbnail) }}" alt="">
                 </a>
                 <div class="card-body">
                     <a href='{{ url("product/show/$product->id") }}'>
-                        <h6>{{ $product->name }}</h6>
+                        <h6>{{ \Illuminate\Support\Str::limit($product->name, 40, $end='...') }}</h6>
                     </a>
                     <h6 class="text-danger">{{ number_format($product->price, 0, '', '.') }}đ</h6>
 
@@ -22,7 +24,8 @@
                 @if ($product->quantity <=5) <div class="container-fluid pb-2">
                     <div class="row btn-group">
                         <div class="col">
-                            <a href="{{url('contact')}}" class="btn-buy btn btn-outline-warning p-0">Liên hệ đặt hàng</a>
+                            <a href="{{url('contact')}}" class="btn-buy btn btn-outline-warning p-0">Liên hệ đặt
+                                hàng</a>
                         </div>
                     </div>
             </div>
@@ -46,10 +49,13 @@
 
     </div>
     @endforeach
-    {{-- san pham ends --}}
 
 </div>
+
 </div>
+{{-- san pham ends --}}
+
+
 {{-- ajax of cart store without reload the page - starts--}}
 <script>
     $(document).ready(function() {

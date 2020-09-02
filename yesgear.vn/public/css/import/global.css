@@ -12,3 +12,11 @@ a:hover {
     text-decoration: none;
     color: black;
 }
+
+.card-product {
+    height: 380px;
+}
+
+.card-img-top {
+    height: 13rem;
+}

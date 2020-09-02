@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\CustomClass\ShowProductWithCondition;
-use App\Product;
 use App\Brand;
 use App\Category;
-use DB;
+use App\CustomClass\ShowProductWithCondition;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class ClientProductController extends Controller
@@ -33,8 +33,6 @@ class ClientProductController extends Controller
         return view('client.product.show')->with(['products' => $products, 'brands' => $brands, 'categories' => $categories]);
     }
 
-
-
     public function detail($id)
     {
         $product = Product::find($id);
@@ -56,41 +54,49 @@ class ClientProductController extends Controller
             echo $output;
         }
     }
+
     //ham chay filter product
-    public function getProductFilter(Request $request)
+    public function filter(Request $request)
     {
-        $product = Product::query();
-
-        // $brand_codes = $request->get('brand_code');
-        // dd($brand_codes);
-        // foreach ($brand_codes as $brand_code) {
-        //     echo $brand_code;
-        //     $products = Product::where('brand_code', $brand_code)->get();
-        // }
-
-        if ($request->has('brand_code')) {
-            $product->where('brand_code', $request->brand_code);
+        $input = $request->all();
+        // dd($request->has('brand_code'));
+        $temp = 0;
+        $query = Product::query();
+        if (isset($input['brand_code'])) {
+            $query = $query->where('brand_code', $input['brand_code']);
+            $temp++;
         }
 
-        if ($request->has('category_code')) {
-            $product->where('category_code', $request->category_code);
+        if (isset($input['category_code'])) {
+            $query = $query->where('category_code' , $input['category_code']);
+            $temp++;
         }
-        if ($request->has('price')) {
-            $price = $request->input('price');
-            if ($price == 1) {
-                $product->where('price', '<', 500000);
+        if (isset($input['price'])) {
+            if ($input['price'] == 1) {
+                $query = $query->where('price','<',500000);
+                $temp++;
             }
-            if ($price == 2) {
-                $product->where('price', '>=', 500000)
-                    ->where('price', '<', 3000000);
+            if ($input['price'] == 2) {
+                $query = $query->where('price','>=',500000)->where('price','<',3000000);
+                $temp++;
             }
-            if ($price == 3) {
-                $product->where('price', '>=', 3000000);
+            if ($input['price'] == 3) {
+                $query = $query->where('price','>=',3000000);
+                $temp++;
             }
+
         }
-        $products =  $product->get();
+        // $products = $query->get();
+
+        if($temp == 0){
+            $products = Product::all();
+        }else{
+            $products = $query->get();
+        }
+
+
         $brands = Brand::all();
         $categories = Category::all();
-        return view('client.product.show', ['products' => $products, 'brands' => $brands, 'categories' => $categories]);
+        return view('client.product.show', compact('brands', 'products', 'categories'));
     }
 }
