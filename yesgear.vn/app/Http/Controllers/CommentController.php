@@ -29,6 +29,7 @@ class CommentController extends Controller
     }
 
     public function replyCmt(Request $request){
+        $product_id = $request->input('product_id');
         $comment_id = $request->input('comment_id');
         $commenter = new Commenter();
         $commenter->name = $request->post('repname');
@@ -42,5 +43,6 @@ class CommentController extends Controller
         $rep_comment->content = $request->post('repcontent');
         $rep_comment->name = $commenter->name;
         $rep_comment->save();
+        return redirect()->action('ClientProductController@detail',$product_id);
     }
 }

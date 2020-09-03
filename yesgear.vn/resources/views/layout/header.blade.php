@@ -82,32 +82,32 @@
             position: absolute;
             top: 30px;
             left: 0px;
-            border: 1px solid #949494;
-            padding: 1rem;
-
-            background-color: #949494;
-            opacity: 0.9;
+            border: 1px solid #dddddd;
+            background-color: #ffffff;
             z-index: 1600;
-            border-radius: 10px;
             width: 250px;
-            /* display: none; */
+            box-shadow: 1px 1px 2px #9b9b9b;
+            display: none;
+            transition: 0.3s;
+
         }
-        #dropdown-link:hover>#wp-dropdown-menu{
+
+        #dropdown-link:hover>#wp-dropdown-menu {
             display: block;
         }
 
         #dropdown-link #wp-dropdown-menu li {
-            text-align: center;
             display: block;
+            margin-bottom: 0.5rem;
+            margin-left: 1rem;
         }
-        #dropdown-link #wp-dropdown-menu li:hover{
-            background-color:#c0c0c0;
-            border-radius: 5px;
+
+        #dropdown-link #wp-dropdown-menu li:hover a {
+            color: #ffc107;
         }
+
         #wp-dropdown-menu li a {
-            font-size: 1.5rem;
-            padding: 1rem 3rem 1rem 3rem;
-            color: white;
+            font-size: 1.2rem;
         }
     </style>
     <!-- navigation -->
@@ -160,26 +160,26 @@
                 <div class="row">
                     <div class="col-12">
                         <ul class="list-unstyled">
-                            <li class="d-inline-block"><a href="{{url('home')}}"
+                            <li class="d-inline-block pb-2"><a href="{{url('home')}}"
                                     class="text-light font-weight-bold mr-5">TRANG
                                     CHỦ</a></li>
-                            <li id="dropdown-link" class="d-inline-block"><a href="{{url('product/show')}}"
+                            <li id="dropdown-link" class="d-inline-block pb-2"><a href="{{url('product/show')}}"
                                     class="text-warning font-weight-bold mr-5">SẢN PHẨM</a>
                                 <ul id="wp-dropdown-menu" class="" style="list-style-type: none;">
-                                    <li><a href="">ban phim</a></li>
-                                    <li><a href="">tai nghe</a></li>
-                                    <li><a href="">chuot</a></li>
+                                    <li><a href="{{url('product/show/cat/bp')}}"><i class="far fa-keyboard"></i> Bàn phím gaming</a></li>
+                                    <li><a href="{{url('product/show/cat/tn')}}"><i class="fas fa-headset"></i> Tai nghe gaming</a></li>
+                                    <li><a href="{{url('product/show/cat/ch')}}"><i class="fas fa-mouse-pointer"></i> Chuột gaming</a></li>
                                 </ul>
                             </li>
-                            <li class="d-inline-block"><a href="{{url('intro')}}"
+                            <li class="d-inline-block pb-2"><a href="{{url('intro')}}"
                                     class="text-light font-weight-bold mr-5">GIỚI THIỆU</a>
                             </li>
-                            <li class="d-inline-block"><a href="{{url('news')}}"
+                            <li class="d-inline-block pb-2"><a href="{{url('news')}}"
                                     class="text-light font-weight-bold mr-5">TIN TỨC</a></li>
-                            <li class="d-inline-block"><a href="{{url('contact')}}"
+                            <li class="d-inline-block pb-2"><a href="{{url('contact')}}"
                                     class="text-light font-weight-bold mr-5">LIÊN
                                     HỆ</a></li>
-                            <li class="d-inline-block">
+                            <li class="d-inline-block pb-2">
                                 <div class="form-group" style="position: relative">
                                     <input type="text" id="search-box" class="form-control"
                                         placeholder="Nhập tên sản phẩm muốn tìm kiếm...">

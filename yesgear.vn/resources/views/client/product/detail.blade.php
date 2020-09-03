@@ -16,9 +16,9 @@ $(document).ready(function() {
 });
 </script>
 <style>
-    .checked{
-        color: orange;
-    }
+.checked {
+    color: orange;
+}
 </style>
 <div class="container">
     <div class="row">
@@ -42,31 +42,30 @@ $(document).ready(function() {
         <div class="col-12 col-lg-6 mt-3">
             <h3 class="pb-3">{{$product->name}}</h3>
 
-            @for ($i = 1; $i <= $average_rate; $i++)
-                <i class="fas fa-star checked"></i>
+            @for ($i = 1; $i <= $average_rate; $i++) <i class="fas fa-star checked"></i>
 
-            @endfor
-            @for ($r = 1; $r <= 5-$average_rate; $r++)
-                    <i class="fas fa-star"></i>
-            @endfor
-            <p class="d-inline-block">{{$count_vote}} đánh giá</p>
-            <h3 class="text-danger">{{number_format($product->price,0,'','.')}}đ</h3>
-            <div class="why-us">
-                <h5>Vì sao chọn Chúng tôi?</h5>
-                <ul>
-                    <li>Sản phẩm chính hãng 100%</li>
-                    <li> Bảo hành 6 tháng (Xem chi tiết)</li>
-                    <li>1 đổi 1 trong 7 ngày (Xem chi tiết)</li>
-                    <li>Giao hàng tận nơi toàn quốc</li>
-                    <li>Free ship đơn hàng >200k nội thành TP.HCM, nhận trong ngày</li>
-                </ul>
-            </div>
-            <p class="mt-5">Mã sản phẩm: <b> {{$product->category_code}}{{$product->brand_code}}{{$product->id}}</b></p>
-            <p>Đang còn: <span class="text-success font-weight-bold">{{$product->quantity}} sản phẩm</span></p>
-            @if ($product->quantity <=5) <div class="row">
-                <div class="col">
-                    <a href="{{url('contact')}}" class="btn btn-warning w-100">Liên hệ đặt hàng</a>
-                </div>
+                @endfor
+                @for ($r = 1; $r <= 5-$average_rate; $r++) <i class="fas fa-star"></i>
+                    @endfor
+                    <p class="d-inline-block">{{$count_vote}} đánh giá</p>
+                    <h3 class="text-danger">{{number_format($product->price,0,'','.')}}đ</h3>
+                    <div class="why-us">
+                        <h5>Vì sao chọn Chúng tôi?</h5>
+                        <ul>
+                            <li>Sản phẩm chính hãng 100%</li>
+                            <li> Bảo hành 6 tháng (Xem chi tiết)</li>
+                            <li>1 đổi 1 trong 7 ngày (Xem chi tiết)</li>
+                            <li>Giao hàng tận nơi toàn quốc</li>
+                            <li>Free ship đơn hàng >200k nội thành TP.HCM, nhận trong ngày</li>
+                        </ul>
+                    </div>
+                    <p class="mt-5">Mã sản phẩm: <b>
+                            {{$product->category_code}}{{$product->brand_code}}{{$product->id}}</b></p>
+                    <p>Đang còn: <span class="text-success font-weight-bold">{{$product->quantity}} sản phẩm</span></p>
+                    @if ($product->quantity <=5) <div class="row">
+                        <div class="col">
+                            <a href="{{url('contact')}}" class="btn btn-warning w-100">Liên hệ đặt hàng</a>
+                        </div>
         </div>
         @else
         <div class="row">
@@ -107,40 +106,55 @@ $(document).ready(function() {
                 </div>
                 <div id="comment" class="container tab-pane fade"><br>
                     <!-- form bình luận và đánh giá -->
-                    <div class="stars">
-                        <form action="">
-                            <input class="fas fa-star" id="star-5" type="radio" name="star" />
-                            <label class="fas fa-star" for="star-5"></label>
-                            <input class="fas fa-star" id="star-4" type="radio" name="star" />
-                            <label class="fas fa-star" for="star-4"></label>
-                            <input class="fas fa-star" id="star-3" type="radio" name="star" />
-                            <label class="fas fa-star" for="star-3"></label>
-                            <input class="fas fa-star" id="star-2" type="radio" name="star" />
-                            <label class="fas fa-star" for="star-2"></label>
-                            <input class="fas fa-star" id="star-1" type="radio" name="star" />
-                            <label class="fas fa-star" for="star-1"></label>
-                        </form>
-                    </div>
                     <div class="container">
-                        <form method="post" action="{{url('client/comment')}}">
+                        <form method="post" action="{{url('client/comment')}}" class="alert alert-light">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <div class="form-group">
-                                <label for="name">Họ và tên:</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <!-- <label>5</label><input type="radio" name="votes" value="5"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+
+
+                                <label>Tốt</label><input type="radio" name="votes" value="4"><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+
+
+                                <label>Bình thường</label><input type="radio" name="votes" value="3"><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+
+                                <label>Không tốt</label><input type="radio" name="votes" value="2"><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+
+
+                                <label>Rất tệ</label><input type="radio" name="votes" value="1"><i> -->
+                                <label>Đánh giá sản phẩm: </label>
+                                <label class="radio-inline px-1"><input type="radio" name="votes" value="5" checked>5<i
+                                        class="fas fa-star checked"></i></label>
+                                <label class="radio-inline px-1"><input type="radio" name="votes" value="4">4<i
+                                        class="fas fa-star checked"></i></label>
+                                <label class="radio-inline px-1"><input type="radio" name="votes" value="3">3<i
+                                        class="fas fa-star checked"></i></label>
+                                <label class="radio-inline px-1"><input type="radio" name="votes" value="2">2<i
+                                        class="fas fa-star checked"></i></label>
+                                <label class="radio-inline px-1"><input type="radio" name="votes" value="1">1<i
+                                        class="fas fa-star checked"></i></label>
+                            </div>
+
+                            <div class="form-group" style="width: 400px;">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên..." required>
+                            </div>
+                            <div class="form-group" style="width: 400px;">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email..." required>
+                            </div>
+                            <div class="form-group" style="width: 400px;">
+                                <input type="number" class="form-control" id="phone" name="phone" placeholder="Số điện thoại liên hệ..." required>
+                            </div>
+                            <div class="form-group text-right" style="width: 400px;">
+                                <textarea class="form-control" row="10" id="cm" name="content" placeholder="Nhập bình luận (tối đa 250 ký tự)..."></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Số điện thoại:</label>
-                                <input type="number" class="form-control" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cm">Bình luận:</label>
-                                <textarea class="form-control" row="10" id="cm" name="content"></textarea>
-                            </div>
-                            <div class="form-group text-right">
                                 <button type="submit" class="btn btn-success">Gửi</button>
                             </div>
                             {{csrf_field()}}
@@ -166,6 +180,8 @@ $(document).ready(function() {
                                                     <form method="post" action="{{url('client/repcomment')}}">
                                                         <input type="hidden" name="comment_id"
                                                             value="{{ $comment->id }}">
+                                                        <input type="hidden" name="product_id"
+                                                            value="{{ $product->id }}">
                                                         <div class="form-group">
                                                             <label for="repname">Họ và tên:</label>
                                                             <input type="text" class="form-control" id="repname"
@@ -247,7 +263,7 @@ $(document).ready(function() {
 
     $parent_com = $(".wp-comment li div");
     $parent_com.children('a').click(function() {
-         $(this).parent("div").children("div").toggle();
+        $(this).parent("div").children("div").toggle();
     });
 
 })

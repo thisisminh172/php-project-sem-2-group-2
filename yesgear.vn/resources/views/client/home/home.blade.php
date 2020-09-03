@@ -86,7 +86,7 @@
         </div>
         <div class="row text-center mt-1">
             <div class="col">
-                <a href="" class="btn btn-warning w-25 ">Xem tất cả</a>
+                <a href="{{url('product/show/cat/tn')}}" class="btn btn-warning w-25 ">Xem tất cả</a>
             </div>
         </div>
         <!-- /.row -->
@@ -111,7 +111,7 @@
         </div>
         <div class="row text-center mt-1">
             <div class="col">
-                <a href="" class="btn btn-warning w-25 ">Xem tất cả</a>
+                <a href="{{url('product/show/cat/bp')}}" class="btn btn-warning w-25 ">Xem tất cả</a>
             </div>
         </div>
 
@@ -137,7 +137,7 @@
         </div>
         <div class="row text-center mb-2 mt-1">
             <div class="col">
-                <a href="" class="btn btn-warning w-25 ">Xem tất cả</a>
+                <a href="{{url('product/show/cat/ch')}}" class="btn btn-warning w-25 ">Xem tất cả</a>
             </div>
         </div>
         <!-- /.row -->
