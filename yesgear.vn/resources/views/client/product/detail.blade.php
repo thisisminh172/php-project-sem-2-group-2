@@ -15,6 +15,11 @@ $(document).ready(function() {
     });
 });
 </script>
+<style>
+    .checked{
+        color: orange;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6 mt-3">
@@ -35,7 +40,16 @@ $(document).ready(function() {
             </div>
         </div>
         <div class="col-12 col-lg-6 mt-3">
-            <h3>{{$product->name}}</h3>
+            <h3 class="pb-3">{{$product->name}}</h3>
+
+            @for ($i = 1; $i <= $average_rate; $i++)
+                <i class="fas fa-star checked"></i>
+
+            @endfor
+            @for ($r = 1; $r <= 5-$average_rate; $r++)
+                    <i class="fas fa-star"></i>
+            @endfor
+            <p class="d-inline-block">{{$count_vote}} đánh giá</p>
             <h3 class="text-danger">{{number_format($product->price,0,'','.')}}đ</h3>
             <div class="why-us">
                 <h5>Vì sao chọn Chúng tôi?</h5>

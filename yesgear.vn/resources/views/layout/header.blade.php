@@ -73,6 +73,34 @@
         .dropdown-cart-list>.button-cart>a {
             width: 300px;
         }
+
+        #dropdown-link {
+            position: relative;
+        }
+
+        #dropdown-link #wp-dropdown-menu {
+            position: absolute;
+            top: 30px;
+            left: 0px;
+            border: 1px solid #949494;
+            padding: 1rem;
+            background-color: #949494;
+            opacity: 0.9;
+            z-index: 1600;
+            border-radius: 10px;
+            width: 250px;
+
+        }
+
+        #dropdown-link #wp-dropdown-menu li {
+            text-align: center;
+        }
+
+        #wp-dropdown-menu li a {
+            font-size: 1.5rem;
+            padding: 1rem;
+            color: white;
+        }
     </style>
     <!-- navigation -->
     <div id="header-wp">
@@ -127,8 +155,14 @@
                             <li class="d-inline-block"><a href="{{url('home')}}"
                                     class="text-light font-weight-bold mr-5">TRANG
                                     CHỦ</a></li>
-                            <li class="d-inline-block"><a href="{{url('product/show')}}"
-                                    class="text-warning font-weight-bold mr-5">SẢN PHẨM</a></li>
+                            <li id="dropdown-link" class="d-inline-block"><a href="{{url('product/show')}}"
+                                    class="text-warning font-weight-bold mr-5">SẢN PHẨM</a>
+                                <ul id="wp-dropdown-menu" class="" style="list-style-type: none;">
+                                    <li><a href="">ban phim</a></li>
+                                    <li><a href="">tai nghe</a></li>
+                                    <li><a href="">chuot</a></li>
+                                </ul>
+                            </li>
                             <li class="d-inline-block"><a href="{{url('intro')}}"
                                     class="text-light font-weight-bold mr-5">GIỚI THIỆU</a>
                             </li>

@@ -51,23 +51,21 @@ class ClientProductController extends Controller
         $product = Product::find($id);
         $images = json_decode($product->image_url);
 
-        //comment function
         $comments = Comment::where('product_id', $id)->get();
-        // foreach ($comments as $comment){
-        //     $commenter = Comment::where('commenter_id', 'id')->commenter;
-        //     return $commenter;
-        //     $commenter_name = $commenter->name;
-        //     $comment_detail[] = array(
-        //         'name'=>$commenter_name,
-        //         'content'=>$comment->content,
-        //     );
-        // }
-        // dd($comment_detail);
+        $count_comment_has_rate = Comment::where('product_id', $id)->whereNotNull('votes')->count();
+        $count_vote = $count_comment_has_rate;
+        if($count_comment_has_rate ==0){
+            $count_comment_has_rate++;
+        }
+        $rates = 0;
+        foreach($comments as $comment){
+            if($comment->votes != null){
+                $rates += $comment->votes;
+            }
+        }
+        $average_rate = round($rates/$count_comment_has_rate);
 
-
-        // $comments = Commenter::where('id', 'commenter_id')->get();
-        // $comments = Commenter::find($id->$name)->$comments;
-        return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments]);
+        return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments,'average_rate'=>$average_rate,'count_vote'=>$count_vote]);
     }
 
     public function find(Request $request)
