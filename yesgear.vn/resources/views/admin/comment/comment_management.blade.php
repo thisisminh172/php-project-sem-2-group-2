@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 alert alert-light">
-                    <h3>Danh sách bình luận</a>h3>
+                    <h3>Danh sách bình luận</a><h3>
                 </div>
             </div>
             <div class="row">
@@ -16,20 +16,24 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
+                                <th>Comementer ID</th>
+                                <th>Content</th>
+                                <th>Votes</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
+                                <th>Sản phẩm bình luận<th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $u)
+                            @foreach ($comments as $cmt)
                                 <tr>
-                                    <td>{{ $u->id }}</td>
-                                    <td>{{ $u->email }}</td>
-                                    <td>{{ $u->name }}</td>
-                                    <td>{{ $u->password }}</td>
-                                    <td><a href="{{ url("admin/update/{$u->id}") }}" class="btn btn-info">Update</a>
-                                        <a href="{{ url("admin/user/{$u->id}") }}" class="btn btn-danger">Delete</a>
+                                    <td>{{ $cmt->id }}</td>
+                                    <td>{{ $cmt->commenter_id }}</td>
+                                    <td>{{ $cmt->content }}</td>
+                                    <td>{{ $cmt->votes }}</td>
+                                    <td>{{ $cmt->name }}</td>
+                                    <td>{{ $cmt->product_id }}</td>
+                                    <td><a href="#" class="btn btn-info">Update</a>
+                                        <a href="#" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
