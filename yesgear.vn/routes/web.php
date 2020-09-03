@@ -46,7 +46,7 @@ Route::get('admin/product/add', 'AdminProductController@add')->middleware('check
 Route::post('admin/product/store', 'AdminProductController@store')->middleware('checkLogin:user');
 
 Route::get('admin/product/update/{id}', 'AdminProductController@update')->name('admin.product.update');
-Route::post('admin/product/update/store/{id}', 'AdminProductController@update_store')->name('admin.product.update');
+Route::post('admin/product/update/store/{id}', 'AdminProductController@update_store')->name('admin.product.update.store');
 
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');

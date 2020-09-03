@@ -84,21 +84,29 @@
             left: 0px;
             border: 1px solid #949494;
             padding: 1rem;
+
             background-color: #949494;
             opacity: 0.9;
             z-index: 1600;
             border-radius: 10px;
             width: 250px;
-
+            /* display: none; */
+        }
+        #dropdown-link:hover>#wp-dropdown-menu{
+            display: block;
         }
 
         #dropdown-link #wp-dropdown-menu li {
             text-align: center;
+            display: block;
         }
-
+        #dropdown-link #wp-dropdown-menu li:hover{
+            background-color:#c0c0c0;
+            border-radius: 5px;
+        }
         #wp-dropdown-menu li a {
             font-size: 1.5rem;
-            padding: 1rem;
+            padding: 1rem 3rem 1rem 3rem;
             color: white;
         }
     </style>

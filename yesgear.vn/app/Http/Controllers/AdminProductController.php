@@ -109,6 +109,13 @@ class AdminProductController extends Controller
         }else{
             $product->image_url = $product->image_url;
         }
+        $product->name = $input['name'];
+        $product->brand_code = $input['brand_code'];
+        $product->category_code = $input['category_code'];
+        $product->price = $input['price'];
+        $product->quantity = $input['quantity'];
+        $product->describe = $input['describe'];
+        $product->tech_info = $input['tech_info'];
 
         $product->save();
 

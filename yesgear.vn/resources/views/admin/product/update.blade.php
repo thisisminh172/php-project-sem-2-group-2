@@ -44,7 +44,7 @@
                         @foreach ($images as $image)
                         <img src="{{asset($image)}}" alt="" width="100px">
                         @endforeach
-                        <input type="file" name="product_image[]" id="" class="form-control-file">
+                        <input type="file" name="product_image[]" id="" class="form-control-file" multiple>
 
                     </div>
                     <div class="form-group">
