@@ -135,16 +135,16 @@ $(document).ready(function() {
                             @foreach ($comments as $comment)
                             <ul>
                                 <i><b>{{ $comment->name }}</b> |</i>
-                                <i><span>Bình luận ngày:
-                                        {{date('d/m/Y H:i',strtotime($comment->created_at))}}</span></i>
+                                <i><span>{{date('d/m/Y H:i',strtotime($comment->created_at))}}</span></i>
                                 <br>
                                 <hr>
                                 &ensp;<span>{{ $comment->content }}</span><br>
+                                <!-- reply comment -->
                                 &emsp;<a href="javascript:void(0)" id="replyCmt"><u><i>Trả lời</i></u></a>
                                 <div id="replyForm" style="display: none;">
                                     <div class="container">
-                                        <form method="post" action="{{url('client/comment')}}">
-                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <form method="post" action="{{url('client/repcomment')}}">
+                                            <input type="hidden" name="comment_id" value="{{ $comment->id }}">
                                             <div class="form-group">
                                                 <label for="repname">Họ và tên:</label>
                                                 <input type="text" class="form-control" id="repname" name="repname"

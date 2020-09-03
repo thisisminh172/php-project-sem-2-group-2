@@ -29,10 +29,18 @@ class CommentController extends Controller
     }
 
     public function replyCmt(Request $request){
-        $rep_commenter = new Commenter();
-        $rep_commenter->name = $request->post('repname');
-        $rep_commenter->email = $request->post('repemail');
-        $rep_commenter->phone = $request->post('repphone');
-        $rep_commenter->save();
+        $comment_id = $request->input('comment_id');
+        $commenter = new Commenter();
+        $commenter->name = $request->post('repname');
+        $commenter->email = $request->post('repemail');
+        $commenter->phone = $request->post('repphone');
+        $commenter->save();
+
+        $rep_comment = new CommentRep();
+        $rep_comment->commenter_id = $commenter->id;
+        $rep_comment->comment_id = $comment_id;
+        $rep_comment->content = $request->post('repcontent');
+        $rep_comment->name = $commenter->name;
+        $rep_comment->save();
     }
 }

@@ -139,6 +139,7 @@ Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('o
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //Comment
 Route::post('client/comment', 'CommentController@comment');
+Route::post('client/repcomment','CommentController@replyCmt');
 
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******
