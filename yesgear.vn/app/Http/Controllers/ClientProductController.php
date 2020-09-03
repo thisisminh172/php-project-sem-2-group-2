@@ -46,6 +46,13 @@ class ClientProductController extends Controller
         return view('client.product.show')->with(['products' => $products, 'brands' => $brands, 'categories' => $categories]);
     }
 
+    public function show_by_category($category){
+        $products = Product::where('category_code',$category)->get();
+        $brands = Brand::all();
+        $categories = Category::all();
+        return view('client.product.show')->with(['products' => $products, 'brands' => $brands, 'categories' => $categories]);
+    }
+
     public function detail($id)
     {
         $product = Product::find($id);

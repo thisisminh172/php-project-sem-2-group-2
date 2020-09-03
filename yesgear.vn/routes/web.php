@@ -108,6 +108,7 @@ Route::get('home', 'ClientProductController@index');
 //=====product show
 Route::get('product/show', 'ClientProductController@show');
 Route::post('product/filter','ClientProductController@filter');
+Route::get('product/show/cat/{category}','ClientProductController@show_by_category');
 //=====product detail
 
 Route::get('product/show/{id}', 'ClientProductController@detail')->name('product.show.detail');
