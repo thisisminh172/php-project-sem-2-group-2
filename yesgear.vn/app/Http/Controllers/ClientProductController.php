@@ -53,20 +53,7 @@ class ClientProductController extends Controller
 
         //comment function
         $comments = Comment::where('product_id', $id)->get();
-        // foreach ($comments as $comment){
-        //     $commenter = Comment::where('commenter_id', 'id')->commenter;
-        //     return $commenter;
-        //     $commenter_name = $commenter->name;
-        //     $comment_detail[] = array(
-        //         'name'=>$commenter_name,
-        //         'content'=>$comment->content,
-        //     );
-        // }
-        // dd($comment_detail);
-
-
-        // $comments = Commenter::where('id', 'commenter_id')->get();
-        // $comments = Commenter::find($id->$name)->$comments;
+        
         return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments]);
     }
 

@@ -95,16 +95,16 @@ $(document).ready(function() {
                     <!-- form bình luận và đánh giá -->
                     <div class="stars">
                         <form action="">
-                            <input class="star star-5" id="star-5" type="radio" name="star" />
-                            <label class="star star-5" for="star-5"></label>
-                            <input class="star star-4" id="star-4" type="radio" name="star" />
-                            <label class="star star-4" for="star-4"></label>
-                            <input class="star star-3" id="star-3" type="radio" name="star" />
-                            <label class="star star-3" for="star-3"></label>
-                            <input class="star star-2" id="star-2" type="radio" name="star" />
-                            <label class="star star-2" for="star-2"></label>
-                            <input class="star star-1" id="star-1" type="radio" name="star" />
-                            <label class="star star-1" for="star-1"></label>
+                            <input class="fas fa-star" id="star-5" type="radio" name="star" />
+                            <label class="fas fa-star" for="star-5"></label>
+                            <input class="fas fa-star" id="star-4" type="radio" name="star" />
+                            <label class="fas fa-star" for="star-4"></label>
+                            <input class="fas fa-star" id="star-3" type="radio" name="star" />
+                            <label class="fas fa-star" for="star-3"></label>
+                            <input class="fas fa-star" id="star-2" type="radio" name="star" />
+                            <label class="fas fa-star" for="star-2"></label>
+                            <input class="fas fa-star" id="star-1" type="radio" name="star" />
+                            <label class="fas fa-star" for="star-1"></label>
                         </form>
                     </div>
                     <div class="container">
@@ -133,45 +133,57 @@ $(document).ready(function() {
                         </form>
                         <div class="col-12 col-lg-9">
                             @foreach ($comments as $comment)
-                            <ul>
-                                <i><b>{{ $comment->name }}</b> |</i>
-                                <i><span>{{date('d/m/Y H:i',strtotime($comment->created_at))}}</span></i>
-                                <br>
-                                <hr>
-                                &ensp;<span>{{ $comment->content }}</span><br>
-                                <!-- reply comment -->
-                                &emsp;<a href="javascript:void(0)" id="replyCmt"><u><i>Trả lời</i></u></a>
-                                <div id="replyForm" style="display: none;">
-                                    <div class="container">
-                                        <form method="post" action="{{url('client/repcomment')}}">
-                                            <input type="hidden" name="comment_id" value="{{ $comment->id }}">
-                                            <div class="form-group">
-                                                <label for="repname">Họ và tên:</label>
-                                                <input type="text" class="form-control" id="repname" name="repname"
-                                                    required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="repemail">Email:</label>
-                                                <input type="email" class="form-control" id="repemail" name="repemail"
-                                                    required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="repphone">Số điện thoại:</label>
-                                                <input type="number" class="form-control" id="repphone" name="repphone"
-                                                    required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="cm">Bình luận:</label>
-                                                <textarea class="form-control" row="10" id="repcm"
-                                                    name="repcontent"></textarea>
-                                            </div>
-                                            <div class="form-group text-right">
-                                                <button type="submit" class="btn btn-success">Gửi</button>
-                                            </div>
-                                            {{csrf_field()}}
-                                        </form>
+                            <ul class="font-weight-normal">
+                                <div class="alert alert-dark">
+                                    <i><b>{{ $comment->name }}</b> |</i>
+                                    <i><span>{{date('d/m/Y H:i',strtotime($comment->created_at))}}</span></i>
+                                    <br>
+                                    <hr>
+                                    &ensp;<span>{{ $comment->content }}</span><br>
+                                    <!-- reply comment -->
+                                    <a href="javascript:void(0)" id="replyCmt"><u><i>
+                                                <font color="blue" style="margin-left:24rem;">Trả lời</font>
+                                            </i></u></a>
+                                    <div id="replyForm" style="display: none;">
+                                        <div class="container">
+                                            <form method="post" action="{{url('client/repcomment')}}">
+                                                <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                                <div class="form-group">
+                                                    <label for="repname">Họ và tên:</label>
+                                                    <input type="text" class="form-control" id="repname" name="repname"
+                                                        required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="repemail">Email:</label>
+                                                    <input type="email" class="form-control" id="repemail"
+                                                        name="repemail" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="repphone">Số điện thoại:</label>
+                                                    <input type="number" class="form-control" id="repphone"
+                                                        name="repphone" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="cm">Bình luận:</label>
+                                                    <textarea class="form-control" row="10" id="repcm"
+                                                        name="repcontent"></textarea>
+                                                </div>
+                                                <div class="form-group text-right">
+                                                    <button type="submit" class="btn btn-success">Gửi</button>
+                                                </div>
+                                                {{csrf_field()}}
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
+                                <ul style="margin-left:6rem;">
+                                    @foreach($comment->comment_reply as $reply)
+                                    <li class="alert alert-secondary">
+                                        <span class="font-weight-bold">{{$reply->name}}:</span>
+                                        {{$reply->content}}
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </ul>
                             @endforeach
                         </div>
@@ -225,7 +237,7 @@ $(document).ready(function() {
 </script>
 <script>
 $('body').on('click', '#replyCmt', function() {
-    $('#replyForm').show();
+    $('#replyForm').toggle();
 })
 </script>
 <!-- content end -->
