@@ -24,6 +24,7 @@ class ClientProductController extends Controller
         $product_id_list = OrderDetail::selectRaw("COUNT('id') as number_orders, product_id")
         ->groupBy('product_id')
         ->orderBy('number_orders','desc')
+        ->limit(4)
         ->get();
         $products = [];
         foreach($product_id_list as $product_id){
@@ -49,7 +50,7 @@ class ClientProductController extends Controller
     {
         $product = Product::find($id);
         $images = json_decode($product->image_url);
-        
+
         //comment function
         $comments = Comment::where('product_id', $id)->get();
         // foreach ($comments as $comment){
@@ -62,7 +63,7 @@ class ClientProductController extends Controller
         //     );
         // }
         // dd($comment_detail);
-        
+
 
         // $comments = Commenter::where('id', 'commenter_id')->get();
         // $comments = Commenter::find($id->$name)->$comments;
