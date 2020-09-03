@@ -31,6 +31,12 @@
                 </ul>
             </li>
             <li>
+                <i class="far fa-folder"></i><a href=""> Quản lý bình luận</a>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url('admin/comment') }}">Danh sách bình luận</a></li>
+                </ul>
+            </li>
+            <li>
                 <i class="far fa-folder"></i><a href="{{ url('admin/user') }}"> Users</a>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/user') }}">Danh sách</a></li>

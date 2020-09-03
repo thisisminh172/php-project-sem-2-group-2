@@ -58,8 +58,8 @@ Route::get('admin/product/delete_category/{category_code}', 'AdminProductControl
 Route::get('admin/product/add_brand', 'AdminProductController@add_brand')->middleware('checkLogin:user');
 Route::post('admin/product/store_brand', 'AdminProductController@store_brand')->middleware('checkLogin:user');
 Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete')->middleware('checkLogin:user');
-
-
+//Comment management
+Route::get('admin/comment', 'AdminCommentManagementController@show');
 
 Route::get('login', 'AccountController@login');
 
