@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedBigInteger('commenter_id');
             $table->string('content',250);
             $table->tinyInteger('votes')->nullable();
+            $table->string('name',100);
             $table->unsignedBigInteger('product_id');
             $table->timestamps();
             $table->foreign('commenter_id')->references('id')->on('commenters')->onDelete('cascade');

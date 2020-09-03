@@ -7,12 +7,8 @@ use App\Category;
 use App\CustomClass\ShowProductWithCondition;
 use App\OrderDetail;
 use App\Product;
-<<<<<<< HEAD
-use DB;
 use App\Comment;
 use App\Commenter;
-=======
->>>>>>> db555972dd71cfc7561087856f8c45b8f4804f67
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -56,16 +52,16 @@ class ClientProductController extends Controller
         
         //comment function
         $comments = Comment::where('product_id', $id)->get();
-        foreach ($comments as $comment){
-            $commenter = Comment::where('commenter_id', 'id')->commenter;
-            return $commenter;
-            $commenter_name = $commenter->name;
-            $comment_detail[] = array(
-                'name'=>$commenter_name,
-                'content'=>$comment->content,
-            );
-        }
-        dd($comment_detail);
+        // foreach ($comments as $comment){
+        //     $commenter = Comment::where('commenter_id', 'id')->commenter;
+        //     return $commenter;
+        //     $commenter_name = $commenter->name;
+        //     $comment_detail[] = array(
+        //         'name'=>$commenter_name,
+        //         'content'=>$comment->content,
+        //     );
+        // }
+        // dd($comment_detail);
         
 
         // $comments = Commenter::where('id', 'commenter_id')->get();
