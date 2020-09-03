@@ -88,7 +88,9 @@ Route::get('admin/update/{id}', 'AdminUserController@update')->middleware('check
 Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate')->middleware('checkLogin:user');
 
 
-//POST
+//NEWS
+Route::get('admin/add_news', 'AdminNewsController@index');
+Route::post('admin/store_news', 'AdminNewsController@store_news');
 
 
 //--------------*****----------------
@@ -107,7 +109,7 @@ Route::get('/', 'ClientProductController@index');
 Route::get('home', 'ClientProductController@index');
 //=====product show
 Route::get('product/show', 'ClientProductController@show');
-Route::post('product/filter','ClientProductController@filter');
+Route::post('product/filter', 'ClientProductController@filter');
 //=====product detail
 
 Route::get('product/show/{id}', 'ClientProductController@detail')->name('product.show.detail');
@@ -139,7 +141,7 @@ Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('o
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //Comment
 Route::post('client/comment', 'CommentController@comment');
-Route::post('client/repcomment','CommentController@replyCmt');
+Route::post('client/repcomment', 'CommentController@replyCmt');
 
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******

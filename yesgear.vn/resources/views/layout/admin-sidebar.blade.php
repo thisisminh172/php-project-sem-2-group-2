@@ -26,7 +26,7 @@
             <li>
                 <i class="far fa-folder"></i><a href="{{ url('') }}"> Tin tức</a>
                 <ul class="list-unstyled">
-                    <li><a href="{{ url('') }}">Thêm mới</a></li>
+                    <li><a href="{{ url('admin/add_news') }}">Thêm mới</a></li>
                     <li><a href="{{ url('') }}">Danh sách</a></li>
                 </ul>
             </li>
