@@ -51,10 +51,22 @@ class ClientProductController extends Controller
         $product = Product::find($id);
         $images = json_decode($product->image_url);
 
-        //comment function
         $comments = Comment::where('product_id', $id)->get();
-        
-        return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments]);
+        $count_comment_has_rate = Comment::where('product_id', $id)->whereNotNull('votes')->count();
+        $count_vote = $count_comment_has_rate;
+        if($count_comment_has_rate ==0){
+            $count_comment_has_rate++;
+        }
+        $rates = 0;
+        foreach($comments as $comment){
+            if($comment->votes != null){
+                $rates += $comment->votes;
+            }
+        }
+        $average_rate = round($rates/$count_comment_has_rate);
+
+        return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments,'average_rate'=>$average_rate,'count_vote'=>$count_vote]);
+
     }
 
     public function find(Request $request)
