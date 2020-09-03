@@ -66,6 +66,7 @@ class ClientProductController extends Controller
         $average_rate = round($rates/$count_comment_has_rate);
 
         return view('client.product.detail')->with(['product' => $product, 'images' => $images,'comments' => $comments,'average_rate'=>$average_rate,'count_vote'=>$count_vote]);
+
     }
 
     public function find(Request $request)
