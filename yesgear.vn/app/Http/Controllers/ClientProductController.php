@@ -9,6 +9,7 @@ use App\OrderDetail;
 use App\Product;
 use App\Comment;
 use App\Commenter;
+use App\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,7 +36,8 @@ class ClientProductController extends Controller
         $headphones = $p->show_headphone();
         $keyboards = $p->show_keyboard();
         $mouses = $p->show_mouse();
-        return view('client.home.home')->with(['products' => $products, 'headphones' => $headphones, 'keyboards' => $keyboards, 'mouses' => $mouses]);
+        $sliders = Slider::find(1);
+        return view('client.home.home')->with(['products' => $products, 'headphones' => $headphones, 'keyboards' => $keyboards, 'mouses' => $mouses,'sliders'=>$sliders]);
     }
 
     public function show()

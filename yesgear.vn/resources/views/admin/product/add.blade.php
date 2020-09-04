@@ -69,7 +69,13 @@
                     <div class="form-group">
                         <label for="tech-info">Thông số kỹ thuật (Lưu ý: nên nhập dạng danh sách) (Không bắt buộc)</label>
                         <textarea name="tech_info" id="tech-info" cols="30" rows="10" class="form-control"
-                            placeholder="Thông số kỹ thuật..."></textarea>
+                            placeholder="Thông số kỹ thuật...">
+                        <ul>
+                            <li>Thương hiệu: </li>
+                            <li>Tên sản phẩm: </li>
+                            <li>Màu sắc: </li>
+                        </ul>
+                        </textarea>
                     </div>
 
                     <div class="form-group">

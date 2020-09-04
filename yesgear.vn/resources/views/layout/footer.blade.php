@@ -2,12 +2,41 @@
 
 <footer id="wp-footer" class="container-fluid bg-dark text-white p-0 mt-5">
     <div class="container">
-        <div class="row">
+        <div class="row py-3">
             <div class="col">
-                <p>© 2020 Công Ty Cổ Phần Máy Tính Hà Nội</p><br>
-                <p>Địa chỉ: Số 129 + 131, phố Lê Thanh Nghị, Phường Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p><br>
-                <p>GPĐKKD số 0101161194 do Sở KHĐT Tp.Hà Nội cấp ngày 31/8/2001</p><br>
-                <p>Email: hnc@hanoicomputer.com. Điện thoại: 1900 1903</p>
+                <h4 class="">Gọi mua hàng</h4>
+                <h2><i class="fas fa-phone-square"></i> 1900 1080</h2>
+                <small>(09:00-18:00 tất cả các ngày trong tuần)</small>
+                <br><br>
+                <p>Email: yeagearvn@gmail.com</p>
+            </div>
+            <div class="col">
+                <h4>Hệ thống cửa hàng</h4>
+
+                <ul>
+                    <li>
+                        <h5>Chi nhánh Hồ Chí Minh</h5>
+                        <p>Địa chỉ: 593 Cách Mạng Tháng 8, Quận 3</p>
+                        <p><i class="fas fa-phone-square"></i> 19001080</p>
+                    </li>
+                    <li>
+                        <h5>Chi nhánh Hà Nội</h5>
+                        <p>Địa chỉ: 21 Trần Duy Hưng, Quận Ba Đình</p>
+                        <p><i class="fas fa-phone-square"></i> 19001070</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Về chúng tối</h4>
+                <p>© 2020 Công Ty Cổ Phần YESGEAR</p><br>
+                <p>Địa chỉ: 593 Cách Mạng Tháng 8, Quận 3, </p><br>
+                <p>Email: yesgearvn@gmail.com. Điện thoại: 1900 1080</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                Copyright 2020 yesgear.vn CT TNHH TM-DV YES GEAR.
             </div>
         </div>
     </div>

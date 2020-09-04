@@ -169,4 +169,11 @@ class AdminProductController extends Controller
     }
     //BRAND functions end<<<<<<<<<<<<<
 
+    public function delete($id){
+
+        $product = Product::find($id)->delete();
+
+        return redirect()->action('AdminProductController@index')->with('success','Xóa sản phẩm thành công');
+    }
+
 }

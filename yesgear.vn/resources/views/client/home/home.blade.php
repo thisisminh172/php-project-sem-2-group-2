@@ -11,22 +11,34 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid"
-                                src="https://hanoicomputercdn.com/media/banner/07_Sep0ad42534737bdef8a6e0feb068e0b5da.jpg"
+                                src="{{asset($sliders->img1)}}"
                                 width="1400" height="450" alt="First slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                src="{{asset($sliders->img2)}}"
                                 width="1400" height="450" alt="Second slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid"
-                                src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                src="{{asset($sliders->img3)}}"
                                 width="1400" height="450" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                src="{{asset($sliders->img4)}}"
+                                width="1400" height="450" alt="forth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                src="{{asset($sliders->img5)}}"
+                                width="1400" height="450" alt="fifth slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

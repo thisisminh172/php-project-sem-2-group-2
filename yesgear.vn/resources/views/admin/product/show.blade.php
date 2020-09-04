@@ -10,6 +10,16 @@
                 <h3>Danh sách sản phẩm</h3>
             </div>
         </div>
+        @if (session('success'))
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+            </div>
+        </div>
+
+        @endif
         <div class="row">
             <div class="col">
                 <table class="table table-hover text-center">
@@ -37,7 +47,7 @@
                             <td>{{$product->category_code}}</td>
                             <td>{{number_format($product->price,0,'','.')}}đ</td>
                             <td>{{$product->quantity}}</td>
-                            <td class="btn-group"><a href="{{route('admin.product.update',$product->id)}}" class="btn btn-info btn-sm">Update</a><a href=""
+                            <td class="btn-group"><a href="{{route('admin.product.update',$product->id)}}" class="btn btn-info btn-sm">Update</a><a href="{{route('admin.product.delete',$product->id)}}"
                                     class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>

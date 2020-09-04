@@ -39,6 +39,7 @@ Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name
 Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success')->middleware('checkLogin:user');
 Route::post('admin/order/search', 'AdminOrderController@search')->middleware('checkLogin:user');
 Route::get('admin/order/show/{status}', 'AdminOrderController@show_by_status')->name('order.show.status')->middleware('checkLogin:user');
+Route::get('admin/order/detail/{id}','AdminOrderController@detail')->name('admin.order.detail');
 //PRODUCT
 
 Route::get('admin/product', 'AdminProductController@index')->middleware('checkLogin:user');
@@ -47,6 +48,7 @@ Route::post('admin/product/store', 'AdminProductController@store')->middleware('
 
 Route::get('admin/product/update/{id}', 'AdminProductController@update')->name('admin.product.update');
 Route::post('admin/product/update/store/{id}', 'AdminProductController@update_store')->name('admin.product.update.store');
+Route::get('admin/product/delete/{id}','AdminProductController@delete')->name('admin.product.delete');
 
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');
@@ -58,7 +60,11 @@ Route::get('admin/product/delete_category/{category_code}', 'AdminProductControl
 Route::get('admin/product/add_brand', 'AdminProductController@add_brand')->middleware('checkLogin:user');
 Route::post('admin/product/store_brand', 'AdminProductController@store_brand')->middleware('checkLogin:user');
 Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete')->middleware('checkLogin:user');
+//slider
 Route::get('admin/slider/show','AdminSliderController@index');
+Route::post('admin/slider/update','AdminSliderController@update');
+
+
 //Comment management
 Route::get('admin/comment', 'AdminCommentManagementController@show');
 Route::get('{product_id}/delete/comment/{id}', 'AdminCommentManagementController@delete');
@@ -92,15 +98,20 @@ Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate')->middlewa
 
 
 //NEWS
-Route::get('admin/add_news', 'AdminNewsController@index');
-Route::post('admin/store_news', 'AdminNewsController@store_news');
+Route::get('admin/add_news', 'AdminNewsController@index')->middleware('checkLogin:user');
+Route::post('admin/store_news', 'AdminNewsController@store_news')->middleware('checkLogin:user');
 
-Route::get('admin/list_news', 'AdminNewsController@list_news');
+Route::get('admin/list_news', 'AdminNewsController@list_news')->middleware('checkLogin:user');
 
-Route::get('admin/news/update/{id}', 'AdminNewsController@update');
-Route::post('admin/news/update/store/{id}', 'AdminNewsController@update_store');
+Route::get('admin/news/update/{id}', 'AdminNewsController@update')->middleware('checkLogin:user');
+Route::post('admin/news/update/store/{id}', 'AdminNewsController@update_store')->middleware('checkLogin:user');
 
-Route::get('admin/news/delete/{id}', 'AdminNewsController@delete');
+Route::get('admin/news/delete/{id}', 'AdminNewsController@delete')->middleware('checkLogin:user');
+
+Route::get('news', 'ClientPostController@news')->middleware('checkLogin:user');
+Route::get('news/show/{id}', 'ClientPostController@detail')->middleware('checkLogin:user');
+
+
 
 
 
@@ -134,9 +145,7 @@ Route::get('intro', function () {
     return view('client.pages.intro');
 });
 //----NEWS
-Route::get('news', function () {
-    return view('client.pages.news');
-});
+
 //CART
 Route::get('cart/show', 'ClientCartController@show');
 Route::get('cart/add/{id}', 'ClientCartController@add')->name('cart.add');

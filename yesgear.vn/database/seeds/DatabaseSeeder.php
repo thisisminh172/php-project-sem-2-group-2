@@ -27,6 +27,13 @@ class DatabaseSeeder extends Seeder
             ['code' => 'ed', 'name' => 'e-dra'],
             ['code' => 'ss', 'name' => 'steelseries']
         ]);
+        DB::table('sliders')->insert([
+            'img1'=>'uploads/hinh-slider-copy.jpg',
+            'img2'=>'uploads/hinh-slider1.jpg',
+            'img3'=>'uploads/hinh-slider2.jpg',
+            'img4'=>'uploads/hinh-slider3.jpg',
+            'img5'=>'uploads/hinh-slider4.jpg'
+            ]);
         DB::table('products')->insert([
             'name' => 'Mouse Dareu LM115G Multi Color Wireless Black Panda',
             'thumbnail' => 'uploads/chuot.jpg',

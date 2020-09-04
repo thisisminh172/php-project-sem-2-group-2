@@ -48,5 +48,14 @@ class AdminOrderController extends Controller
         $orders = Order::where('status',$status)->paginate(10);
         return view('admin.order.show',compact('orders'));
     }
+    public function detail($id){
+        $order = Order::find($id);
+        $order_detail = Order::find($id)->order_detail;
+        $total = 0;
+        foreach($order_detail as $row){
+            $total += $row->price;
+        }
+        return view('admin.order.detail',compact('order','order_detail','total'));
+    }
 
 }

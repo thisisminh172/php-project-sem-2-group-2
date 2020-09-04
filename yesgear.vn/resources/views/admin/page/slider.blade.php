@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{url('admin/slider/update')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <h5 class=""><u>Bảng hình slider</u></h5>
                     <table class="table table-bordered table-hover text-center">
@@ -28,14 +28,13 @@
                                 <td class="font-weight-bold">1</td>
                                 <td>
                                     <img class="d-block img-fluid"
-                                        src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                        src="{{asset($sliders->img1)}}"
                                         width="400" height="150" alt="Second slide">
                                 </td>
 
                                 <td>
-                                    <div class="custom-file w-75 mt-3">
-                                        <input type="file" class="custom-file-input" id="customFile" name="img1">
-                                        <label class="custom-file-label" for="">chọn file ảnh 1</label>
+                                    <div class="form-group">
+                                        <input type="file" class="" id="customFile" name="img1">
                                     </div>
 
                                 </td>
@@ -44,14 +43,13 @@
                                 <td class="font-weight-bold">2</td>
                                 <td>
                                     <img class="d-block img-fluid"
-                                        src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                        src="{{asset($sliders->img2)}}"
                                         width="400" height="150" alt="Second slide">
                                 </td>
 
                                 <td>
-                                    <div class="custom-file w-75 mt-3">
-                                        <input type="file" class="custom-file-input" id="customFile" name="img2">
-                                        <label class="custom-file-label" for="">chọn file ảnh 2</label>
+                                    <div class="form-group">
+                                        <input type="file" class="" id="customFile" name="img2">
                                     </div>
 
                                 </td>
@@ -60,14 +58,13 @@
                                 <td class="font-weight-bold">3</td>
                                 <td>
                                     <img class="d-block img-fluid"
-                                        src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                        src="{{asset($sliders->img3)}}"
                                         width="400" height="150" alt="Second slide">
                                 </td>
 
                                 <td>
-                                    <div class="custom-file w-75 mt-3">
-                                        <input type="file" class="custom-file-input" id="customFile" name="img3">
-                                        <label class="custom-file-label" for="">chọn file ảnh 3</label>
+                                    <div class="form-group">
+                                        <input type="file" class="" id="customFile" name="img3">
                                     </div>
 
                                 </td>
@@ -76,14 +73,13 @@
                                 <td class="font-weight-bold">4</td>
                                 <td>
                                     <img class="d-block img-fluid"
-                                        src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                        src="{{asset($sliders->img4)}}"
                                         width="400" height="150" alt="Second slide">
                                 </td>
 
                                 <td>
-                                    <div class="custom-file w-75 mt-3">
-                                        <input type="file" class="custom-file-input" id="customFile" name="img4">
-                                        <label class="custom-file-label" for="">chọn file ảnh 4</label>
+                                    <div class="form-group">
+                                        <input type="file" class="" id="customFile" name="img4">
                                     </div>
 
                                 </td>
@@ -92,14 +88,13 @@
                                 <td class="font-weight-bold">5</td>
                                 <td>
                                     <img class="d-block img-fluid"
-                                        src="https://hanoicomputercdn.com/media/banner/30_Jun002e814b718497418291b567512c7463.jpg"
+                                        src="{{asset($sliders->img5)}}"
                                         width="400" height="150" alt="Second slide">
                                 </td>
 
                                 <td>
-                                    <div class="custom-file w-75 mt-3">
-                                        <input type="file" class="custom-file-input" id="customFile" name="img5">
-                                        <label class="custom-file-label" for="">chọn file ảnh 5</label>
+                                    <div class="form-group">
+                                        <input type="file" class="" id="customFile" name="img5">
                                     </div>
 
                                 </td>
