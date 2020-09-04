@@ -21,7 +21,7 @@ class CommentController extends Controller
         $comment = new Comment();
         $comment->commenter_id = $commenter->id;
         $comment->content = $request->post('content');
-        $comment->votes = $request->post('votes');
+        $comment->votes = $request->post('rating');
         $comment->product_id = $request->post('product_id');
         $comment->name = $request->post('name');
         $comment->save();

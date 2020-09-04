@@ -61,6 +61,8 @@ Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@de
 Route::get('admin/slider/show','AdminSliderController@index');
 //Comment management
 Route::get('admin/comment', 'AdminCommentManagementController@show');
+Route::get('{product_id}/delete/comment/{id}', 'AdminCommentManagementController@delete');
+Route::get('{product_id}/delete/commentrep/{id}', 'AdminCommentManagementController@delete_rep')->name('admin.delete.commentrep');
 
 Route::get('login', 'AccountController@login');
 

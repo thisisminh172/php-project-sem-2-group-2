@@ -19,6 +19,43 @@ $(document).ready(function() {
 .checked {
     color: orange;
 }
+/* star rating */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    position: relative;
+    width: 1em;
+    font-size: 4vw;
+    color: #ffd600;
+    cursor: pointer;
+}
+
+.rating label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+
+.rating label:hover:before,
+.rating label:hover~label:before {
+    opacity: 1 !important;
+}
+
+.rating input:checked~label:before {
+    opacity: 1;
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4;
+}
 </style>
 <div class="container">
     <div class="row">
@@ -109,24 +146,14 @@ $(document).ready(function() {
                     <div class="container">
                         <form method="post" action="{{url('client/comment')}}" class="alert alert-light">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <div class="rating">
-                                <label>Đánh giá sản phẩm: </label>
-                                <!-- <input type="radio" name="star" id="star1" value="1"><label for="star1"></label>
-                                <input type="radio" name="star" id="star2" value="2"><label for="star2"></label>
-                                <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
-                                <input type="radio" name="star" id="star4" value="4"><label for="star4"></label>
-                                <input type="radio" name="star" id="star5" value="5"><label for="star5"></label> -->
-                                <label class="radio-inline px-1"><input type="radio" name="votes" value="5" checked>5<i
-                                        class="fas fa-star checked"></i></label>
-                                <label class="radio-inline px-1"><input type="radio" name="votes" value="4">4<i
-                                        class="fas fa-star checked"></i></label>
-                                <label class="radio-inline px-1"><input type="radio" name="votes" value="3">3<i
-                                        class="fas fa-star checked"></i></label>
-                                <label class="radio-inline px-1"><input type="radio" name="votes" value="2">2<i
-                                        class="fas fa-star checked"></i></label>
-                                <label class="radio-inline px-1"><input type="radio" name="votes" value="1">1<i
-                                        class="fas fa-star checked"></i></label>
-                            </div>
+                            <label><b>Đánh giá sản phẩm:</b></label>
+                                <div class="rating">
+                                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                </div>
 
                             <div class="form-group" style="width: 400px;">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên..."
