@@ -138,6 +138,9 @@ Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 Route::get('order/add', 'ClientOrderController@index');
 Route::post('order/store', 'ClientOrderController@store');
 Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('order.success');
+Route::get('search/order', function(){
+    return view('client.cart.checkorder');
+});
 //Mail
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //Comment

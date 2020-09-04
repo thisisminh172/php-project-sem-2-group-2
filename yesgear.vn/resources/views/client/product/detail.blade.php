@@ -109,27 +109,13 @@ $(document).ready(function() {
                     <div class="container">
                         <form method="post" action="{{url('client/comment')}}" class="alert alert-light">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <div class="form-group">
-                                <!-- <label>5</label><input type="radio" name="votes" value="5"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-
-
-                                <label>Tốt</label><input type="radio" name="votes" value="4"><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-
-
-                                <label>Bình thường</label><input type="radio" name="votes" value="3"><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-
-
-                                <label>Không tốt</label><input type="radio" name="votes" value="2"><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i>
-
-
-                                <label>Rất tệ</label><input type="radio" name="votes" value="1"><i> -->
+                            <div class="rating">
                                 <label>Đánh giá sản phẩm: </label>
+                                <!-- <input type="radio" name="star" id="star1" value="1"><label for="star1"></label>
+                                <input type="radio" name="star" id="star2" value="2"><label for="star2"></label>
+                                <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
+                                <input type="radio" name="star" id="star4" value="4"><label for="star4"></label>
+                                <input type="radio" name="star" id="star5" value="5"><label for="star5"></label> -->
                                 <label class="radio-inline px-1"><input type="radio" name="votes" value="5" checked>5<i
                                         class="fas fa-star checked"></i></label>
                                 <label class="radio-inline px-1"><input type="radio" name="votes" value="4">4<i
@@ -143,16 +129,20 @@ $(document).ready(function() {
                             </div>
 
                             <div class="form-group" style="width: 400px;">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên..." required>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên..."
+                                    required>
                             </div>
                             <div class="form-group" style="width: 400px;">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email..." required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email..."
+                                    required>
                             </div>
                             <div class="form-group" style="width: 400px;">
-                                <input type="number" class="form-control" id="phone" name="phone" placeholder="Số điện thoại liên hệ..." required>
+                                <input type="number" class="form-control" id="phone" name="phone"
+                                    placeholder="Số điện thoại liên hệ..." required>
                             </div>
                             <div class="form-group text-right" style="width: 400px;">
-                                <textarea class="form-control" row="10" id="cm" name="content" placeholder="Nhập bình luận (tối đa 250 ký tự)..."></textarea>
+                                <textarea class="form-control" row="10" id="cm" name="content"
+                                    placeholder="Nhập bình luận (tối đa 250 ký tự)..."></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">Gửi</button>
