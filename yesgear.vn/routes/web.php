@@ -92,6 +92,14 @@ Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate')->middlewa
 Route::get('admin/add_news', 'AdminNewsController@index');
 Route::post('admin/store_news', 'AdminNewsController@store_news');
 
+Route::get('admin/list_news', 'AdminNewsController@list_news');
+
+Route::get('admin/news/update/{id}', 'AdminNewsController@update');
+Route::post('admin/news/update/store/{id}', 'AdminNewsController@update_store');
+
+Route::get('admin/news/delete/{id}', 'AdminNewsController@delete');
+
+
 
 //--------------*****----------------
 #********ADMIN ROUTES - ends *******
