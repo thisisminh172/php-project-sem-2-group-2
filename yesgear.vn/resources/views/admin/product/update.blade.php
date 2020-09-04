@@ -94,6 +94,37 @@
                 </form>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 alert alert-light">
+                    <h3>Quản lý bình luận</h3>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($comments as $comment)
+                <ul>
+                    <li class="alert alert-secondary">
+                        <span style="text-transform: uppercase;"><b>{{ $comment->name }}</b> |</span>
+                        <span>{{date('d/m/Y H:i',strtotime($comment->created_at))}}</span>
+                        <hr>
+                        &ensp;<span>{{ $comment->content }}</span>
+                        <a href="{{$product->id}}/delete/comment/{{$comment->id}}" class="btn btn-link">Delete</a>
+                        <br>
+                    </li>
+                    <ul style="margin-left:6rem;">
+                        @foreach($comment->comment_reply as $reply)
+                        <li class="alert alert-secondary">
+                            <span class="font-weight-bold">{{$reply->name}}:</span>
+                            {{$reply->content}}
+                            <a href="{{$product->id}}/delete/commentrep/{{$reply->id}}" class="btn btn-link">Delete</a>
+                        </li>
+
+                        @endforeach
+                    </ul>
+                </ul>
+                @endforeach
+            </div>
+        </div>
     </div>
 </div>
 <!-- content end-->

@@ -29,7 +29,7 @@
                             placeholder="Nhập mã đơn hàng...">
                         <div class="input-group-append">
                             <input type="submit" class="btn btn-outline-info" id="search-btn" name="search-btn"
-                                value="Tìm kím mã đơn" />
+                                value="Tìm kiếm mã đơn" />
                         </div>
                     </div>
                 </form>

@@ -49,3 +49,10 @@ p.comments {
     text-transform: uppercase;
 }
 /*star rating*/
+
+
+section #searchorder {
+    margin: auto;
+    padding: 0px;
+    margin-top: 20px;
+}

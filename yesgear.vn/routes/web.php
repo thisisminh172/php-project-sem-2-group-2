@@ -67,6 +67,8 @@ Route::post('admin/slider/update','AdminSliderController@update');
 
 //Comment management
 Route::get('admin/comment', 'AdminCommentManagementController@show');
+Route::get('{product_id}/delete/comment/{id}', 'AdminCommentManagementController@delete');
+Route::get('{product_id}/delete/commentrep/{id}', 'AdminCommentManagementController@delete_rep')->name('admin.delete.commentrep');
 
 Route::get('login', 'AccountController@login');
 
@@ -156,6 +158,9 @@ Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 Route::get('order/add', 'ClientOrderController@index');
 Route::post('order/store', 'ClientOrderController@store');
 Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('order.success');
+Route::get('search/order', function(){
+    return view('client.cart.checkorder');
+});
 //Mail
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
 //Comment

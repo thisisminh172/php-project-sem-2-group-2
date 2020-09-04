@@ -8,6 +8,10 @@ use App\Image;
 use App\Brand;
 use App\Category;
 use App\CustomClass\ChangeFileName;
+use App\Comment;
+use App\CommentRep;
+use App\Commenter;
+use DB;
 
 class AdminProductController extends Controller
 {
@@ -68,7 +72,9 @@ class AdminProductController extends Controller
         $current_brand = Brand::where('code',$product->brand_code)->first();
         $categories = Category::all();
         $current_category = Category::where('code',$product->category_code)->first();
-        return view('admin.product.update',compact('brands','current_brand','categories','current_category','product','images'));
+
+        $comments = Comment::where('product_id', $id)->get();
+        return view('admin.product.update',compact('brands','current_brand','categories','current_category','product','images','comments'));
     }
 
     public function update_store(Request $request,$id){
