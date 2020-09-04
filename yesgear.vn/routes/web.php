@@ -64,6 +64,7 @@ Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@de
 Route::get('admin/slider/show','AdminSliderController@index');
 Route::post('admin/slider/update','AdminSliderController@update');
 
+
 //Comment management
 Route::get('admin/comment', 'AdminCommentManagementController@show');
 
@@ -95,8 +96,20 @@ Route::post('admin/postUpdate/{id}', 'AdminUserController@postUpdate')->middlewa
 
 
 //NEWS
-Route::get('admin/add_news', 'AdminNewsController@index');
-Route::post('admin/store_news', 'AdminNewsController@store_news');
+Route::get('admin/add_news', 'AdminNewsController@index')->middleware('checkLogin:user');
+Route::post('admin/store_news', 'AdminNewsController@store_news')->middleware('checkLogin:user');
+
+Route::get('admin/list_news', 'AdminNewsController@list_news')->middleware('checkLogin:user');
+
+Route::get('admin/news/update/{id}', 'AdminNewsController@update')->middleware('checkLogin:user');
+Route::post('admin/news/update/store/{id}', 'AdminNewsController@update_store')->middleware('checkLogin:user');
+
+Route::get('admin/news/delete/{id}', 'AdminNewsController@delete')->middleware('checkLogin:user');
+
+Route::get('news', 'ClientPostController@news')->middleware('checkLogin:user');
+Route::get('news/show/{id}', 'ClientPostController@detail')->middleware('checkLogin:user');
+
+
 
 
 
@@ -130,9 +143,7 @@ Route::get('intro', function () {
     return view('client.pages.intro');
 });
 //----NEWS
-Route::get('news', function () {
-    return view('client.pages.news');
-});
+
 //CART
 Route::get('cart/show', 'ClientCartController@show');
 Route::get('cart/add/{id}', 'ClientCartController@add')->name('cart.add');
