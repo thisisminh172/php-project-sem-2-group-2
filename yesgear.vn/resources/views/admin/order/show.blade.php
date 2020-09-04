@@ -71,7 +71,7 @@
                         <td>
                             <ul class="list-unstyled">
                                 <div class="btn-group">
-                                    <li><a href="" class="btn btn-info mr-1 btn-sm">Detail</a></li>
+                                    <li><a href="{{route('admin.order.detail',$order->id)}}" class="btn btn-info mr-1 btn-sm">Detail</a></li>
                                     <li><a href="{{route('admin.order.success',$order->id)}}"
                                             class="btn btn-success mr-1 btn-sm">Success</a></li>
                                     <li><a href="{{route('admin.order.cancel',$order->id)}}"

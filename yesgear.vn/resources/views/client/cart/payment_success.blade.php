@@ -17,6 +17,7 @@
                     <li><b>Email: </b>{{$info->email}}</li>
                     <li><b>Số điện thoại: </b>{{$info->phone}}</li>
                     <li><b>Địa chỉ giao hàng: </b>{{$info->address}}</li>
+                    <li><b>Mã đơn hàng: </b>{{$info->payment_content}}</li>
                     <li><b>Nội dung chuyển khoản: </b>{{$info->payment_content}}</li>
                 </ul>
             </div>
