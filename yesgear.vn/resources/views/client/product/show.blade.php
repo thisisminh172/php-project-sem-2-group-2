@@ -9,7 +9,7 @@
         @foreach ($products as $product)
 
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 py-1">
-            <div class="card card-product">
+            <div class="card card-product box-shadow">
                 <a href='{{ url("product/show/$product->id") }}'>
                     <img class="card-img-top" src="{{ asset($product->thumbnail) }}" alt="">
                 </a>

@@ -53,16 +53,16 @@
         }
 
         .dropdown-cart>.dropdown-cart-list {
-            display: none;
+            opacity: 0;
             min-width: 300px;
             border-radius: 10px;
             border: 1px solid #949494;
-            transition: 0.3s;
+            transition: opacity 0.3s ease;
         }
 
         .dropdown-cart:hover>.dropdown-cart-list {
 
-            display: block;
+            opacity: 1;
         }
 
         .dropdown-cart-list>.button-cart {
@@ -87,13 +87,13 @@
             z-index: 1600;
             width: 250px;
             box-shadow: 1px 1px 2px #9b9b9b;
-            display: none;
-            transition: 0.3s;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
 
         }
 
         #dropdown-link:hover>#wp-dropdown-menu {
-            display: block;
+            opacity: 1;
         }
 
         #dropdown-link #wp-dropdown-menu li {
@@ -108,6 +108,7 @@
 
         #wp-dropdown-menu li a {
             font-size: 1.2rem;
+            transition: 0.3s ease;
         }
     </style>
     <!-- navigation -->
