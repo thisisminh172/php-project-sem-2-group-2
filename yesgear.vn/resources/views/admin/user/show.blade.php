@@ -16,8 +16,8 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Name</th>
                                 <th>Email</th>
+                                <th>Name</th>
                                 <th>Password</th>
                             </tr>
                         </thead>

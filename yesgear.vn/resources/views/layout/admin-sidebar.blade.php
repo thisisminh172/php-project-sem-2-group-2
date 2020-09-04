@@ -24,10 +24,16 @@
                 </ul>
             </li>
             <li>
+                <i class="far fa-folder"></i><a href="{{ url('admin/slider/show') }}"> Trang</a>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url('admin/slider/show') }}">Hình chạy slider</a></li>
+                </ul>
+            </li>
+            <li>
                 <i class="far fa-folder"></i><a href="{{ url('') }}"> Tin tức</a>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/add_news') }}">Thêm mới</a></li>
-                    <li><a href="{{ url('') }}">Danh sách</a></li>
+                    <li><a href="{{ url('admin/list_news') }}">Danh sách</a></li>
                 </ul>
             </li>
             <li>

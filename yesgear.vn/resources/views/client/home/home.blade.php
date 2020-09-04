@@ -46,7 +46,7 @@
         <div class="row">
             @foreach ($products as $product)
             <div class="col-12 col-sm-6 col-md-3">
-                <div class="card h-100">
+                <div class="card h-100 box-shadow">
                     <a href="{{url("product/show/$product->id")}}"><img class="card-img-top"
                             src="{{asset($product->thumbnail)}}"
                             width="525px" height="300px" alt=""></a>
@@ -70,7 +70,7 @@
         <div class="row">
             @foreach ($headphones as $headphone)
             <div class="col-12 col-sm-6 col-md-3">
-                <div class="card">
+                <div class="card box-shadow">
                     <a href='{{url("product/show/$headphone->id")}}'>
                         <img class="card-img-top" src="{{asset($headphone->thumbnail)}}" alt="">
                     </a>
@@ -95,7 +95,7 @@
         <div class="row">
             @foreach ($keyboards as $keyboard)
             <div class="col-12 col-sm-6 col-md-3">
-                <div class="card">
+                <div class="card box-shadow">
                     <a href='{{url("product/show/$keyboard->id")}}'>
                         <img class="card-img-top" src="{{asset($keyboard->thumbnail)}}" alt="">
                     </a>
@@ -121,7 +121,7 @@
         <div class="row">
             @foreach ($mouses as $mouse)
             <div class="col-12 col-sm-6 col-md-3">
-                <div class="card">
+                <div class="card box-shadow">
                     <a href='{{url("product/show/$mouse->id")}}'>
                         <img class="card-img-top" src="{{asset($mouse->thumbnail)}}" alt="">
                     </a>
