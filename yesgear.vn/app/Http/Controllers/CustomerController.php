@@ -9,10 +9,20 @@ use DB;
 
 class CustomerController extends Controller
 {
-    public function show(){
+    public function show_order(){
         $customers_order = DB::table('orders')
-        ->distinct('email')->get();
-        $customers_comment = Commenter::all();
-        return view('admin.customerlist.customer')->with(['customers_order'=>$customers_order, 'customers_comment'=>$customers_comment]);
+        ->select('email')
+        ->groupBy('email')
+        ->get();
+        return view('admin.customerlist.customer_order')->with('customers_order',$customers_order);
     }
+
+    public function show_commenter(){
+        $customers_comment = DB::table('commenters')
+        ->select('email')
+        ->groupBy('email')
+        ->get();
+        return view('admin.customerlist.customer_commenter')->with('customers_comment',$customers_comment);
+    }
+    
 }

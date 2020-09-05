@@ -69,7 +69,9 @@ Route::post('admin/slider/update','AdminSliderController@update');
 Route::get('admin/product/update/delete/comment/{product_id}/{id}', 'AdminCommentManagementController@delete');
 Route::get('admin/product/update/delete/commentrep/{product_id}/{id}', 'AdminCommentManagementController@delete_rep');
 //Customers
-Route::get('admin/customer','CustomerController@show');
+Route::get('admin/customer_order','CustomerController@show_order');
+Route::get('admin/customer_commenter','CustomerController@show_commenter');
+
 
 Route::get('login', 'AccountController@login');
 
