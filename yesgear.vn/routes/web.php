@@ -142,7 +142,7 @@ Route::get('contact', function () {
 });
 //----INTRO
 Route::get('check', 'ClientOrderController@check');
-Route::post('check/order','ClientOrderController@check_order');
+Route::post('check/order', 'ClientOrderController@check_order');
 //----NEWS
 
 //CART

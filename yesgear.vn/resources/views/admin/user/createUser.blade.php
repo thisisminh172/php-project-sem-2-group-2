@@ -29,7 +29,7 @@
                     <h4>
                         @if (session('message'))
 
-                         {{ session('message') }}
+                            {{ session('message') }}
                         @endif
                     </h4>
                     <div class="form-group">
@@ -50,6 +50,10 @@
                                 </ul>
                             </div>
                         @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Address:</label>
+                        <input type="text" name="address" class="form-control" id="address" required>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password:</label>

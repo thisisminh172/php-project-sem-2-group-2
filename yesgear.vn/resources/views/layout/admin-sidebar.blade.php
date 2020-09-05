@@ -40,9 +40,10 @@
                 <i class="far fa-folder"></i><a href="{{ url('admin/user') }}"> Users</a>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/user') }}">Danh sách</a></li>
-                    {{-- <li><a href="{{ url('') }}">Gửi thông báo</a></li> --}}
+                    {{-- <li><a href="{{ url('') }}">Gửi thông báo</a></li>
+                    --}}
                     <li><a href="{{ url('addUser') }}">Thêm nhân viên</a></li>
-                    <li><a class="btn btn-success" href="{{ url('admin/user/logout') }}">Đăng xuất</a></li>
+                    <li><a class="btn btn-success" href="{{ url('login') }}">Đăng xuất</a></li>
 
                 </ul>
             </li>
