@@ -30,15 +30,17 @@ body {
 /* sidebar */
 
 #wp-sidebar {
-    height: 100vh;
+    height: 900px;
     width: 250px;
     padding-top: 5rem;
     z-index: 500;
     box-shadow: 0px 1px 10px grey;
+    overflow: scroll;
 }
 
 #sidebar-menu {
     margin-left: 2rem;
+    height: 1000px;
 }
 
 #wp-sidebar #sidebar-menu ul li ul {
