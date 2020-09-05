@@ -24,11 +24,15 @@
                 </ul>
             </li>
             <li>
-                <i class="far fa-folder"></i><a href="{{ url('admin/customer_order') }}"> Gửi email chương trình khuyến mãi</a>
+                <i class="far fa-folder"></i><a href="{{ url('admin/customer_order') }}"> Gửi email chương trình khuyến
+                    mãi</a>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/customer_order') }}">Email khách hàng từng đặt hàng</a></li>
                     <li><a href="{{ url('admin/customer_commenter') }}">Email khách hàng từng bình luận</a></li>
                 </ul>
+            </li>
+            <li>
+                <i class="far fa-folder"></i><a href="{{ url('admin/comment/show') }}">Bình luận của khách hàng</a>
             </li>
             <li>
                 <i class="far fa-folder"></i><a href="{{ url('admin/slider/show') }}"> Trang</a>
@@ -47,13 +51,14 @@
                 <i class="far fa-folder"></i><a href="{{ url('admin/user') }}"> Users</a>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/user') }}">Danh sách</a></li>
-                    {{-- <li><a href="{{ url('') }}">Gửi thông báo</a></li>
-                    --}}
-                    <li><a href="{{ url('addUser') }}">Thêm nhân viên</a></li>
-                    <li><a class="btn btn-success" href="{{ url('login') }}">Đăng xuất</a></li>
-
-                </ul>
+                    {{-- <li><a href="{{ url('') }}">Gửi thông báo</a>
             </li>
+            --}}
+            <li><a href="{{ url('addUser') }}">Thêm nhân viên</a></li>
+            <li><a class="btn btn-success" href="{{ url('login') }}">Đăng xuất</a></li>
+
+        </ul>
+        </li>
         </ul>
     </div>
 </div>

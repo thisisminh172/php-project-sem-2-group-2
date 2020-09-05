@@ -29,87 +29,101 @@
 
 <body>
     <style>
-        .dropdown-cart {
-            position: relative;
-        }
+    .dropdown-cart {
+        position: relative;
+    }
 
-        .dropdown-cart-list {
-            position: absolute;
-            z-index: 1500;
-            background-color: white;
-            right: 0px;
-            top: 30px
-        }
+    .dropdown-cart-list {
+        position: absolute;
+        z-index: 1500;
+        background-color: white;
+        right: 0px;
+        top: 30px
+    }
 
-        li.dropdown-item img {
-            display: inline-block;
-            float: left;
-        }
+    li.dropdown-item img {
+        display: inline-block;
+        float: left;
+    }
 
-        li.dropdown-item p {
-            display: inline-block;
-            float: left;
-            padding: 1rem;
-        }
+    li.dropdown-item p {
+        display: inline-block;
+        float: left;
+        padding: 1rem;
+    }
 
-        .dropdown-cart>.dropdown-cart-list {
-            opacity: 0;
-            min-width: 300px;
-            border-radius: 10px;
-            border: 1px solid #949494;
-            transition: opacity 0.3s ease;
-        }
+    .dropdown-cart>.dropdown-cart-list {
+        opacity: 0;
+        min-width: 300px;
+        border-radius: 10px;
+        border: 1px solid #949494;
+        transition: opacity 0.3s ease;
+    }
 
-        .dropdown-cart:hover>.dropdown-cart-list {
+    .dropdown-cart:hover>.dropdown-cart-list {
 
-            opacity: 1;
-        }
+        opacity: 1;
+    }
 
-        .dropdown-cart-list>.button-cart {
-            /* margin-top: 2rem; */
-            padding: 1rem;
-        }
+    .dropdown-cart-list>.button-cart {
+        /* margin-top: 2rem; */
+        padding: 1rem;
+    }
 
-        .dropdown-cart-list>.button-cart>a {
-            width: 300px;
-        }
+    .dropdown-cart-list>.button-cart>a {
+        width: 300px;
+    }
 
-        #dropdown-link {
-            position: relative;
-        }
+    #dropdown-link {
+        position: relative;
+    }
 
-        #dropdown-link #wp-dropdown-menu {
-            position: absolute;
-            top: 30px;
-            left: 0px;
-            border: 1px solid #dddddd;
-            background-color: #ffffff;
-            z-index: 1600;
-            width: 250px;
-            box-shadow: 1px 1px 2px #9b9b9b;
-            opacity: 0;
-            transition: opacity 0.3s ease-out;
+    #dropdown-link #wp-dropdown-menu {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+        z-index: 1600;
+        width: 250px;
+        box-shadow: 1px 1px 2px #9b9b9b;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
 
-        }
+    }
 
-        #dropdown-link:hover>#wp-dropdown-menu {
-            opacity: 1;
-        }
+    #dropdown-link:hover>#wp-dropdown-menu {
+        opacity: 1;
+    }
 
-        #dropdown-link #wp-dropdown-menu li {
-            display: block;
-            margin-bottom: 0.5rem;
-            margin-left: 1rem;
-        }
+    #dropdown-link #wp-dropdown-menu li {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-left: 1rem;
+    }
 
-        #dropdown-link #wp-dropdown-menu li:hover a {
-            color: #ffc107;
-        }
+    #dropdown-link #wp-dropdown-menu li:hover a {
+        color: #ffc107;
+    }
 
-        #wp-dropdown-menu li a {
-            font-size: 1.2rem;
-            transition: 0.3s ease;
-        }
+    #wp-dropdown-menu li a {
+        font-size: 1.2rem;
+        transition: 0.3s ease;
+    }
+
+    .search_product {
+        padding: 6px;
+        margin-top: 8px;
+        border: none;
+        font-size: 17px;
+        width: 300px;
+    }
+
+    .productList {
+       position: absolute;
+       display: block;
+       border: 3px;
+    }
     </style>
     <!-- navigation -->
     <div id="header-wp">
@@ -167,9 +181,12 @@
                             <li id="dropdown-link" class="d-inline-block pb-2"><a href="{{url('product/show')}}"
                                     class="text-warning font-weight-bold mr-5">SẢN PHẨM</a>
                                 <ul id="wp-dropdown-menu" class="" style="list-style-type: none;">
-                                    <li><a href="{{url('product/show/cat/bp')}}"><i class="far fa-keyboard"></i> Bàn phím gaming</a></li>
-                                    <li><a href="{{url('product/show/cat/tn')}}"><i class="fas fa-headset"></i> Tai nghe gaming</a></li>
-                                    <li><a href="{{url('product/show/cat/ch')}}"><i class="fas fa-mouse-pointer"></i> Chuột gaming</a></li>
+                                    <li><a href="{{url('product/show/cat/bp')}}"><i class="far fa-keyboard"></i> Bàn
+                                            phím gaming</a></li>
+                                    <li><a href="{{url('product/show/cat/tn')}}"><i class="fas fa-headset"></i> Tai nghe
+                                            gaming</a></li>
+                                    <li><a href="{{url('product/show/cat/ch')}}"><i class="fas fa-mouse-pointer"></i>
+                                            Chuột gaming</a></li>
                                 </ul>
                             </li>
                             <li class="d-inline-block pb-2"><a href="{{url('check')}}"
@@ -181,11 +198,17 @@
                                     class="text-light font-weight-bold mr-5">LIÊN
                                     HỆ</a></li>
                             <li class="d-inline-block pb-2">
-                                <div class="form-group" style="position: relative">
-                                    <input type="text" id="search-box" class="form-control"
-                                        placeholder="Tìm kiếm sản phẩm...">
-                                    <div id="productList" style="position: absolute"></div>
+                                <div style="position: relative">
+                                    <div class="search_product">
+                                        <form method="post" action="{{ url('client/search/product')}}">
+                                            {{ csrf_field() }}
+                                            <input type="text" id="search_product" class="search_product" name="search_product"
+                                                placeholder="Tìm kiếm sản phẩm...">
+                                        </form>
+                                    </div>
                                 </div>
+                                <div id="productList" class="productList"></div>
+                                <!-- <span id="productList" style="position: absolute; height: 5px;"></span> -->
                                 {{ csrf_field() }}
                             </li>
                         </ul>
@@ -199,9 +222,9 @@
     {{-- script starts --}}
 
     <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
 
-        $('#search-box').keyup(function() { //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
+        $('#search_product').keyup(function() { //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
             var query = $(this).val(); //lấy gía trị ng dùng gõ
             if (query != '') //kiểm tra khác rỗng thì thực hiện đoạn lệnh bên dưới
             {
@@ -215,14 +238,16 @@
                     },
                     success: function(data) { //dữ liệu nhận về
                         $('#productList').fadeIn();
-                        $('#productList').html(data); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là productList
+                        $('#productList').html(
+                            data
+                        ); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là productList
                     }
                 });
             }
         });
 
         $(document).on('click', 'li', function() {
-            $('#search-box').val($(this).text());
+            $('#search_product').val($(this).text());
             $('#productList').fadeOut();
         });
 

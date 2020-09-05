@@ -83,10 +83,10 @@ class ClientProductController extends Controller
         if ($request->get('query')) {
             $query = $request->get('query');
             $data = Product::where('name', 'like', "%{$query}%")->get();
-            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+            $output = '<ul class="dropdown-menu" style="display:block; position:relative; overflow: auto;">';
             foreach ($data as $row) {
                 $page_url = url("product/show/{$row->id}");
-                $output .= '<li><a href="' . $page_url . '">' . $row->name . '</a></li>';
+                $output .= '<li><a href="' . $page_url . '">' . $row->name . '</a></li><hr>';
             }
             $output .= '</ul>';
             echo $output;
@@ -136,5 +136,13 @@ class ClientProductController extends Controller
         $brands = Brand::all();
         $categories = Category::all();
         return view('client.product.show', compact('brands', 'products', 'categories'));
+    }
+    public function search(Request $request){
+        $search_product = $request->post('search_product');
+        
+        $products = Product::where('name','like',"%{$search_product}%")->get();
+        $brands = Brand::all();
+        $categories = Category::all();
+        return view('client.product.search')->with(['products' => $products, 'brands' => $brands, 'categories' => $categories]);
     }
 }

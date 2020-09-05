@@ -66,8 +66,9 @@ Route::post('admin/slider/update', 'AdminSliderController@update');
 
 
 //Comment management
-Route::get('admin/product/update/delete/comment/{product_id}/{id}', 'AdminCommentManagementController@delete');
-Route::get('admin/product/update/delete/commentrep/{product_id}/{id}', 'AdminCommentManagementController@delete_rep');
+Route::get('admin/comment/show','AdminCommentManagementController@show');
+Route::get('admin/delete/comment/{id}', 'AdminCommentManagementController@delete');
+Route::get('admin/delete/commentrep/{id}', 'AdminCommentManagementController@delete_rep');
 //Customers
 Route::get('admin/customer_order','CustomerController@show_order');
 Route::get('admin/customer_commenter','CustomerController@show_commenter');
@@ -169,6 +170,8 @@ Route::post('/salemail/send','SaleMailController@send');
 //Comment
 Route::post('client/comment', 'CommentController@comment');
 Route::post('client/repcomment', 'CommentController@replyCmt');
+//Search product
+Route::post('client/search/product','ClientProductController@search');
 
 //--------------*****----------------
 #********CLIENT ROUTES - ends *******

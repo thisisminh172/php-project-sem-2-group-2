@@ -6,19 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Comment;
 use App\CommentRep;
+use App\Product;
+use App\CustomClass\ChangeFileName;
 
 class AdminCommentManagementController extends Controller
 {
-    public function delete($product_id, $id)
+    public function show(){
+
+        $comments = Comment::orderBy('id','desc')->paginate(5);
+        return view('admin.comment.admincomment')->with(['comments'=>$comments]);
+    }
+        
+
+    public function delete($id)
     {
         $comment = Comment::find($id);
         $comment->delete();
-        return redirect('admin/product/update/'.$product_id)->with('success','Xóa bình luận thành công!');
+        return redirect()->action('AdminCommentManagementController@show')->with('success','Xóa bình luận thành công!');
     }
-    public function delete_rep($product_id, $id){
+    public function delete_rep($id){
         $comment_rep = CommentRep::find($id);
         $comment_rep->delete();
-        return redirect()->action('AdminProductController@update',$product_id)->with('success','Xóa bình luận thành công!');
-    }
+        return redirect()->action('AdminCommentManagementController@show')->with('success','Xóa bình luận thành công!');
 
+    }
 }

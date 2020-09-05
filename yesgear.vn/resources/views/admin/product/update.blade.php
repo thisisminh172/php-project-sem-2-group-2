@@ -86,48 +86,11 @@
                         <textarea name="tech_info" id="tech-info" cols="30" rows="10" class="form-control"
                             placeholder="Thông số kỹ thuật...">{{$product->tech_info}}</textarea>
                     </div>
-
                     <div class="form-group">
                         <input type="submit" value="Cập nhật" class="btn btn-success" name="btn_add_product">
                         <input type="reset" value="Reset" class="btn btn-dark">
                     </div>
                 </form>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 alert alert-light">
-                    <h3>Quản lý bình luận</h3>
-                </div>
-                @if(session('success'))
-                <script>
-                alert("{{session('success')}}");
-                </script>
-                @endif
-            </div>
-            <div class="row">
-                @foreach ($comments as $comment)
-                <ul>
-                    <li class="alert alert-secondary">
-                        <span style="text-transform: uppercase;"><b>{{ $comment->name }}</b> |</span>
-                        <span>{{date('d/m/Y H:i',strtotime($comment->created_at))}}</span>
-                        <hr>
-                        &ensp;<span>{{ $comment->content }}</span>
-                        <a href="delete/comment/{{$product->id}}/{{$comment->id}}" class="btn btn-link">Delete</a>
-                        <br>
-                    </li>
-                    <ul style="margin-left:6rem;">
-                        @foreach($comment->comment_reply as $reply)
-                        <li class="alert alert-secondary">
-                            <span class="font-weight-bold">{{$reply->name}}:</span>
-                            {{$reply->content}}
-                            <a href="delete/commentrep/{{$product->id}}/{{$reply->id}}" class="btn btn-link">Delete</a>
-                        </li>
-
-                        @endforeach
-                    </ul>
-                </ul>
-                @endforeach
             </div>
         </div>
     </div>

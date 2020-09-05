@@ -157,7 +157,7 @@ $(document).ready(function() {
 
                             <div class="form-group" style="width: 400px;">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên..."
-                                    required>
+                                maxLength="100" minlength="3" required>
                             </div>
                             <div class="form-group" style="width: 400px;">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email..."
@@ -165,11 +165,11 @@ $(document).ready(function() {
                             </div>
                             <div class="form-group" style="width: 400px;">
                                 <input type="number" class="form-control" id="phone" name="phone"
-                                    placeholder="Số điện thoại liên hệ..." required>
+                                    placeholder="Số điện thoại liên hệ..." minlength="10" maxlength="11" required>
                             </div>
                             <div class="form-group text-right" style="width: 400px;">
                                 <textarea class="form-control" row="10" id="cm" name="content"
-                                    placeholder="Nhập bình luận (tối đa 250 ký tự)..."></textarea>
+                                    placeholder="Nhập bình luận (tối đa 250 ký tự)..." maxLength="250" minlength="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">Gửi</button>
