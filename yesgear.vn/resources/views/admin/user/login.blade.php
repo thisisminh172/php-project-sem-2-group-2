@@ -27,11 +27,11 @@
                     <h2>LOGIN</h2>
                     <hr>
                     <div class="form-group">
-                        <label for="email">Email address:</label>
+                        <label for="email">Email:</label>
                         <input type="email" name="email" class="form-control" id="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
+                        <label for="pwd">Mật khẩu:</label>
                         <input type="password" name="password" class="form-control" id="pwd" required>
                     </div>
                     <div class="form-group">

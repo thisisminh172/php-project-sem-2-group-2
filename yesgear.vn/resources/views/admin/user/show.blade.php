@@ -19,7 +19,7 @@
                                 <th>Email</th>
                                 <th>Tên họ</th>
                                 <th>Địa chỉ</th>
-                                <th>Password</th>
+                                <th>Mật khẩu</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,8 +30,8 @@
                                     <td>{{ $u->name }}</td>
                                     <td>{{ $u->address }}</td>
                                     <td>{{ $u->password }}</td>
-                                    <td><a href="{{ url("admin/update/{$u->id}") }}" class="btn btn-info">Update</a>
-                                        <a href="{{ url("admin/user/{$u->id}") }}" class="btn btn-danger">Delete</a>
+                                    <td><a href="{{ url("admin/update/{$u->id}") }}" class="btn btn-info">Cập nhật</a>
+                                        <a href="{{ url("admin/user/{$u->id}") }}" class="btn btn-danger">Xóa</a>
                                     </td>
                                 </tr>
                             @endforeach

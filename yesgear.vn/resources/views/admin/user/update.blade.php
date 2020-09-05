@@ -24,11 +24,11 @@
                             @endif
                         </h4>
                         <div class="form-group">
-                            <label for="email">Name:</label>
+                            <label for="email">Tên họ:</label>
                             <input type="text" name="name" class="form-control" id="name" required value="{{ $u->name }}">
                         </div>
                         <div class=" form-group">
-                            <label for="email">Email address:</label>
+                            <label for="email">Địa chỉ email::</label>
                             <input type="email" name="email" class="form-control" id="email" required
                                 value="{{ $u->email }}">
                         </div>
@@ -44,16 +44,16 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="email">Address:</label>
+                            <label for="email">Địa chỉ:</label>
                             <input type="text" name="address" class="form-control" id="address" required>
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
+                            <label for="pwd">Mật khẩu:</label>
                             <input type="password" name="password" class="form-control" id="password" required
                                 value="{{ $u->password }}">
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Confirm Password:</label>
+                            <label for="pwd">Xác nhận mật khẩu:</label>
                             <input type="password" name="passwordConfirm" class="form-control" id="passwordConfirm"
                                 required>
                         </div>
