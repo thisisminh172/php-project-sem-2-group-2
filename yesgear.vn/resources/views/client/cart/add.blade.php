@@ -10,19 +10,19 @@
                 <p>(<span class="text-danger">*</span>) : thông tin bắt buộc</p>
                 <div class="form-group">
                     <label for="name">Họ tên</label>&nbsp;<span class="text-danger">*</span>
-                    <input type="text" name="name" id="name" class="form-control">
+                    <input type="text" name="name" id="name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>&nbsp;<span class="text-danger">*</span>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="email" id="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Điện thoại</label>&nbsp;<span class="text-danger">*</span>
-                    <input type="text" name="phone" id="phone" class="form-control">
+                    <input type="text" name="phone" id="phone" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="address">Địa chỉ giao hàng</label>&nbsp;<span class="text-danger">*</span>
-                    <input type="text" name="address" id="address" class="form-control">
+                    <input type="text" name="address" id="address" class="form-control" required>
                 </div>
                 <div class="alert alert-danger">
                     <p>Quý khách vui lòng kiểm tra thông tin giỏ hàng trước khi nhấn thực hiện thanh toán!</p>
