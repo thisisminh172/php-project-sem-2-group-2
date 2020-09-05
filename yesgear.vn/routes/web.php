@@ -70,7 +70,7 @@ Route::get('admin/comment', 'AdminCommentManagementController@show');
 Route::get('{product_id}/delete/comment/{id}', 'AdminCommentManagementController@delete');
 Route::get('{product_id}/delete/commentrep/{id}', 'AdminCommentManagementController@delete_rep')->name('admin.delete.commentrep');
 
-Route::get('login', 'AccountController@login');
+Route::get('login', 'AccountController@login')->name('login');
 
 //USER
 
@@ -85,7 +85,7 @@ Route::get('addUser', function () {
 })->middleware('checkLogin:user');
 Route::get('admin/user/logout', function (Request $request) {
     $request->session()->flush();
-    return view('admin.user.login');
+    return redirect()->route('login');
 });
 
 Route::get('createUser', 'AccountController@addUser');
