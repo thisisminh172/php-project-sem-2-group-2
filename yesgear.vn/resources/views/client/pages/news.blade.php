@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             @foreach ($news as $n)
-                <div class="col">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <br><br>
                     <div class="card" style="">
                         <a href='{{ url("news/show/$n->id") }}'><img class="card-img-top" src="{{ asset($n->thumbnail) }}"

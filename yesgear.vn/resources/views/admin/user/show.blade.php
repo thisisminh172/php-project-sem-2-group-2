@@ -15,9 +15,10 @@
                     <table class="table table-hover text-center">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>STT</th>
                                 <th>Email</th>
-                                <th>Name</th>
+                                <th>Tên họ</th>
+                                <th>Địa chỉ</th>
                                 <th>Password</th>
                             </tr>
                         </thead>
@@ -27,6 +28,7 @@
                                     <td>{{ $u->id }}</td>
                                     <td>{{ $u->email }}</td>
                                     <td>{{ $u->name }}</td>
+                                    <td>{{ $u->address }}</td>
                                     <td>{{ $u->password }}</td>
                                     <td><a href="{{ url("admin/update/{$u->id}") }}" class="btn btn-info">Update</a>
                                         <a href="{{ url("admin/user/{$u->id}") }}" class="btn btn-danger">Delete</a>
