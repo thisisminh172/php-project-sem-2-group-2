@@ -24,6 +24,12 @@
                 </ul>
             </li>
             <li>
+                <i class="far fa-folder"></i><a href="{{ url('') }}">Gửi email chương trình khuyến mãi</a>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url('admin/customer') }}">Danh sách khách hàng</a></li>
+                </ul>
+            </li>
+            <li>
                 <i class="far fa-folder"></i><a href="{{ url('admin/slider/show') }}"> Trang</a>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('admin/slider/show') }}">Hình chạy slider</a></li>

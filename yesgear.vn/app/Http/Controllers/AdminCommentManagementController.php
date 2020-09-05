@@ -13,12 +13,12 @@ class AdminCommentManagementController extends Controller
     {
         $comment = Comment::find($id);
         $comment->delete();
-        return redirect('admin/product/update/'.$product_id);
+        return redirect('admin/product/update/'.$product_id)->with('success','Xóa bình luận thành công!');
     }
     public function delete_rep($product_id, $id){
         $comment_rep = CommentRep::find($id);
         $comment_rep->delete();
-        return redirect()->action('AdminProductController@update',$product_id);
+        return redirect()->action('AdminProductController@update',$product_id)->with('success','Xóa bình luận thành công!');
     }
 
 }

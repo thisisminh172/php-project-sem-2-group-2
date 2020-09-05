@@ -123,7 +123,7 @@ $(document).ready(function() {
     <div class="row">
         @if(session('success'))
         <script>
-        alert("{{session('success')}}"); >>>
+        alert("{{session('success')}}");
         </script>
         @endif
     </div>

@@ -99,6 +99,11 @@
                 <div class="col-12 alert alert-light">
                     <h3>Quản lý bình luận</h3>
                 </div>
+                @if(session('success'))
+                <script>
+                alert("{{session('success')}}");
+                </script>
+                @endif
             </div>
             <div class="row">
                 @foreach ($comments as $comment)
@@ -108,7 +113,7 @@
                         <span>{{date('d/m/Y H:i',strtotime($comment->created_at))}}</span>
                         <hr>
                         &ensp;<span>{{ $comment->content }}</span>
-                        <a href="{{$product->id}}/delete/comment/{{$comment->id}}" class="btn btn-link">Delete</a>
+                        <a href="delete/comment/{{$product->id}}/{{$comment->id}}" class="btn btn-link">Delete</a>
                         <br>
                     </li>
                     <ul style="margin-left:6rem;">
@@ -116,7 +121,7 @@
                         <li class="alert alert-secondary">
                             <span class="font-weight-bold">{{$reply->name}}:</span>
                             {{$reply->content}}
-                            <a href="{{$product->id}}/delete/commentrep/{{$reply->id}}" class="btn btn-link">Delete</a>
+                            <a href="delete/commentrep/{{$product->id}}/{{$reply->id}}" class="btn btn-link">Delete</a>
                         </li>
 
                         @endforeach
