@@ -15,6 +15,9 @@ class ClientOrderController extends Controller
 {
     //
     public function index(){
+        if(count(Cart::content())==0){
+            return view('client.cart.show');
+        }
         return view('client.cart.add');
     }
     public function store(Request $request){
