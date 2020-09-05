@@ -183,7 +183,7 @@
                             <li class="d-inline-block pb-2">
                                 <div class="form-group" style="position: relative">
                                     <input type="text" id="search-box" class="form-control"
-                                        placeholder="Nhập tên sản phẩm muốn tìm kiếm...">
+                                        placeholder="Tìm kiếm sản phẩm...">
                                     <div id="productList" style="position: absolute"></div>
                                 </div>
                                 {{ csrf_field() }}

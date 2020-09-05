@@ -43,6 +43,6 @@ class CommentController extends Controller
         $rep_comment->content = $request->post('repcontent');
         $rep_comment->name = $commenter->name;
         $rep_comment->save();
-        return redirect()->action('ClientProductController@detail',$product_id);
+        return redirect()->action('ClientProductController@detail',$product_id)->with('success','Bình luận thành công!');
     }
 }
