@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-2"></div>
             <div class="col-9">
-                <h3>Your email or password is incorrect. Login again?</h3>
+                <h3>Email hoặc mật khẩu sai. Đăng nhập lại?</h3>
             </div>
         </div>
 
@@ -31,9 +31,9 @@
 
                 <div class="">
                     <a href="{{ url('login') }}" class="btn btn-success btn-lg active" role="button"
-                        aria-pressed="true">Yes, login again.</a>
+                        aria-pressed="true">Ok, đăng nhập lại.</a>
                     <a href="{{ url('home') }}" class="btn btn-danger btn-lg active" role="button"
-                        aria-pressed="true">No, back to homepage.</a>
+                        aria-pressed="true">Không, về trang chủ.</a>
                 </div>
             </div>
             <div class="col-3"></div>
