@@ -32,8 +32,8 @@
                         </div>
                         <div class="form-group">
                             <label for="content">Nội dung</label>
-                            <input type="text" name="content" id="content" value="{{ $u->content }}" class="form-control"
-                                required>
+                            <textarea name="content" id="content" cols="30" rows="10" class="form-control"
+                                required>{{ $u->content }}</textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Cập nhật" class="btn btn-success" name="btn_add_product">

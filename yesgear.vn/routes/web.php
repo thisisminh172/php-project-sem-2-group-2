@@ -39,7 +39,7 @@ Route::get('admin/order/cancel/{order_id}', 'AdminOrderController@cancel')->name
 Route::get('admin/order/success/{order_id}', 'AdminOrderController@success')->name('admin.order.success')->middleware('checkLogin:user');
 Route::post('admin/order/search', 'AdminOrderController@search')->middleware('checkLogin:user');
 Route::get('admin/order/show/{status}', 'AdminOrderController@show_by_status')->name('order.show.status')->middleware('checkLogin:user');
-Route::get('admin/order/detail/{id}','AdminOrderController@detail')->name('admin.order.detail');
+Route::get('admin/order/detail/{id}', 'AdminOrderController@detail')->name('admin.order.detail');
 //PRODUCT
 
 Route::get('admin/product', 'AdminProductController@index')->middleware('checkLogin:user');
@@ -48,7 +48,7 @@ Route::post('admin/product/store', 'AdminProductController@store')->middleware('
 
 Route::get('admin/product/update/{id}', 'AdminProductController@update')->name('admin.product.update');
 Route::post('admin/product/update/store/{id}', 'AdminProductController@update_store')->name('admin.product.update.store');
-Route::get('admin/product/delete/{id}','AdminProductController@delete')->name('admin.product.delete');
+Route::get('admin/product/delete/{id}', 'AdminProductController@delete')->name('admin.product.delete');
 
 //route nút lọc
 Route::get('client/filter', 'ClientProductController@getProductFilter');
@@ -61,8 +61,8 @@ Route::get('admin/product/add_brand', 'AdminProductController@add_brand')->middl
 Route::post('admin/product/store_brand', 'AdminProductController@store_brand')->middleware('checkLogin:user');
 Route::get('admin/product/delete_brand/{brand_code}', 'AdminProductController@delete_brand')->name('admin.brand.delete')->middleware('checkLogin:user');
 //slider
-Route::get('admin/slider/show','AdminSliderController@index');
-Route::post('admin/slider/update','AdminSliderController@update');
+Route::get('admin/slider/show', 'AdminSliderController@index');
+Route::post('admin/slider/update', 'AdminSliderController@update');
 
 
 //Comment management
@@ -108,8 +108,8 @@ Route::post('admin/news/update/store/{id}', 'AdminNewsController@update_store')-
 
 Route::get('admin/news/delete/{id}', 'AdminNewsController@delete')->middleware('checkLogin:user');
 
-Route::get('news', 'ClientPostController@news')->middleware('checkLogin:user');
-Route::get('news/show/{id}', 'ClientPostController@detail')->middleware('checkLogin:user');
+Route::get('news', 'ClientPostController@news');
+Route::get('news/show/{id}', 'ClientPostController@detail');
 
 
 
@@ -158,7 +158,7 @@ Route::post('/home/find', 'ClientProductController@find')->name('home.find');
 Route::get('order/add', 'ClientOrderController@index');
 Route::post('order/store', 'ClientOrderController@store');
 Route::get('order/success/{order_id}', 'ClientOrderController@success')->name('order.success');
-Route::get('search/order', function(){
+Route::get('search/order', function () {
     return view('client.cart.checkorder');
 });
 //Mail

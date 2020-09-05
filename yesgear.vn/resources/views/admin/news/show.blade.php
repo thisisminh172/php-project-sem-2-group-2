@@ -27,7 +27,7 @@
                                 <th>Id</th>
                                 <th>Tên bài viết</th>
                                 <th>Thumbnail</th>
-                                <th>Nội dung</th>
+                                {{-- <th>Nội dung</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +36,9 @@
                                     <td><b>{{ $n->id }}</b></td>
                                     <td>{{ $n->title }}</td>
                                     <td class="overflow">{{ $n->thumbnail }}</td>
-                                    <td>{{ $n->content }}</td>
+                                    {{-- <td>{{ $n->content }}</td>
+                                    --}}
+
                                     <td class="btn-group"><a href="{{ url("admin/news/update/{$n->id}") }}"
                                             class="btn btn-info btn-sm">Update</a>
                                         <a href="{{ url("admin/news/delete/{$n->id}") }}"
