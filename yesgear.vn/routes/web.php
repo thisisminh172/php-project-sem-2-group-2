@@ -165,6 +165,7 @@ Route::get('search/order', function () {
 });
 //Mail
 Route::post('/sendemailcontact/send', 'ContactusMailController@send');
+Route::post('/salemail/send','SaleMailController@send');
 //Comment
 Route::post('client/comment', 'CommentController@comment');
 Route::post('client/repcomment', 'CommentController@replyCmt');
