@@ -22,9 +22,7 @@
                         <hr>
                         <h4>
                             @if (session('message'))
-
-                                <<<<<<< HEAD {{ session('message') }}======={{ session('message') }}>>>>>>>
-                                    d95a50a0589a9867fd6b6755f760ec885bc843a4
+                                {{ session('message') }}
                             @endif
                         </h4>
                         <div class="form-group">
