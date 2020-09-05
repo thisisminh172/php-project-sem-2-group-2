@@ -56,4 +56,21 @@ class ClientOrderController extends Controller
         // $detail = OrderDetail::where('order_id',$order_id)->get();
         return view('client.cart.payment_success',compact('info'));
     }
+
+    public function check(){
+        return view('client.pages.check');
+    }
+
+    public function check_order(Request $request){
+        $payment_content = $request->input('payment_content');
+        // $order="";
+        $order = Order::where('payment_content',$payment_content)->first();
+        // dd($order);
+        if(isset($order)){
+            return redirect()->action('ClientOrderController@check')->with('order',$order);
+        }else{
+            return redirect()->action('ClientOrderController@check')->with('fail','Không tìm thấy mã đơn hàng này!');
+
+        }
+    }
 }

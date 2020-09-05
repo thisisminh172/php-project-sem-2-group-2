@@ -142,9 +142,8 @@ Route::get('contact', function () {
     return view('client.contact.contact');
 });
 //----INTRO
-Route::get('intro', function () {
-    return view('client.pages.intro');
-});
+Route::get('check', 'ClientOrderController@check');
+Route::post('check/order','ClientOrderController@check_order');
 //----NEWS
 
 //CART

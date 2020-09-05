@@ -172,8 +172,8 @@
                                     <li><a href="{{url('product/show/cat/ch')}}"><i class="fas fa-mouse-pointer"></i> Chuột gaming</a></li>
                                 </ul>
                             </li>
-                            <li class="d-inline-block pb-2"><a href="{{url('intro')}}"
-                                    class="text-light font-weight-bold mr-5">GIỚI THIỆU</a>
+                            <li class="d-inline-block pb-2"><a href="{{url('check')}}"
+                                    class="text-light font-weight-bold mr-5">KIỂM TRA ĐƠN HÀNG</a>
                             </li>
                             <li class="d-inline-block pb-2"><a href="{{url('news')}}"
                                     class="text-light font-weight-bold mr-5">TIN TỨC</a></li>
