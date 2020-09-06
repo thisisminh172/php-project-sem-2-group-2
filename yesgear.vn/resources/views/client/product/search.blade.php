@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
+<div class="product-category text-center text-danger">Kết quả tìm kiếm cho sản phẩm: <?php echo $search_product ?></div><hr>
     <div class="row">
         {{-- san pham starts --}}
 

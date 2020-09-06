@@ -143,6 +143,6 @@ class ClientProductController extends Controller
         $products = Product::where('name','like',"%{$search_product}%")->get();
         $brands = Brand::all();
         $categories = Category::all();
-        return view('client.product.search')->with(['products' => $products, 'brands' => $brands, 'categories' => $categories]);
+        return view('client.product.search')->with(['products' => $products, 'brands' => $brands, 'categories' => $categories,'search_product'=>$search_product]);
     }
 }
