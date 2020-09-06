@@ -58,11 +58,13 @@
         border-radius: 10px;
         border: 1px solid #949494;
         transition: opacity 0.3s ease;
+        z-index: -1;
     }
 
-    .dropdown-cart:hover>.dropdown-cart-list {
+    .dropdown-cart a:hover~.dropdown-cart-list {
 
         opacity: 1;
+        z-index:1;
     }
 
     .dropdown-cart-list>.button-cart {

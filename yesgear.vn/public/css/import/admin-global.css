@@ -30,7 +30,7 @@ body {
 /* sidebar */
 
 #wp-sidebar {
-    height: 900px;
+    height: 1000px;
     width: 250px;
     padding-top: 5rem;
     z-index: 500;
