@@ -61,7 +61,7 @@
         z-index: -1;
     }
 
-    .dropdown-cart a:hover~.dropdown-cart-list {
+    .dropdown-cart:hover>.dropdown-cart-list {
 
         opacity: 1;
         z-index:1;

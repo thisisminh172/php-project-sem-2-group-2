@@ -49,7 +49,7 @@ class ClientCartController extends Controller
             'cartCount'=> Cart::count(),
             'message' => "Thêm sản phẩm thành công",
         );
-        // return Cart::content();
+        // dd(Cart::content());
         //xuất thì echo
         echo json_encode($result);
     }
