@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2020 at 02:34 PM
+-- Generation Time: Sep 06, 2020 at 03:56 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -391,7 +391,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `address`) VALUES
-(1, 'Lê Minh', 'minh@gmail.com', NULL, '123', NULL, NULL, NULL, '1235/50 cmt8');
+(1, 'Lê Minh', 'minh@gmail.com', NULL, '123', NULL, NULL, NULL, '1235/50 cmt8'),
+(2, 'Công Dương', 'duong@gmail.com', NULL, '123', NULL, NULL, NULL, 'cmt8'),
+(3, 'Quốc Tuấn', 'tuan@gmail.com', NULL, '123', NULL, NULL, NULL, 'cmt8');
 
 --
 -- Indexes for dumped tables
@@ -564,7 +566,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
