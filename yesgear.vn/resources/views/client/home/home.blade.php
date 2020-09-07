@@ -1,6 +1,49 @@
 @extends('layout.layout')
 @section('content')
 <!-- content start -->
+<style>
+    .card {
+        position: relative;
+    }
+    .card:hover{
+        /* background: black; */
+    }
+
+    .overlay {
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        transition: .3s ease;
+    }
+    .overlay{
+        width: 100%;
+        border: 1px solid white;
+    }
+    .overlay>a{
+        display: inline-block;
+        color: white;
+        padding: 1rem 1.5rem;
+        border: 1px solid white;
+        margin-top: 8rem;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+    .overlay>a:hover{
+        background: #ffffff;
+        color: #000;
+
+    }
+    .card:hover>.overlay{
+        z-index: 1;
+        height: 100%;
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+
+    }
+</style>
 <div id="body-wp" class="">
     <div class="container">
         {{-- calrosel starts--}}
@@ -71,6 +114,10 @@
                         <h5 class="text-danger">{{number_format($product->price,0,'','.')}}đ</h5>
 
                     </div>
+                    {{-- them --}}
+                    <div class="overlay">
+                        <a href="{{url("product/show/$product->id")}}" class="">Xem chi tiết</a>
+                    </div>
                 </div>
             </div>
             @endforeach
@@ -91,6 +138,10 @@
                             <h6>{{ \Illuminate\Support\Str::limit($headphone->name, 40, $end='...') }}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($headphone->price,0,'','.')}}đ</h6>
+                    </div>
+                    {{-- them --}}
+                    <div class="overlay">
+                        <a href="{{url("product/show/$headphone->id")}}" class="">Xem chi tiết</a>
                     </div>
                 </div>
             </div>
@@ -117,6 +168,10 @@
                         </a>
                         <h6 class="text-danger">{{number_format($keyboard->price,0,'','.')}}đ</h6>
                     </div>
+                    {{-- them --}}
+                    <div class="overlay">
+                        <a href="{{url("product/show/$keyboard->id")}}" class="">Xem chi tiết</a>
+                    </div>
                 </div>
             </div>
             @endforeach
@@ -142,6 +197,10 @@
                             <h6>{{ \Illuminate\Support\Str::limit($mouse->name, 40, $end='...') }}</h6>
                         </a>
                         <h6 class="text-danger">{{number_format($mouse->price,0,'','.')}}đ</h6>
+                    </div>
+                    {{-- them --}}
+                    <div class="overlay">
+                        <a href="{{url("product/show/$mouse->id")}}" class="">Xem chi tiết</a>
                     </div>
                 </div>
             </div>
