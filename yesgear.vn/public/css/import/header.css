@@ -10,10 +10,12 @@
 
 /* search box */
 
-
 #search-box {
     width: 300px;
-    
+}
+
+#search_product {
+    border-radius: 30px;
 }
 
 #productList {}
@@ -26,6 +28,59 @@
 }
 
 #cart {
-    border: 1px solid #fff;
-    border-radius: 5px;
+    /* border: 1px solid #fff; */
+    /* border-radius: 5px; */
+    color: #fff;
+}
+
+
+/* product button */
+
+.product-btn {
+    padding: 1rem;
+    animation: animate 8s linear infinite;
+}
+
+
+/* other button */
+
+.other-btn {
+    padding: 1rem;
+    animation: animate 8s linear infinite;
+    text-align: center;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    /* background: linear-gradient(90deg, #ff7b46, #ffeb3b, #03a9f4, #ff7b46); */
+    background-size: 400%;
+    border-radius: 30px;
+    animation: animate 8s linear infinite;
+}
+
+
+/* rainbow button */
+
+.rainbow-btn {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 30px;
+    animation: animate 8s linear infinite;
+}
+
+
+/* .rainbow-btn:hover {
+    animation: animate 8s linear infinite;
+} */
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
 }

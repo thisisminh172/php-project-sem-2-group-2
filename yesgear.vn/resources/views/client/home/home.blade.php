@@ -17,7 +17,7 @@
         left: 0;
         height: 0;
         overflow: hidden;
-        transition: .3s ease;
+        transition: .5s ease;
     }
     .overlay{
         width: 100%;
@@ -29,7 +29,8 @@
         padding: 1rem 1.5rem;
         border: 1px solid white;
         margin-top: 8rem;
-        border-radius: 5px;
+        border-radius: 2rem;
+        /* border-radius: 5px; */
         transition: 0.3s ease;
     }
     .overlay>a:hover{
@@ -149,7 +150,7 @@
         </div>
         <div class="row text-center mt-1">
             <div class="col">
-                <a href="{{url('product/show/cat/tn')}}" class="btn btn-warning w-25 ">Xem tất cả</a>
+                <a href="{{url('product/show/cat/tn')}}" class="btn w-25 other-btn">Xem tất cả</a>
             </div>
         </div>
         <!-- /.row -->
@@ -178,7 +179,7 @@
         </div>
         <div class="row text-center mt-1">
             <div class="col">
-                <a href="{{url('product/show/cat/bp')}}" class="btn btn-warning w-25 ">Xem tất cả</a>
+                <a href="{{url('product/show/cat/bp')}}" class="btn other-btn w-25 ">Xem tất cả</a>
             </div>
         </div>
 
@@ -208,7 +209,7 @@
         </div>
         <div class="row text-center mb-2 mt-1">
             <div class="col">
-                <a href="{{url('product/show/cat/ch')}}" class="btn btn-warning w-25 ">Xem tất cả</a>
+                <a href="{{url('product/show/cat/ch')}}" class="btn other-btn w-25 ">Xem tất cả</a>
             </div>
         </div>
         <!-- /.row -->

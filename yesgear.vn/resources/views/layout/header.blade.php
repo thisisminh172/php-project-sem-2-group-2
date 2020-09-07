@@ -82,7 +82,7 @@
 
     #dropdown-link #wp-dropdown-menu {
         position: absolute;
-        top: 30px;
+        top: 2.5rem;
         left: 0px;
         border: 1px solid #dddddd;
         background-color: #ffffff;
@@ -91,7 +91,7 @@
         box-shadow: 1px 1px 2px #9b9b9b;
         opacity: 0;
         transition: opacity 0.3s ease-out;
-
+        border-radius: 0.5rem;
     }
 
     #dropdown-link:hover>#wp-dropdown-menu {
@@ -135,8 +135,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <a class="" id="logo" href="{{url('home')}}"><span
-                                class="text-light font-weight-bold">YES</span><span
+                        <a class="" id="logo" href="{{url('home')}}" class=""><span
+                                class="text-light font-weight-bold ">YES</span><span
                                 class="text-danger font-weight-bold">GEAR</span></a>
                         <p class="text-light d-inline-block">BẤT cần đời, BUT cần gear</p>
                     </div>
@@ -144,7 +144,7 @@
 
 
                         <div class="dropdown-cart">
-                            <a href="{{url('cart/show')}}" id="cart" class="text-danger p-2"><i
+                            <a href="{{url('cart/show')}}" id="cart" class="text-light font-weight-bold p-2 rainbow-btn"><i
                                     class="fas fa-shopping-cart"></i> Giỏ hàng <span class="text-success"> (<span
                                         id="cart-count">{{Cart::count()}}</span> sản phẩm)</span></a>
                             <div class="dropdown-cart-list">
@@ -181,7 +181,7 @@
                                     class="text-light font-weight-bold mr-5">TRANG
                                     CHỦ</a></li>
                             <li id="dropdown-link" class="d-inline-block pb-2"><a href="{{url('product/show')}}"
-                                    class="text-warning font-weight-bold mr-5">SẢN PHẨM</a>
+                                    class="text-white font-weight-bold mr-5 rainbow-btn product-btn">SẢN PHẨM</a>
                                 <ul id="wp-dropdown-menu" class="" style="list-style-type: none;">
                                     <li><a href="{{url('product/show/cat/bp')}}"><i class="far fa-keyboard"></i> Bàn
                                             phím gaming</a></li>
