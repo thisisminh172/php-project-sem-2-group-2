@@ -10,7 +10,7 @@
 
 ******************************************
 
-#---VIDEO---
+#VIDEO
 
 Link video intro: https://youtu.be/lFneBFzOWlQ
 
@@ -18,7 +18,7 @@ Link video intro: https://youtu.be/lFneBFzOWlQ
 
 ******************************************
 
-#---Project Map ---
+#Project Map
 
 **DOCUMENTATION**
 
