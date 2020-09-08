@@ -23,13 +23,13 @@ Link video intro: https://youtu.be/lFneBFzOWlQ
 DOCUMENTATION
 
 |
-
+|
 |--> client-installation
-
+|
 |--> developer-installation
-
+|
 |--> Cấu trúc chi tiết Website
-
+|
 |--> Tài liệu thiết kế
 
 YESGEAR.VN
