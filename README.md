@@ -20,24 +20,24 @@ Link video intro: https://youtu.be/lFneBFzOWlQ
 
 #---Project Map ---
 
-DOCUMENTATION
+**DOCUMENTATION**
 
 |
-|
+
 |--> client-installation
-|
+
 |--> developer-installation
-|
+
 |--> Cấu trúc chi tiết Website
-|
+
 |--> Tài liệu thiết kế
 
-YESGEAR.VN
+**YESGEAR.VN**
 
 |
 
 |--> project
 
-README.md
+**README.md**
 
 
