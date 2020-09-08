@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="col">
-                <h4>Về chúng tối</h4>
+                <h4>Về chúng tôi</h4>
                 <p>© 2020 Công Ty Cổ Phần YESGEAR</p><br>
                 <p>Địa chỉ: 593 Cách Mạng Tháng 8, Quận 3, </p><br>
                 <p>Email: yesgearvn@gmail.com. Điện thoại: 1900 1080</p>
