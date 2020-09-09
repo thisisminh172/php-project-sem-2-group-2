@@ -56,7 +56,7 @@
                         <h5>Tổng giỏ hàng: {{Cart::total()}}đ</h5>
                     </div>
                     <div class="mt-5 position-relative">
-                        <a href="" class="btn btn-info">Tiếp tục mua hàng</a>
+                        <a href="{{url('product/show')}}" class="btn btn-info">Tiếp tục mua hàng</a>
                         <a href="{{url('order/add')}}" id="btn-check-out"
                             class="btn btn-danger position-absolute w-25 font-weight-bold">Thanh
                             toán</a>
